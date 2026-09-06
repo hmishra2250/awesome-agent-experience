@@ -1,0 +1,182 @@
+[
+  {
+    "title": "Introducing AX: Why Agent Experience Matters",
+    "url": "https://biilmann.blog/articles/introducing-ax/",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Agent experience framing",
+    "whyItMatters": "A public opinion frame for AX as a discipline, useful because it states that agent-facing surfaces deserve product-design attention rather than being treated as incidental automation glue.",
+    "limitations": "This is a framing essay, not a benchmark or standard; cite it as an opinionated field definition, not as proof of outcomes or ownership."
+  },
+  {
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "sourceType": "paper",
+    "year": 2022,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Connects reasoning traces with actions, making it a useful starting point for interfaces that expose why an agent chose a tool and what happened next.",
+    "limitations": "Primarily a prompting and evaluation paper; it does not by itself specify production observability, permissioning, or recovery contracts."
+  },
+  {
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Frames tool use as something models can learn from demonstrations, which is central to designing tool descriptions and examples that agents can actually use.",
+    "limitations": "Uses a bounded set of tools and self-supervised data generation; production tool ecosystems add security, latency, and changing-schema problems."
+  },
+  {
+    "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+    "url": "https://arxiv.org/abs/2307.16789",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Shows how large tool corpora and tool-use data shape agent behavior, supporting AX work on catalog structure and retrieval-friendly tool metadata.",
+    "limitations": "Large catalogs can hide quality variance; practical AX also needs clear scope boundaries, deprecation signals, and safe failure modes."
+  },
+  {
+    "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "url": "https://arxiv.org/abs/2307.13854",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Models web agents against realistic sites, showing why navigation, site state, and task context matter for agent-facing web design.",
+    "limitations": "Self-hosted benchmark environments are useful for repeatability, but live websites change and need ongoing monitoring."
+  },
+  {
+    "title": "Mind2Web: Towards a Generalist Agent for the Web",
+    "url": "https://arxiv.org/abs/2306.06070",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Focuses on mapping natural-language goals to web actions, which is a core AX concern for documentation, labels, and machine-readable task affordances.",
+    "limitations": "Dataset-driven results should be treated as evidence about task representation, not as a universal recipe for every website."
+  },
+  {
+    "title": "llms.txt: The /llms.txt file, v2",
+    "url": "https://llmstxt.org/",
+    "sourceType": "specification",
+    "year": 2024,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Documents a proposed Markdown-based website discovery convention for helping language models and agents find the most relevant human-authored pages.",
+    "limitations": "It is a proposal rather than an enforced web standard, so teams should treat it as one discoverability surface among several."
+  },
+  {
+    "title": "Agentic Resource Discovery (ARD) specification",
+    "url": "https://github.com/ards-project/ard-spec",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Provides a draft discovery-layer vocabulary for cataloging agentic resources such as tools, prompts, feeds, and machine-readable endpoints.",
+    "limitations": "Adoption is still evolving; use it as a living proposal and keep fallbacks for conventional sitemaps, docs, and links."
+  },
+  {
+    "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+    "url": "https://arxiv.org/abs/2406.12045",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation and benchmarks",
+    "whyItMatters": "Centers user-agent-tool interaction, making it especially relevant to AX work on handoffs, clarifications, and domain state.",
+    "limitations": "Domain simulations still simplify messy real systems; use it to guide evaluation design, not to claim production readiness."
+  },
+  {
+    "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+    "url": "https://arxiv.org/abs/2401.13178",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation and benchmarks",
+    "whyItMatters": "Supports analysis of multi-turn agent behavior rather than only recording a final success or failure, which helps AX reviews separate failure stages.",
+    "limitations": "Benchmark assumptions can age quickly as tools, models, and web environments change, so it should not be treated as a universal scorecard."
+  },
+  {
+    "title": "StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models",
+    "url": "https://arxiv.org/abs/2403.07714",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation and benchmarks",
+    "whyItMatters": "Calls attention to benchmark stability for tool learning, a necessary concern when tracking whether AX changes move an evaluation in a repeatable way.",
+    "limitations": "Stability controls evaluation noise; it does not decide which product affordances matter to a given audience."
+  },
+  {
+    "title": "Model Context Protocol architecture overview",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Gives the MCP mental model for hosts, clients, servers, tools, resources, prompts, and discovery, which is useful when designing agent-facing surfaces.",
+    "limitations": "It is high-level documentation; implementation work still needs the specific dated specification pages and SDK behavior."
+  },
+  {
+    "title": "Model Context Protocol tools specification",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Defines how MCP servers expose callable tools, including metadata and schemas that agents and clients use to understand possible actions.",
+    "limitations": "The spec defines the contract shape; product teams still need to write clear names, descriptions, input schemas, examples, and error responses."
+  },
+  {
+    "title": "Model Context Protocol resources specification",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/resources",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Defines the resource layer for exposing context such as files, data, and app-specific information to agent clients.",
+    "limitations": "It does not choose the semantic taxonomy or freshness policy for a particular product's resources."
+  },
+  {
+    "title": "OpenAPI Specification v3.2.0",
+    "url": "https://spec.openapis.org/oas/v3.2.0.html",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "OpenAPI remains a practical bridge between HTTP APIs, developer docs, and agent-readable operation metadata.",
+    "limitations": "An OpenAPI file can be syntactically valid while still being poor AX if operation names, examples, errors, and auth flows are unclear."
+  },
+  {
+    "title": "JSON Schema Draft 2020-12",
+    "url": "https://json-schema.org/draft/2020-12",
+    "sourceType": "specification",
+    "year": 2020,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "JSON Schema is a foundation for tool input contracts, structured outputs, API validation, and agent-readable constraints.",
+    "limitations": "Schemas need examples, semantics, and versioning discipline; validation alone does not explain intent."
+  },
+  {
+    "title": "Model Context Protocol security best practices",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Human control, accessibility, and recovery",
+    "whyItMatters": "Collects security guidance for tool exposure, trust boundaries, and defensive defaults in MCP-connected agent systems.",
+    "limitations": "Security guidance is implementation-sensitive; teams still need product-specific threat models and operational review."
+  },
+  {
+    "title": "Understanding Authorization in MCP",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/authorization",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Human control, accessibility, and recovery",
+    "whyItMatters": "Explains consent, scopes, and OAuth-oriented authorization patterns that matter when agents act through user-authorized tools.",
+    "limitations": "Remote and local transports differ, so the same authorization pattern will not fit every deployment."
+  },
+  {
+    "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.2",
+    "url": "https://www.w3.org/TR/wai-aria-1.2/",
+    "sourceType": "specification",
+    "year": 2023,
+    "section": "Human control, accessibility, and recovery",
+    "whyItMatters": "Defines roles, states, and properties for accessible web interfaces; AX uses this as relevant machine-readable UI semantics, not as a shortcut to agent success.",
+    "limitations": "Correct ARIA use is necessary for accessibility in many interfaces, but it does not guarantee that an agent can complete a workflow."
+  },
+  {
+    "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "sourceType": "specification",
+    "year": 2023,
+    "section": "Human control, accessibility, and recovery",
+    "whyItMatters": "Sets human accessibility requirements for perceivable, operable, understandable, and robust web content; AX relevance is an inference because agent tooling often benefits from the same explicit structure.",
+    "limitations": "WCAG conformance is not equivalent to agent readiness and should not be cited as evidence that agents will operate a product reliably."
+  }
+]
