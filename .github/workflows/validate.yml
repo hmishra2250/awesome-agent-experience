@@ -1,0 +1,24 @@
+name: Validate curation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: '24'
+      - name: Test README generation
+        run: node --test test/*.test.mjs
+      - name: Check generated README
+        run: node scripts/build-readme-sources.mjs --check
+      - name: Check source structure offline
+        run: node scripts/check-links.mjs

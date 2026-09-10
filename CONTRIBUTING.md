@@ -36,10 +36,16 @@ Prefer stable official URLs: arXiv, ACL Anthology, OpenReview, standards bodies,
 
 Before opening a pull request:
 
-1. Run `node scripts/check-links.mjs`.
+1. Regenerate with `node scripts/build-readme-sources.mjs`, then run `node --test test/*.test.mjs`, `node scripts/build-readme-sources.mjs --check`, and `node scripts/check-links.mjs`.
 2. If online access is available, run `node scripts/check-links.mjs --online`.
 3. Confirm the annotation is original and does not copy an abstract.
 4. Confirm the source is relevant to software agent experience.
 5. Confirm the contribution is not paid placement, link exchange, or SEO filler.
 
 This project welcomes corrections and removals. A smaller accurate list is better than a large noisy one.
+
+## Generated README protocol
+
+Run `node scripts/build-readme-sources.mjs`, `node scripts/build-readme-sources.mjs --check`, and `node scripts/check-links.mjs`. Submit canonical public URLs, an original rationale and limitation, and verified source/version facts; do not infer dates or status.
+
+The offline checks also run in GitHub Actions on pull requests and pushes to `main`. Online URL checks remain an explicit maintainer task; CI does not crawl external sources. See [maintenance](docs/MAINTENANCE.md) for the review cadence.

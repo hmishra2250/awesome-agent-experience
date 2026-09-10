@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readFile } from 'node:fs/promises';
+import { render, replaceGenerated } from './build-readme-sources.mjs';
 
 const ONLINE = process.argv.includes('--online');
 const sourcePath = new URL('../data/sources.json', import.meta.url);
@@ -81,6 +82,15 @@ async function fetchOk(url) {
 await validateCitationFile();
 const sources = JSON.parse(await readFile(sourcePath, 'utf8'));
 if (!Array.isArray(sources)) fail('data/sources.json must contain an array');
+try {
+  const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+  if (replaceGenerated(readme, render(sources)) !== readme) {
+    fail('README generated sources drift; run node scripts/build-readme-sources.mjs');
+  }
+} catch (error) {
+  fail(error.message);
+}
+
 
 const urls = new Set();
 const sections = new Map();
