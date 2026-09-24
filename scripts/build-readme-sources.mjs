@@ -27,7 +27,7 @@ export function render(sources) {
   }
   return [...groups].map(([section, entries]) => {
     const lines = entries.map((source) =>
-      `- [${escapeMarkdown(source.title)}](${destination(source.url)}) — ${escapeMarkdown(source.whyItMatters)} _Limit: ${escapeMarkdown(source.limitations)}_`,
+      `- [${escapeMarkdown(source.title)}](${destination(source.url)}): ${escapeMarkdown(source.whyItMatters)} _Limit: ${escapeMarkdown(source.limitations)}_`,
     );
     return `## ${escapeMarkdown(section)}\n\n${lines.join('\n')}`;
   }).join('\n\n') + '\n';
