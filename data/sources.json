@@ -36,6 +36,60 @@
     "limitations": "Large catalogs can hide quality variance; practical AX also needs clear scope boundaries, deprecation signals, and safe failure modes."
   },
   {
+    "title": "Writing effective tools for agents \u2014 with agents",
+    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Lays out a concrete build-evaluate-refine loop for tool design, realistic multi-step evaluation tasks followed by using an agent to analyse transcripts, with five practical principles and a quantified example cutting one tool's response from 206 to 72 tokens.",
+    "limitations": "All worked examples are Anthropic's own internal Slack and Asana tools; it does not address cross-vendor tool catalogues, discovery, or MCP registries."
+  },
+  {
+    "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior",
+    "url": "https://arxiv.org/abs/2608.11386",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Runs 11,700 trajectories across three model actors and six tool architectures, from a bare bash tool to structured interfaces, showing that how tools are organised and exposed changes agent behaviour even when raw capability is held constant.",
+    "limitations": "Findings come from repository-level issue-fixing tasks with specific model actors; whether the same architecture ranking holds for other task domains is not tested here."
+  },
+  {
+    "title": "DOCSCHISEL: Adaptive Tool Documentation Optimization Framework for LLM Agents",
+    "url": "https://arxiv.org/abs/2608.10037",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Shows that no single fixed tool-documentation format generalises across tasks, models, and agent designs, then proposes a framework that analyses failed execution traces to iteratively add, remove, or refine documentation fields per tool.",
+    "limitations": "The proposed framework requires access to an agent's failed execution traces to iterate on, which is not available to every team publishing a tool or API."
+  },
+  {
+    "title": "From Docs to Descriptions: Smell-Aware Evaluation of MCP Server Descriptions",
+    "url": "https://arxiv.org/abs/2602.18914",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Defines 18 documentation 'smell' categories across four quality dimensions, applies them to 10,831 real MCP servers, and runs a mutation study showing that injecting or fixing smells measurably changes which tool an agent selects.",
+    "limitations": "The mutation study shows description smells move selection outcomes in the tested setup; it does not rank which individual smells matter most across every model."
+  },
+  {
+    "title": "More Skills, Worse Agents? Skill Shadowing Degrades Performance When Expanding Skill Libraries",
+    "url": "https://arxiv.org/abs/2605.24050",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Decomposes agent performance degradation from growing tool or skill libraries into a wrong-selection component, named skill shadowing, versus a context-overhead component, and estimates both empirically on a library scaling to 202 skills.",
+    "limitations": "Findings come from one scaling experiment up to 202 skills; whether the same shadowing-versus-overhead split holds at far larger catalogue sizes is not established."
+  },
+  {
+    "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents",
+    "url": "https://arxiv.org/abs/2606.06284",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent tool use and planning",
+    "whyItMatters": "Argues topical relevance alone is not enough to decide which tools to expose at each step, and tests a precondition-aware filtering method across 2,448 task-method-model runs, cutting token cost roughly 90 percent without hurting task success.",
+    "limitations": "Evaluated with 100 tools and four backend models in a controlled multi-step task set; real production catalogues and model mixes may behave differently."
+  },
+  {
     "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
     "url": "https://arxiv.org/abs/2307.13854",
     "sourceType": "paper",
@@ -63,16 +117,43 @@
     "limitations": "It is a proposal rather than an enforced web standard, so teams should treat it as one discoverability surface among several."
   },
   {
-    "title": "Agentic Resource Discovery (ARD) specification",
-    "url": "https://github.com/ards-project/ard-spec",
+    "title": "Agentic Resource Discovery (ARD) specification, v0.91",
+    "url": "https://agenticresourcediscovery.org/spec/",
     "sourceType": "specification",
     "year": 2026,
     "section": "Discovery and agent-readable web",
-    "whyItMatters": "Provides a draft discovery-layer vocabulary for cataloging agentic resources such as tools, prompts, feeds, and machine-readable endpoints.",
-    "limitations": "Adoption is still evolving; use it as a living proposal and keep fallbacks for conventional sitemaps, docs, and links."
+    "whyItMatters": "The dated, multi-vendor v0.91 proposal (authored across Google, Microsoft, and Hugging Face) distinguishes a plain catalog entry from a stricter ARD entry built for search-based discovery beyond an LLM's context window.",
+    "limitations": "Status is explicitly Proposal, not final; it delegates authentication and distribution to the underlying agent or tool protocol rather than defining them itself."
   },
   {
-    "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+    "title": "WebMCP (Draft Community Group Report)",
+    "url": "https://webmachinelearning.github.io/webmcp/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Defines the document.modelContext API for exposing client-side tools to agents and gives a detailed public security taxonomy for agent-callable web pages, covering tool poisoning, output injection, and over-parameterised data leakage.",
+    "limitations": "Published by a W3C Community Group; the spec itself states it is not a W3C Standard nor on the Standards Track, so treat it as an active proposal, not settled browser behaviour."
+  },
+  {
+    "title": "AGENTS.md",
+    "url": "https://agents.md/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "A deliberately unstructured Markdown convention for repository-level agent instructions, now governed by the Agentic AI Foundation under the Linux Foundation rather than a single vendor, with adoption checkable via a linked GitHub code search.",
+    "limitations": "Has no required fields or schema, so file quality varies widely between projects; the specification itself does not address how a poorly written file affects agent task success."
+  },
+  {
+    "title": "Markdown for Agents",
+    "url": "https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Documents an HTTP content-negotiation pattern, an Accept: text/markdown request, for serving agents an edge-converted Markdown page, with a precise, checkable policy on which headers are preserved, recalculated, or dropped.",
+    "limitations": "The feature is limited to paid Cloudflare plans and to HTML-to-Markdown conversion of responses under 2 MB; it does not establish whether AI crawlers actually send the Accept header in practice."
+  },
+  {
+    "title": "\u03c4-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
     "url": "https://arxiv.org/abs/2406.12045",
     "sourceType": "paper",
     "year": 2024,
@@ -97,6 +178,24 @@
     "section": "Evaluation and benchmarks",
     "whyItMatters": "Calls attention to benchmark stability for tool learning, a necessary concern when tracking whether AX changes move an evaluation in a repeatable way.",
     "limitations": "Stability controls evaluation noise; it does not decide which product affordances matter to a given audience."
+  },
+  {
+    "title": "Designing Agent-Ready Websites for AI Web Agents",
+    "url": "https://arxiv.org/abs/2607.12056",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation and benchmarks",
+    "whyItMatters": "Runs a controlled before/after e-commerce experiment across three browser-agent models and 300 task runs, finding an otherwise-identical agent-ready site raised strict task success from about 49 percent to about 89 percent.",
+    "limitations": "The experiment uses one e-commerce site design and three specific browser-agent models; results may not transfer directly to other site types or to agent models released after the study."
+  },
+  {
+    "title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
+    "url": "https://arxiv.org/abs/2607.02577",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation and benchmarks",
+    "whyItMatters": "Audits four major tool-calling benchmark families against 496 expert-reviewed tasks and finds that repeating one benchmark's own setup 23 times produced an 18.9-point score spread, large enough to flip leaderboard conclusions.",
+    "limitations": "The audit covers four named benchmark families (BFCL v4, tau2-Bench, LiveMCPBench, MCP-Atlas); it does not establish that every tool-calling benchmark has comparable reproducibility problems."
   },
   {
     "title": "Model Context Protocol architecture overview",
@@ -144,6 +243,69 @@
     "limitations": "Schemas need examples, semantics, and versioning discipline; validation alone does not explain intent."
   },
   {
+    "title": "The MCP Registry",
+    "url": "https://modelcontextprotocol.io/registry/about",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Explains the official MCP Registry's architecture as metadata-only infrastructure meant for downstream aggregators rather than a store end-user MCP clients query directly, and documents its namespace-based publisher trust model.",
+    "limitations": "The registry was in preview status at retrieval time, so behaviour may change before general availability, and it explicitly delegates security scanning to underlying package registries instead of performing its own."
+  },
+  {
+    "title": "Exposed by Design: A Dynamic Security Assessment of Internet-Facing MCP Servers at Scale",
+    "url": "https://arxiv.org/abs/2608.00150",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Combines passive discovery across eleven data sources with active dynamic testing of 414 production MCP servers, providing scale evidence that most audited public servers currently ship without authentication.",
+    "limitations": "The audited sample, 640 confirmed and 414 tested servers found across four July 2026 measurement runs, is a snapshot of internet-facing MCP servers rather than a comprehensive census of the ecosystem."
+  },
+  {
+    "title": "Breaking the Protocol: Security Analysis of the Model Context Protocol Specification",
+    "url": "https://arxiv.org/abs/2601.17549",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Argues MCP's security gaps are architectural, naming missing capability attestation and unauthenticated bidirectional sampling as protocol-level issues, then tests 847 attack scenarios across five server implementations to support the claim.",
+    "limitations": "The proposed MCPSec mitigation is the authors' own backward-compatible extension, not an adopted part of the MCP specification, so its real-world deployment status is unverified here."
+  },
+  {
+    "title": "WorkOS FGA: The authorization layer for AI agents",
+    "url": "https://workos.com/blog/agents-need-authorization-not-just-authentication",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Distinguishes on-behalf-of agents, which need scope attenuation under the acting user's own permissions, from autonomous agents, which need fine-grained scope rather than broad client-credential grants, using worked confused-deputy and shared-context scenarios.",
+    "limitations": "A vendor architecture piece promoting WorkOS Fine-Grained Authorization; its one supporting statistic, an average 47-day stale-credential lifetime, is uncited in the retrieved text."
+  },
+  {
+    "title": "Agent Registration with Auth.md",
+    "url": "https://workos.com/blog/agent-registration-with-auth-md",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Proposes an open protocol, a discoverable /auth.md document plus three HTTP endpoints extending RFC 9728 Protected Resource Metadata, for an agent to register a new user on their behalf, a gap OAuth's browser-consent flow does not cover.",
+    "limitations": "Adoption outside WorkOS's own ecosystem is unstated in the source; as an author-organisation announcement, independent implementation evidence is still needed."
+  },
+  {
+    "title": "What You Approve Is What Executes: Consent Integrity for Black-Box LLM Agents",
+    "url": "https://arxiv.org/abs/2606.02668",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Names the missing 'Consent Integrity' property for agent approval dialogs, the action shown must be rendered by a trusted mediator from the real action rather than the agent's own narration, and tests a prototype against 1,330 trusted-tool abuse techniques.",
+    "limitations": "The prototype analyser, renderer, and execution binder is a research system tested on the GTFOBins and tldr corpora, not a deployed product feature available to adopt directly."
+  },
+  {
+    "title": "Loopjacking: Hijacking Human-in-the-Loop Approval",
+    "url": "https://arxiv.org/abs/2609.21081",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Defines Loopjacking as any case where the operation a human approves does not match what a system actually executes, and reproduces both representation-based and post-approval state-substitution variants in named, released agent products.",
+    "limitations": "The paper names a purposive set of tested products rather than a random or exhaustive sample, so prevalence across the wider agent-product ecosystem is not established."
+  },
+  {
     "title": "Model Context Protocol security best practices",
     "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
     "sourceType": "specification",
@@ -178,5 +340,14 @@
     "section": "Human control, accessibility, and recovery",
     "whyItMatters": "Sets human accessibility requirements for perceivable, operable, understandable, and robust web content; AX relevance is an inference because agent tooling often benefits from the same explicit structure.",
     "limitations": "WCAG conformance is not equivalent to agent readiness and should not be cited as evidence that agents will operate a product reliably."
+  },
+  {
+    "title": "Oversight Has a Capacity: Calibrating Agent Guards to a Subjective, Fatiguing Human",
+    "url": "https://arxiv.org/abs/2606.08919",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, accessibility, and recovery",
+    "whyItMatters": "Measures inter-reviewer agreement on a hand-labelled set of 125 adversarially-weighted agent actions and models the human reviewer as fatiguing under escalation load, finding that more oversight can reduce realised safety past a point.",
+    "limitations": "The reviewer-fatigue model and the 125-action labelled set are the authors' own construction; whether the same capacity limit holds for other review populations or action types is not tested."
   }
 ]
