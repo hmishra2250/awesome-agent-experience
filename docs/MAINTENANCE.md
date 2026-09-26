@@ -27,7 +27,8 @@ The public product is a selective annotated reading list, not a mirror of a scra
 
 - Optionally run `node scripts/check-links.mjs --online`; investigate failures manually before removing a source. Temporary rate limits are not proof that a work disappeared.
 - Recheck version-sensitive protocol/SDK sources. Pin the appropriate version; distinguish a draft, release, mutable main branch and vendor implementation.
-- Confirm that each category still answers a reader's task; split a section only when its contents justify it.
+- Confirm that each category still answers a reader's task; split a section only when its contents justify it. Section names and their reader-path order live in `requiredSections` in `scripts/check-links.mjs`; change the list and the dataset together.
+- Keep crowded categories capped: readiness instruments and GEO papers are held to a small set of representatives, chosen for documented method and distinct measurement objects.
 - Review contribution instructions and common-maintainer disclosure. Keep commercial invitations outside individual resource annotations.
 
 ## Change-review record
