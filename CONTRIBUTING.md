@@ -24,13 +24,17 @@ Every new entry in `data/sources.json` needs:
 
 - `title`
 - `url`
-- `sourceType`
-- `year`
-- `section`
+- `sourceType`: one of `paper`, `specification`, `framework`, `dataset`, `repository`, `essay`, `documentation`, `tool`, `benchmark`, `list`
+- `year`: the publication year stated by the source, or `null` when the source states none (do not infer one)
+- `section`: one of the sections listed in `scripts/check-links.mjs`, kept contiguous in `data/sources.json`
 - `whyItMatters`
 - `limitations`
 
-Prefer stable official URLs: arXiv, ACL Anthology, OpenReview, standards bodies, NIST, W3C, OpenAPI, JSON Schema, or the project's canonical repository/site.
+`subsection` is optional and is used where a section is large enough to split (currently tool use and evaluation). Write annotations in British English, without contractions or em dashes, and without ranking or effectiveness claims the source does not support. The offline check enforces the dash and contraction rules.
+
+Prefer stable official URLs: arXiv abstract pages, ACL Anthology, OpenReview, standards bodies, NIST, W3C, IETF, OpenAPI, JSON Schema, or the project's canonical repository or specification site. Prefer a specification over its launch post.
+
+Readiness scanners belong in the Readiness instruments section, and their limitation must say whether any evidence links the score to agent task success. Large neighbouring catalogues go in Related lists rather than being copied entry by entry.
 
 ## Review checklist
 

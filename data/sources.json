@@ -9,103 +9,49 @@
     "limitations": "This is a framing essay, not a benchmark or standard; cite it as an opinionated field definition, not as proof of outcomes or ownership."
   },
   {
-    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
-    "url": "https://arxiv.org/abs/2210.03629",
-    "sourceType": "paper",
-    "year": 2022,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Connects reasoning traces with actions, making it a useful starting point for interfaces that expose why an agent chose a tool and what happened next.",
-    "limitations": "Primarily a prompting and evaluation paper; it does not by itself specify production observability, permissioning, or recovery contracts."
+    "title": "One Year of AX",
+    "url": "https://biilmann.blog/articles/one-year-of-ax/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "A one-year follow-up to the founding AX essay that regroups the idea into four pillars (access, context, tools and orchestration), giving a compact vocabulary for auditing a product surface.",
+    "limitations": "Written by the same author as the original essay, so it is an update to one framing rather than independent validation that the four pillars are complete or correct."
   },
   {
-    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
-    "url": "https://arxiv.org/abs/2302.04761",
-    "sourceType": "paper",
-    "year": 2023,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Frames tool use as something models can learn from demonstrations, which is central to designing tool descriptions and examples that agents can actually use.",
-    "limitations": "Uses a bounded set of tools and self-supervised data generation; production tool ecosystems add security, latency, and changing-schema problems."
-  },
-  {
-    "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
-    "url": "https://arxiv.org/abs/2307.16789",
-    "sourceType": "paper",
-    "year": 2023,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Shows how large tool corpora and tool-use data shape agent behavior, supporting AX work on catalog structure and retrieval-friendly tool metadata.",
-    "limitations": "Large catalogs can hide quality variance; practical AX also needs clear scope boundaries, deprecation signals, and safe failure modes."
-  },
-  {
-    "title": "Writing effective tools for agents \u2014 with agents",
-    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "title": "AX in Practice: Real-World Examples from Netlify and the Industry",
+    "url": "https://biilmann.blog/articles/ax-in-practice/",
     "sourceType": "essay",
     "year": 2025,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Lays out a concrete build-evaluate-refine loop for tool design, realistic multi-step evaluation tasks followed by using an agent to analyse transcripts, with five practical principles and a quantified example cutting one tool's response from 206 to 72 tokens.",
-    "limitations": "All worked examples are Anthropic's own internal Slack and Asana tools; it does not address cross-vendor tool catalogues, discovery, or MCP registries."
+    "section": "Agent experience framing",
+    "whyItMatters": "Turns the AX framing into named production patterns, including agent-first onboarding that lets an agent create a resource before a human claims it, and bidirectional links between agents and human work queues.",
+    "limitations": "Adopter examples are reported by a platform founder about his own and partner products; the article does not measure whether the patterns change outcomes."
   },
   {
-    "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior",
-    "url": "https://arxiv.org/abs/2608.11386",
+    "title": "What is AX (Agent Experience) and how to improve it",
+    "url": "https://resend.com/blog/agent-experience",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Agent experience framing",
+    "whyItMatters": "Maps familiar developer-experience concerns onto agents across six practical areas (onboarding, documentation, SDKs, audit logs, API keys and role-based access), useful as a checklist for platform teams.",
+    "limitations": "A vendor blog post drawn from one email platform's perspective; the six areas are the author's own grouping rather than the result of a study."
+  },
+  {
+    "title": "Principles of AX",
+    "url": "https://agentexperience.ax/concepts/principles-of-ax/",
+    "sourceType": "essay",
+    "year": null,
+    "section": "Agent experience framing",
+    "whyItMatters": "States a short set of community AX principles, including treating agents as delegates of people and recording agent actions separately from human ones, which helps teams agree on design intent before choosing tools.",
+    "limitations": "The site is hosted and largely written by Netlify staff despite its community framing, and it says itself that the principles may change as practice matures."
+  },
+  {
+    "title": "From Human Interfaces to Agent Interfaces: Rethinking Software Design in the Age of AI-Native Systems",
+    "url": "https://arxiv.org/abs/2603.20300",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Runs 11,700 trajectories across three model actors and six tool architectures, from a bare bash tool to structured interfaces, showing that how tools are organised and exposed changes agent behaviour even when raw capability is held constant.",
-    "limitations": "Findings come from repository-level issue-fixing tasks with specific model actors; whether the same architecture ranking holds for other task domains is not tested here."
-  },
-  {
-    "title": "DOCSCHISEL: Adaptive Tool Documentation Optimization Framework for LLM Agents",
-    "url": "https://arxiv.org/abs/2608.10037",
-    "sourceType": "paper",
-    "year": 2026,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Shows that no single fixed tool-documentation format generalises across tasks, models, and agent designs, then proposes a framework that analyses failed execution traces to iteratively add, remove, or refine documentation fields per tool.",
-    "limitations": "The proposed framework requires access to an agent's failed execution traces to iterate on, which is not available to every team publishing a tool or API."
-  },
-  {
-    "title": "From Docs to Descriptions: Smell-Aware Evaluation of MCP Server Descriptions",
-    "url": "https://arxiv.org/abs/2602.18914",
-    "sourceType": "paper",
-    "year": 2026,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Defines 18 documentation 'smell' categories across four quality dimensions, applies them to 10,831 real MCP servers, and runs a mutation study showing that injecting or fixing smells measurably changes which tool an agent selects.",
-    "limitations": "The mutation study shows description smells move selection outcomes in the tested setup; it does not rank which individual smells matter most across every model."
-  },
-  {
-    "title": "More Skills, Worse Agents? Skill Shadowing Degrades Performance When Expanding Skill Libraries",
-    "url": "https://arxiv.org/abs/2605.24050",
-    "sourceType": "paper",
-    "year": 2026,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Decomposes agent performance degradation from growing tool or skill libraries into a wrong-selection component, named skill shadowing, versus a context-overhead component, and estimates both empirically on a library scaling to 202 skills.",
-    "limitations": "Findings come from one scaling experiment up to 202 skills; whether the same shadowing-versus-overhead split holds at far larger catalogue sizes is not established."
-  },
-  {
-    "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents",
-    "url": "https://arxiv.org/abs/2606.06284",
-    "sourceType": "paper",
-    "year": 2026,
-    "section": "Agent tool use and planning",
-    "whyItMatters": "Argues topical relevance alone is not enough to decide which tools to expose at each step, and tests a precondition-aware filtering method across 2,448 task-method-model runs, cutting token cost roughly 90 percent without hurting task success.",
-    "limitations": "Evaluated with 100 tools and four backend models in a controlled multi-step task set; real production catalogues and model mixes may behave differently."
-  },
-  {
-    "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
-    "url": "https://arxiv.org/abs/2307.13854",
-    "sourceType": "paper",
-    "year": 2023,
-    "section": "Discovery and agent-readable web",
-    "whyItMatters": "Models web agents against realistic sites, showing why navigation, site state, and task context matter for agent-facing web design.",
-    "limitations": "Self-hosted benchmark environments are useful for repeatability, but live websites change and need ongoing monitoring."
-  },
-  {
-    "title": "Mind2Web: Towards a Generalist Agent for the Web",
-    "url": "https://arxiv.org/abs/2306.06070",
-    "sourceType": "paper",
-    "year": 2023,
-    "section": "Discovery and agent-readable web",
-    "whyItMatters": "Focuses on mapping natural-language goals to web actions, which is a core AX concern for documentation, labels, and machine-readable task affordances.",
-    "limitations": "Dataset-driven results should be treated as evidence about task representation, not as a universal recipe for every website."
+    "section": "Agent experience framing",
+    "whyItMatters": "A position paper that names agent interfaces and invocable capabilities as a design discipline distinct from human-facing UX and conventional API design, giving the field an academic framing to cite.",
+    "limitations": "Conceptual and argumentative only; none of the proposed principles are measured against real systems in the paper."
   },
   {
     "title": "llms.txt: The /llms.txt file, v2",
@@ -122,7 +68,7 @@
     "sourceType": "specification",
     "year": 2026,
     "section": "Discovery and agent-readable web",
-    "whyItMatters": "The dated, multi-vendor v0.91 proposal (authored across Google, Microsoft, and Hugging Face) distinguishes a plain catalog entry from a stricter ARD entry built for search-based discovery beyond an LLM's context window.",
+    "whyItMatters": "The dated, multi-vendor v0.91 proposal (authored across Google, Microsoft, and Hugging Face) distinguishes a plain catalogue entry from a stricter ARD entry built for search-based discovery beyond an LLM's context window.",
     "limitations": "Status is explicitly Proposal, not final; it delegates authentication and distribution to the underlying agent or tool protocol rather than defining them itself."
   },
   {
@@ -135,15 +81,6 @@
     "limitations": "Published by a W3C Community Group; the spec itself states it is not a W3C Standard nor on the Standards Track, so treat it as an active proposal, not settled browser behaviour."
   },
   {
-    "title": "AGENTS.md",
-    "url": "https://agents.md/",
-    "sourceType": "specification",
-    "year": 2026,
-    "section": "Discovery and agent-readable web",
-    "whyItMatters": "A deliberately unstructured Markdown convention for repository-level agent instructions, now governed by the Agentic AI Foundation under the Linux Foundation rather than a single vendor, with adoption checkable via a linked GitHub code search.",
-    "limitations": "Has no required fields or schema, so file quality varies widely between projects; the specification itself does not address how a poorly written file affects agent task success."
-  },
-  {
     "title": "Markdown for Agents",
     "url": "https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/",
     "sourceType": "specification",
@@ -153,65 +90,383 @@
     "limitations": "The feature is limited to paid Cloudflare plans and to HTML-to-Markdown conversion of responses under 2 MB; it does not establish whether AI crawlers actually send the Accept header in practice."
   },
   {
-    "title": "\u03c4-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
-    "url": "https://arxiv.org/abs/2406.12045",
-    "sourceType": "paper",
-    "year": 2024,
-    "section": "Evaluation and benchmarks",
-    "whyItMatters": "Centers user-agent-tool interaction, making it especially relevant to AX work on handoffs, clarifications, and domain state.",
-    "limitations": "Domain simulations still simplify messy real systems; use it to guide evaluation design, not to claim production readiness."
-  },
-  {
-    "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
-    "url": "https://arxiv.org/abs/2401.13178",
-    "sourceType": "paper",
-    "year": 2024,
-    "section": "Evaluation and benchmarks",
-    "whyItMatters": "Supports analysis of multi-turn agent behavior rather than only recording a final success or failure, which helps AX reviews separate failure stages.",
-    "limitations": "Benchmark assumptions can age quickly as tools, models, and web environments change, so it should not be treated as a universal scorecard."
-  },
-  {
-    "title": "StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models",
-    "url": "https://arxiv.org/abs/2403.07714",
-    "sourceType": "paper",
-    "year": 2024,
-    "section": "Evaluation and benchmarks",
-    "whyItMatters": "Calls attention to benchmark stability for tool learning, a necessary concern when tracking whether AX changes move an evaluation in a repeatable way.",
-    "limitations": "Stability controls evaluation noise; it does not decide which product affordances matter to a given audience."
-  },
-  {
     "title": "Designing Agent-Ready Websites for AI Web Agents",
     "url": "https://arxiv.org/abs/2607.12056",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Evaluation and benchmarks",
+    "section": "Discovery and agent-readable web",
     "whyItMatters": "Runs a controlled before/after e-commerce experiment across three browser-agent models and 300 task runs, finding an otherwise-identical agent-ready site raised strict task success from about 49 percent to about 89 percent.",
     "limitations": "The experiment uses one e-commerce site design and three specific browser-agent models; results may not transfer directly to other site types or to agent models released after the study."
   },
   {
-    "title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
-    "url": "https://arxiv.org/abs/2607.02577",
+    "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.2",
+    "url": "https://www.w3.org/TR/wai-aria-1.2/",
+    "sourceType": "specification",
+    "year": 2023,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Defines roles, states, and properties for accessible web interfaces; AX uses this as relevant machine-readable UI semantics, not as a shortcut to agent success.",
+    "limitations": "Correct ARIA use is necessary for accessibility in many interfaces, but it does not guarantee that an agent can complete a workflow."
+  },
+  {
+    "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "sourceType": "specification",
+    "year": 2023,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Sets human accessibility requirements for perceivable, operable, understandable, and robust web content; AX relevance is an inference because agent tooling often benefits from the same explicit structure.",
+    "limitations": "WCAG conformance is not equivalent to agent readiness and should not be cited as evidence that agents will operate a product reliably."
+  },
+  {
+    "title": "llms-txt (reference repository)",
+    "url": "https://github.com/AnswerDotAI/llms-txt",
+    "sourceType": "repository",
+    "year": 2024,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "The proposal authors' own repository, with the source of the specification site and Python tooling to parse and expand llms.txt files, which is the practical companion to the llms.txt entry above.",
+    "limitations": "Reflects the proposal authors' implementation; it does not test whether any given agent or answer engine actually requests or uses the file."
+  },
+  {
+    "title": "Content Signals Policy",
+    "url": "https://contentsignals.org/",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Extends robots.txt with separate machine-readable preferences for search, AI input and AI training, so a site can distinguish being indexed from being fetched by a live agent from being used as training data.",
+    "limitations": "It expresses a preference rather than enforcing one, and it depends on crawler operators choosing to honour the signal."
+  },
+  {
+    "title": "NLWeb",
+    "url": "https://github.com/nlweb-ai/NLWeb",
+    "sourceType": "repository",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Reference implementation for giving a website a natural-language query endpoint built on its existing Schema.org data, with every instance also exposed as an MCP server, a concrete pattern for making content queryable by agents.",
+    "limitations": "Useful results depend on structured data that is already present and accurate, and this pass found no independent evidence on deployment or outcomes."
+  },
+  {
+    "title": "Build agent-friendly websites",
+    "url": "https://web.dev/articles/ai-agent-site-ux",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Browser-vendor guidance that treats agents as a new kind of site visitor and translates that into concrete markup and interaction advice, including semantic structure, predictable forms and stable state changes.",
+    "limitations": "Framed around Chrome's own agentic browsing features, so some recommendations reflect one browser vendor's direction rather than a cross-browser standard."
+  },
+  {
+    "title": "Make your site readable by AI agents",
+    "url": "https://vercel.com/kb/guide/make-your-site-readable-by-ai-agents",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Combines an observational trace study of 1,033 agent runs across 25 sites with controlled fetch probes, then turns the results into specific advice on server rendering, Markdown responses and llms.txt.",
+    "limitations": "Vendor research run with a partner lab on a small set of sites; the study design and recommendations are shaped by one hosting platform and have not been independently replicated."
+  },
+  {
+    "title": "Building the Web for Agents: A Declarative Framework for Agent-Web Interaction",
+    "url": "https://arxiv.org/abs/2511.11287",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Proposes HTML elements that let a page declare agent-callable actions and relevant state directly in markup, so agents do not have to infer affordances from visual layout.",
+    "limitations": "A short feasibility study with a small developer group, not evidence of production adoption, robustness or behaviour under adversarial use."
+  },
+  {
+    "title": "Web Agents Should Use Typed Actions Instead of Click-Based Browsing",
+    "url": "https://arxiv.org/abs/2602.17245",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Evaluation and benchmarks",
-    "whyItMatters": "Audits four major tool-calling benchmark families against 496 expert-reviewed tasks and finds that repeating one benchmark's own setup 23 times produced an 18.9-point score spread, large enough to flip leaderboard conclusions.",
-    "limitations": "The audit covers four named benchmark families (BFCL v4, tau2-Bench, LiveMCPBench, MCP-Atlas); it does not establish that every tool-calling benchmark has comparable reproducibility problems."
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Argues for typed web actions with documented preconditions, postconditions and policy tags as a more reliable and auditable interface for agents than click-based page automation.",
+    "limitations": "A position paper without an implementation or benchmark; its value depends on site owners and standards bodies building the layer it describes."
+  },
+  {
+    "title": "Affora: A Design System for Agent-Friendly Interfaces",
+    "url": "https://arxiv.org/abs/2609.19125",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "An evaluated design system bridging human UX and agent use, whose controlled studies indicate that agent performance follows preserved interaction meaning rather than visual style.",
+    "limitations": "Its benefit appears mainly where an interface had a matching deficit, and the authors describe the workflow case-study evidence as preliminary."
+  },
+  {
+    "title": "terms.txt: A Consent and Compensation Protocol for Agentic Web Access",
+    "url": "https://arxiv.org/abs/2609.11152",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Proposes a successor to robots.txt that combines per-path access terms with signed agent identity, delegation tokens and HTTP 402 payment negotiation, framing agent access as a consent and compensation question.",
+    "limitations": "A proposal with a reference implementation, not an adopted standard; it only works if both site operators and agent vendors implement it."
+  },
+  {
+    "title": "AGENTS.md",
+    "url": "https://agents.md/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "A deliberately unstructured Markdown convention for repository-level agent instructions, now governed by the Agentic AI Foundation under the Linux Foundation rather than a single vendor, with adoption checkable via a linked GitHub code search.",
+    "limitations": "Has no required fields or schema, so file quality varies widely between projects; the specification itself does not address how a poorly written file affects agent task success."
+  },
+  {
+    "title": "Agent Skills specification",
+    "url": "https://agentskills.io/specification",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "Defines the SKILL.md package format (a directory with YAML frontmatter, instructions and optional scripts and references) that many coding agents load on demand, now a common way for products to ship usage knowledge to agents.",
+    "limitations": "The format does not verify the quality or safety of a skill; installing a third-party skill can mean running its instructions and code."
+  },
+  {
+    "title": "Agent Plugins Specification 1.0.0",
+    "url": "https://agent-plugins.org/specification",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "A published, versioned specification with conformance requirements for packaging skills, MCP servers and client extensions into one portable plugin, useful for teams that ship agent-facing capabilities to several clients.",
+    "limitations": "Very new at retrieval time; there is no independent evidence yet on how consistently clients implement the conformance checklist."
+  },
+  {
+    "title": "Agent Skills Discovery RFC",
+    "url": "https://github.com/cloudflare/agent-skills-discovery-rfc",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Proposes a well-known URI index so an agent can discover the skills a site publishes, extending the RFC 8615 discovery pattern to agent skills.",
+    "limitations": "An RFC-stage proposal from one company; the index shape may change and it has no standards-body status."
+  },
+  {
+    "title": "How to write a great agents.md: Lessons from over 2,500 repositories",
+    "url": "https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Documentation for agents",
+    "whyItMatters": "Draws authoring patterns from a large sample of real agent instruction files, such as naming exact commands, stating boundaries and giving concrete examples, which is practical advice the AGENTS.md convention itself leaves open.",
+    "limitations": "Written about GitHub Copilot custom agent files, which overlap with but are not identical to the cross-vendor AGENTS.md convention, and the analysis method is not published in detail."
+  },
+  {
+    "title": "AGENTS.md outperforms skills in our agent evals",
+    "url": "https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Reports an internal evaluation in which a compressed documentation index placed in AGENTS.md outperformed on-demand skills for framework-specific coding tasks, a useful counterweight to skills-first advice.",
+    "limitations": "A single vendor, a single framework and the vendor's own evaluation set; the result is not shown to generalise to other stacks or agents."
+  },
+  {
+    "title": "Effective context engineering for AI agents",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Documentation for agents",
+    "whyItMatters": "Explains how to treat an agent's context as a finite budget, covering just-in-time retrieval, compaction and structured notes, which informs how documentation and tool output should be shaped for agents.",
+    "limitations": "Written from one model provider's internal practice; specific patterns may not transfer unchanged to other models or agent harnesses."
+  },
+  {
+    "title": "Writing effective tools for agents — with agents",
+    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Lays out a concrete build-evaluate-refine loop for tool design, realistic multi-step evaluation tasks followed by using an agent to analyse transcripts, with five practical principles and a quantified example cutting one tool's response from 206 to 72 tokens.",
+    "limitations": "All worked examples are Anthropic's own internal Slack and Asana tools; it does not address cross-vendor tool catalogues, discovery, or MCP registries."
+  },
+  {
+    "title": "Designing Agent-Friendly APIs",
+    "url": "https://www.pinecone.io/blog/designing-agent-friendly-apis/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Sets out six API design principles for agent callers, including treating errors as guidance, budgeting the reader's context and making the interface self-describing, with worked failure examples.",
+    "limitations": "A vendor engineering post without an accompanying controlled evaluation of the six principles."
+  },
+  {
+    "title": "Steps toward great agent experience every API provider can take today",
+    "url": "https://www.stainless.com/blog/steps-toward-great-agent-experience-every-api-provider-can-take-today/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Argues that specific, actionable error bodies and machine-readable API descriptions are part of an API's contract with agents, with concrete before-and-after examples an API team can apply.",
+    "limitations": "Written by an SDK-generation vendor and illustrated with its own examples rather than a controlled comparison."
+  },
+  {
+    "title": "Agentic Experience Is the New Developer Experience",
+    "url": "https://nx.dev/blog/making-nx-agent-ready",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "A command-line perspective on AX that describes structured output, idempotent commands, managed context and informative errors as design goals for tools that agents call from a terminal.",
+    "limitations": "Describes one vendor's own product decisions; the principles are not tested against other command-line tools."
+  },
+  {
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "sourceType": "paper",
+    "year": 2022,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Connects reasoning traces with actions, making it a useful starting point for interfaces that expose why an agent chose a tool and what happened next.",
+    "limitations": "Primarily a prompting and evaluation paper; it does not by itself specify production observability, permissioning, or recovery contracts."
+  },
+  {
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Frames tool use as something models can learn from demonstrations, which is central to designing tool descriptions and examples that agents can actually use.",
+    "limitations": "Uses a bounded set of tools and self-supervised data generation; production tool ecosystems add security, latency, and changing-schema problems."
+  },
+  {
+    "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+    "url": "https://arxiv.org/abs/2307.16789",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Shows how large tool corpora and tool-use data shape agent behaviour, supporting AX work on catalogue structure and retrieval-friendly tool metadata.",
+    "limitations": "Large catalogues can hide quality variance; practical AX also needs clear scope boundaries, deprecation signals, and safe failure modes."
+  },
+  {
+    "title": "The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior",
+    "url": "https://arxiv.org/abs/2608.11386",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Runs 11,700 trajectories across three model actors and six tool architectures, from a bare bash tool to structured interfaces, showing that how tools are organised and exposed changes agent behaviour even when raw capability is held constant.",
+    "limitations": "Findings come from repository-level issue-fixing tasks with specific model actors; whether the same architecture ranking holds for other task domains is not tested here."
+  },
+  {
+    "title": "DOCSCHISEL: Adaptive Tool Documentation Optimization Framework for LLM Agents",
+    "url": "https://arxiv.org/abs/2608.10037",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Shows that no single fixed tool-documentation format generalises across tasks, models, and agent designs, then proposes a framework that analyses failed execution traces to iteratively add, remove, or refine documentation fields per tool.",
+    "limitations": "The proposed framework requires access to an agent's failed execution traces to iterate on, which is not available to every team publishing a tool or API."
+  },
+  {
+    "title": "From Docs to Descriptions: Smell-Aware Evaluation of MCP Server Descriptions",
+    "url": "https://arxiv.org/abs/2602.18914",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Defines 18 documentation 'smell' categories across four quality dimensions, applies them to 10,831 real MCP servers, and runs a mutation study showing that injecting or fixing smells measurably changes which tool an agent selects.",
+    "limitations": "The mutation study shows description smells move selection outcomes in the tested setup; it does not rank which individual smells matter most across every model."
+  },
+  {
+    "title": "More Skills, Worse Agents? Skill Shadowing Degrades Performance When Expanding Skill Libraries",
+    "url": "https://arxiv.org/abs/2605.24050",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Decomposes agent performance degradation from growing tool or skill libraries into a wrong-selection component, named skill shadowing, versus a context-overhead component, and estimates both empirically on a library scaling to 202 skills.",
+    "limitations": "Findings come from one scaling experiment up to 202 skills; whether the same shadowing-versus-overhead split holds at far larger catalogue sizes is not established."
+  },
+  {
+    "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents",
+    "url": "https://arxiv.org/abs/2606.06284",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Argues topical relevance alone is not enough to decide which tools to expose at each step, and tests a precondition-aware filtering method across 2,448 task-method-model runs, cutting token cost roughly 90 percent without hurting task success.",
+    "limitations": "Evaluated with 100 tools and four backend models in a controlled multi-step task set; real production catalogues and model mixes may behave differently."
+  },
+  {
+    "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+    "url": "https://arxiv.org/abs/2405.15793",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "An early demonstration that the interface an agent uses to read and edit files is itself a lever on task success, shown by varying interface design while holding the model fixed.",
+    "limitations": "Evaluated on repository-editing benchmarks with a hand-designed interface, so the size of the effect may be specific to that setting."
+  },
+  {
+    "title": "AXIS: Efficient Human-Agent-Computer Interaction with API-First LLM-Based Agents",
+    "url": "https://arxiv.org/abs/2409.17140",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Shows an agent that prefers application APIs over clicking through a graphical interface completing tasks faster with less user workload, supporting an API-first recommendation for agent-facing products.",
+    "limitations": "Evaluated on one desktop application against one baseline; its automatic API discovery is not shown to generalise to other applications."
+  },
+  {
+    "title": "BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models",
+    "url": "https://arxiv.org/abs/2510.00307",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Finds that models choosing between functionally equivalent tools from different providers show systematic preferences that small wording changes can shift, which matters for anyone publishing into a shared tool marketplace.",
+    "limitations": "The sets of equivalent tools are constructed by the authors; real marketplaces rarely offer such clean alternatives."
+  },
+  {
+    "title": "Tools are under-documented: Simple Document Expansion Boosts Tool Retrieval",
+    "url": "https://arxiv.org/abs/2510.22670",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Uses a purpose-built benchmark to show that enriching sparse tool documentation with structured fields improves tool retrieval, evidence that under-documentation is a fixable cause of selection failures.",
+    "limitations": "The enriched documentation is itself generated by a model, so it can encode errors or drift from what a tool actually does."
+  },
+  {
+    "title": "Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use",
+    "url": "https://arxiv.org/abs/2602.20426",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Trains a rewriter that improves tool descriptions without needing per-tool execution traces and generalises to unseen tools, relevant to teams maintaining large catalogues of tool metadata.",
+    "limitations": "Gains are reported on research benchmarks; behaviour on proprietary or highly specialised tool catalogues is not tested."
+  },
+  {
+    "title": "Schema First Tool APIs for LLM Agents: A Controlled Study of Tool Misuse, Recovery, and Budgeted Performance",
+    "url": "https://arxiv.org/abs/2603.13404",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "A controlled pilot that isolates interface design and finds that JSON Schema contracts reduce malformed calls but not conceptually wrong ones, a useful check on the assumption that schemas alone fix tool misuse.",
+    "limitations": "A small pilot on one local model in which end-task success stayed at zero in every condition, which limits conclusions about downstream outcomes."
+  },
+  {
+    "title": "Toollery: Scaling LLM Agents to Thousands of Skills and Tools",
+    "url": "https://arxiv.org/abs/2609.22218",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "A training-free method that keeps online tool selection bounded to a small candidate set as catalogues grow, evaluated on a benchmark of tens of thousands of capabilities, relevant to large MCP and skill catalogues.",
+    "limitations": "Benefits depend on how well generated intent queries cover the real workload and on provider-side prompt caching, both of which vary by deployment."
   },
   {
     "title": "Model Context Protocol architecture overview",
     "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
     "sourceType": "specification",
     "year": 2026,
-    "section": "Protocols and machine-readable surfaces",
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
     "whyItMatters": "Gives the MCP mental model for hosts, clients, servers, tools, resources, prompts, and discovery, which is useful when designing agent-facing surfaces.",
-    "limitations": "It is high-level documentation; implementation work still needs the specific dated specification pages and SDK behavior."
+    "limitations": "It is high-level documentation; implementation work still needs the specific dated specification pages and SDK behaviour."
   },
   {
     "title": "Model Context Protocol tools specification",
     "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
     "sourceType": "specification",
     "year": 2026,
-    "section": "Protocols and machine-readable surfaces",
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
     "whyItMatters": "Defines how MCP servers expose callable tools, including metadata and schemas that agents and clients use to understand possible actions.",
     "limitations": "The spec defines the contract shape; product teams still need to write clear names, descriptions, input schemas, examples, and error responses."
   },
@@ -220,9 +475,40 @@
     "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/resources",
     "sourceType": "specification",
     "year": 2026,
-    "section": "Protocols and machine-readable surfaces",
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
     "whyItMatters": "Defines the resource layer for exposing context such as files, data, and app-specific information to agent clients.",
     "limitations": "It does not choose the semantic taxonomy or freshness policy for a particular product's resources."
+  },
+  {
+    "title": "The MCP Registry",
+    "url": "https://modelcontextprotocol.io/registry/about",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "Explains the official MCP Registry's architecture as metadata-only infrastructure meant for downstream aggregators rather than a store end-user MCP clients query directly, and documents its namespace-based publisher trust model.",
+    "limitations": "The registry was in preview status at retrieval time, so behaviour may change before general availability, and it explicitly delegates security scanning to underlying package registries instead of performing its own."
+  },
+  {
+    "title": "MCP client best practices",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/develop/clients/client-best-practices",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "Official guidance for MCP hosts on progressive tool discovery and on keeping large intermediate results out of the model context, the client-side counterpart to the server specifications above.",
+    "limitations": "Pinned to the 2026-07-28 documentation set; it should be rechecked against newer dated releases of the protocol."
+  },
+  {
+    "title": "MCP Apps (ext-apps)",
+    "url": "https://github.com/modelcontextprotocol/ext-apps",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "The official specification and SDK for an MCP extension that lets a server return interactive user interface inside the host, extending agent-facing surfaces from text results to embedded UI.",
+    "limitations": "An extension rather than part of the core protocol, so support differs between MCP hosts."
   },
   {
     "title": "OpenAPI Specification v3.2.0",
@@ -243,31 +529,49 @@
     "limitations": "Schemas need examples, semantics, and versioning discipline; validation alone does not explain intent."
   },
   {
-    "title": "The MCP Registry",
-    "url": "https://modelcontextprotocol.io/registry/about",
+    "title": "Arazzo Specification v1.1.0",
+    "url": "https://spec.openapis.org/arazzo/v1.1.0.html",
     "sourceType": "specification",
     "year": 2026,
     "section": "Protocols and machine-readable surfaces",
-    "whyItMatters": "Explains the official MCP Registry's architecture as metadata-only infrastructure meant for downstream aggregators rather than a store end-user MCP clients query directly, and documents its namespace-based publisher trust model.",
-    "limitations": "The registry was in preview status at retrieval time, so behaviour may change before general availability, and it explicitly delegates security scanning to underlying package registries instead of performing its own."
+    "whyItMatters": "Describes sequences of API calls that achieve an outcome, including success criteria and failure actions, which is the workflow and recovery layer that per-endpoint OpenAPI descriptions leave an agent to infer.",
+    "limitations": "Less widely published than OpenAPI, and it describes workflows without executing them; an agent still needs a separate way to run the calls."
   },
   {
-    "title": "Exposed by Design: A Dynamic Security Assessment of Internet-Facing MCP Servers at Scale",
-    "url": "https://arxiv.org/abs/2608.00150",
-    "sourceType": "paper",
-    "year": 2026,
+    "title": "Agent2Agent (A2A) Protocol specification",
+    "url": "https://a2a-protocol.org/latest/specification/",
+    "sourceType": "specification",
+    "year": 2025,
     "section": "Protocols and machine-readable surfaces",
-    "whyItMatters": "Combines passive discovery across eleven data sources with active dynamic testing of 414 production MCP servers, providing scale evidence that most audited public servers currently ship without authentication.",
-    "limitations": "The audited sample, 640 confirmed and 414 tested servers found across four July 2026 measurement runs, is a snapshot of internet-facing MCP servers rather than a comprehensive census of the ecosystem."
+    "whyItMatters": "Defines agent cards for capability discovery and a task-based exchange for delegating work between independently built agents, the agent-to-agent layer that MCP does not address.",
+    "limitations": "The latest URL tracks a moving version, and published adoption figures come from the project itself rather than independent measurement."
   },
   {
-    "title": "Breaking the Protocol: Security Analysis of the Model Context Protocol Specification",
-    "url": "https://arxiv.org/abs/2601.17549",
-    "sourceType": "paper",
+    "title": "AG-UI: Agent-User Interaction Protocol",
+    "url": "https://docs.ag-ui.com/introduction",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "An open, event-based protocol for streaming agent state, UI intents and user input between an agent backend and a user-facing application, relevant to keeping people informed while an agent works.",
+    "limitations": "Governed by its originating project rather than a standards body, and support varies by agent framework."
+  },
+  {
+    "title": "Agent Communication Protocols (agentproto) working group charter",
+    "url": "https://datatracker.ietf.org/doc/charter-ietf-agentproto/00-03/",
+    "sourceType": "specification",
     "year": 2026,
     "section": "Protocols and machine-readable surfaces",
-    "whyItMatters": "Argues MCP's security gaps are architectural, naming missing capability attestation and unauthenticated bidirectional sampling as protocol-level issues, then tests 847 attack scenarios across five server implementations to support the claim.",
-    "limitations": "The proposed MCPSec mitigation is the authors' own backward-compatible extension, not an adopted part of the MCP specification, so its real-world deployment status is unverified here."
+    "whyItMatters": "Tracks the IETF process for a working group on user-to-agent, agent-to-agent and agent-to-tool communication, a standards-track venue with more procedural weight than the many individual agent drafts.",
+    "limitations": "A proposed charter under review at retrieval time; its scope was contested and is expected to change before any working group is formed."
+  },
+  {
+    "title": "A Survey of AI Agent Protocols",
+    "url": "https://arxiv.org/abs/2504.16736",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Compares agent protocols along shared dimensions, giving one place to understand design choices across MCP, A2A and related proposals before reading each specification.",
+    "limitations": "A 2025 survey that predates several later protocols, including the commerce and payment protocols listed below."
   },
   {
     "title": "WorkOS FGA: The authorization layer for AI agents",
@@ -288,11 +592,110 @@
     "limitations": "Adoption outside WorkOS's own ecosystem is unstated in the source; as an author-organisation announcement, independent implementation evidence is still needed."
   },
   {
+    "title": "Understanding Authorization in MCP",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/authorization",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Explains consent, scopes, and OAuth-oriented authorisation patterns that matter when agents act through user-authorised tools.",
+    "limitations": "Remote and local transports differ, so the same authorisation pattern will not fit every deployment."
+  },
+  {
+    "title": "HTTP Message Signatures (RFC 9421)",
+    "url": "https://www.rfc-editor.org/rfc/rfc9421.html",
+    "sourceType": "specification",
+    "year": 2024,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "The IETF standard for signing HTTP messages, on which verified-bot schemes and several agent identity proposals build so that a request can carry a verifiable signature.",
+    "limitations": "Defines the signing mechanism only; it says nothing about which signers to trust or what a verified agent may do."
+  },
+  {
+    "title": "Web Bot Auth",
+    "url": "https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Documents how bots and agents can prove operator identity on each request with HTTP message signatures instead of a spoofable user-agent string.",
+    "limitations": "Authenticates the operator of the agent, not the person it acts for, so it does not solve delegated or on-behalf-of authorisation."
+  },
+  {
+    "title": "AI Agent Authentication and Authorization (Internet-Draft)",
+    "url": "https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A multi-author Internet-Draft describing how existing standards, the WIMSE workload identity architecture and the OAuth 2.0 family, can be applied to agent authentication and authorisation without a new protocol.",
+    "limitations": "An individual Internet-Draft, not an RFC; it may change or expire, and it composes existing standards rather than settling open questions such as multi-hop delegation."
+  },
+  {
+    "title": "Agent Identity overview (Google Cloud IAM)",
+    "url": "https://docs.cloud.google.com/iam/docs/agent-identity-overview",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Shows one cloud provider giving each agent its own attested, SPIFFE-based identity distinct from human and service accounts, a concrete implementation to compare with vendor-neutral proposals.",
+    "limitations": "Describes one provider's implementation, which does not transfer directly to other clouds or self-hosted identity systems."
+  },
+  {
+    "title": "Agent Name Service (ANS) for Secure AI Agent Discovery v1.0",
+    "url": "https://genai.owasp.org/resource/agent-name-service-ans-for-secure-al-agent-discovery-v1-0/",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A security-community design for agent naming and discovery that ties agent names to PKI-backed identity and adapts across A2A, MCP and other protocols.",
+    "limitations": "A working-group whitepaper rather than a deployed system, and independent adoption is not documented on the resource page."
+  },
+  {
+    "title": "AI Agent Standards Initiative (NIST)",
+    "url": "https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative",
+    "sourceType": "framework",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A government standards programme focused on interoperability, security and identity for agents, useful for tracking where public-sector guidance on agent identity is heading.",
+    "limitations": "A programme page rather than a standard; concrete published outputs were limited at retrieval time."
+  },
+  {
+    "title": "Agentic Commerce Protocol (ACP)",
+    "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "The specification repository for an open checkout protocol in which an agent passes a scoped payment token while the merchant remains merchant of record, with schemas and a changelog.",
+    "limitations": "Maintained by two companies at retrieval time, and implementing it does not by itself list a merchant on any AI shopping surface."
+  },
+  {
+    "title": "Agent Payments Protocol (AP2)",
+    "url": "https://ap2-protocol.org/",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Specifies signed mandates that record what a person authorised an agent to buy, aimed at verifiable authorisation for payments and offered as an extension to A2A and UCP.",
+    "limitations": "Partner counts are supplied by the sponsors, and independent evidence of production use was not found in this pass."
+  },
+  {
+    "title": "Universal Commerce Protocol (UCP)",
+    "url": "https://ucp.dev/",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "An open specification for agentic commerce covering discovery, checkout and post-purchase steps, with a public repository, SDKs and reference implementations.",
+    "limitations": "Written from its sponsoring companies' perspective, and cross-protocol interoperability testing is not documented on the site."
+  },
+  {
+    "title": "x402",
+    "url": "https://github.com/x402-foundation/x402",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "An HTTP-native payment protocol built around the 402 Payment Required status code, so an agent can pay for a request in the same exchange, a different mechanism from checkout-based protocols.",
+    "limitations": "Early deployments centre on stablecoin settlement, which brings custody and regulatory considerations that card-based checkout does not."
+  },
+  {
     "title": "What You Approve Is What Executes: Consent Integrity for Black-Box LLM Agents",
     "url": "https://arxiv.org/abs/2606.02668",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Agent identity and authorization",
+    "section": "Human control, approval and recovery",
     "whyItMatters": "Names the missing 'Consent Integrity' property for agent approval dialogs, the action shown must be rendered by a trusted mediator from the real action rather than the agent's own narration, and tests a prototype against 1,330 trusted-tool abuse techniques.",
     "limitations": "The prototype analyser, renderer, and execution binder is a research system tested on the GTFOBins and tldr corpora, not a deployed product feature available to adopt directly."
   },
@@ -301,53 +704,563 @@
     "url": "https://arxiv.org/abs/2609.21081",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Agent identity and authorization",
+    "section": "Human control, approval and recovery",
     "whyItMatters": "Defines Loopjacking as any case where the operation a human approves does not match what a system actually executes, and reproduces both representation-based and post-approval state-substitution variants in named, released agent products.",
     "limitations": "The paper names a purposive set of tested products rather than a random or exhaustive sample, so prevalence across the wider agent-product ecosystem is not established."
-  },
-  {
-    "title": "Model Context Protocol security best practices",
-    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
-    "sourceType": "specification",
-    "year": 2026,
-    "section": "Human control, accessibility, and recovery",
-    "whyItMatters": "Collects security guidance for tool exposure, trust boundaries, and defensive defaults in MCP-connected agent systems.",
-    "limitations": "Security guidance is implementation-sensitive; teams still need product-specific threat models and operational review."
-  },
-  {
-    "title": "Understanding Authorization in MCP",
-    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/authorization",
-    "sourceType": "specification",
-    "year": 2026,
-    "section": "Human control, accessibility, and recovery",
-    "whyItMatters": "Explains consent, scopes, and OAuth-oriented authorization patterns that matter when agents act through user-authorized tools.",
-    "limitations": "Remote and local transports differ, so the same authorization pattern will not fit every deployment."
-  },
-  {
-    "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.2",
-    "url": "https://www.w3.org/TR/wai-aria-1.2/",
-    "sourceType": "specification",
-    "year": 2023,
-    "section": "Human control, accessibility, and recovery",
-    "whyItMatters": "Defines roles, states, and properties for accessible web interfaces; AX uses this as relevant machine-readable UI semantics, not as a shortcut to agent success.",
-    "limitations": "Correct ARIA use is necessary for accessibility in many interfaces, but it does not guarantee that an agent can complete a workflow."
-  },
-  {
-    "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
-    "url": "https://www.w3.org/TR/WCAG22/",
-    "sourceType": "specification",
-    "year": 2023,
-    "section": "Human control, accessibility, and recovery",
-    "whyItMatters": "Sets human accessibility requirements for perceivable, operable, understandable, and robust web content; AX relevance is an inference because agent tooling often benefits from the same explicit structure.",
-    "limitations": "WCAG conformance is not equivalent to agent readiness and should not be cited as evidence that agents will operate a product reliably."
   },
   {
     "title": "Oversight Has a Capacity: Calibrating Agent Guards to a Subjective, Fatiguing Human",
     "url": "https://arxiv.org/abs/2606.08919",
     "sourceType": "paper",
     "year": 2026,
-    "section": "Human control, accessibility, and recovery",
+    "section": "Human control, approval and recovery",
     "whyItMatters": "Measures inter-reviewer agreement on a hand-labelled set of 125 adversarially-weighted agent actions and models the human reviewer as fatiguing under escalation load, finding that more oversight can reduce realised safety past a point.",
     "limitations": "The reviewer-fatigue model and the 125-action labelled set are the authors' own construction; whether the same capacity limit holds for other review populations or action types is not tested."
+  },
+  {
+    "title": "Design Principles for Human-Agent Interaction",
+    "url": "https://arxiv.org/abs/2606.20630",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Proposes principles across the stages of an agent interaction, including when things go wrong, and applies them to existing agent systems, separating graceful failure from raw task completion as a design goal.",
+    "limitations": "A position paper with an illustrative rather than statistically validated evaluation."
+  },
+  {
+    "title": "Delegating or Doing? Understanding User Behavior in Hybrid Human-Agent Interfaces",
+    "url": "https://arxiv.org/abs/2608.19551",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "A 73-participant study of an interface with an MCP-connected assistant finding that assistance reduced interaction effort but not task time, and that the choice to delegate followed personal disposition more than task risk.",
+    "limitations": "One application and one participant pool, so findings about who delegates may not generalise to other domains."
+  },
+  {
+    "title": "GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications",
+    "url": "https://arxiv.org/abs/2404.06921",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Proposes post-facto validation, undo and damage confinement for actions an agent has already taken, a reference design for recovery when review happens after execution.",
+    "limitations": "A research runtime, not a hardened dependency; teams still have to define undo semantics for their own actions."
+  },
+  {
+    "title": "Human-in-the-loop (OpenAI Agents SDK)",
+    "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Documents how an agent run pauses for approval of sensitive tool calls and resumes from saved state, a concrete framework-level pattern for approval gates.",
+    "limitations": "Specific to one SDK's run and approval model, so the mechanism does not transfer directly to other frameworks."
+  },
+  {
+    "title": "Exposed by Design: A Dynamic Security Assessment of Internet-Facing MCP Servers at Scale",
+    "url": "https://arxiv.org/abs/2608.00150",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Combines passive discovery across eleven data sources with active dynamic testing of 414 production MCP servers, providing scale evidence that most audited public servers currently ship without authentication.",
+    "limitations": "The audited sample, 640 confirmed and 414 tested servers found across four July 2026 measurement runs, is a snapshot of internet-facing MCP servers rather than a comprehensive census of the ecosystem."
+  },
+  {
+    "title": "Breaking the Protocol: Security Analysis of the Model Context Protocol Specification",
+    "url": "https://arxiv.org/abs/2601.17549",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Argues MCP's security gaps are architectural, naming missing capability attestation and unauthenticated bidirectional sampling as protocol-level issues, then tests 847 attack scenarios across five server implementations to support the claim.",
+    "limitations": "The proposed MCPSec mitigation is the authors' own backward-compatible extension, not an adopted part of the MCP specification, so its real-world deployment status is unverified here."
+  },
+  {
+    "title": "Model Context Protocol security best practices",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Collects security guidance for tool exposure, trust boundaries, and defensive defaults in MCP-connected agent systems.",
+    "limitations": "Security guidance is implementation-sensitive; teams still need product-specific threat models and operational review."
+  },
+  {
+    "title": "A First Look at the Security Issues in the Model Context Protocol Ecosystem",
+    "url": "https://arxiv.org/abs/2510.16558",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Analyses tens of thousands of MCP servers across several registries and describes a two-stage risk: weak registry vetting admits bad servers, then attacker-controlled tool metadata steers the model.",
+    "limitations": "Registry practices change quickly, and the accompanying scanner's heuristics are not claimed to be complete."
+  },
+  {
+    "title": "VIPER-MCP: Detecting and Exploiting Taint-Style Vulnerabilities in Model Context Protocol Servers",
+    "url": "https://arxiv.org/abs/2605.21392",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "An automated auditing method run over a large set of MCP server repositories that confirmed previously unknown exploitable vulnerabilities, evidence that server code, not only descriptions, needs review.",
+    "limitations": "The reported findings are a lower bound shaped by the method's heuristics, not an estimate of total ecosystem exposure."
+  },
+  {
+    "title": "From Component Manipulation to System Compromise: Understanding and Detecting Malicious MCP Servers",
+    "url": "https://arxiv.org/abs/2604.01905",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Builds a dataset of malicious MCP server proofs of concept and shows attacks spread across tools, resources and prompts, informing detection before and during execution.",
+    "limitations": "The dataset is researcher-authored rather than drawn from attacks observed in the wild, and real-world detection was demonstrated on few servers."
+  },
+  {
+    "title": "Mitigating Taint-Style Vulnerabilities in MCP Servers via Security-Aware Tool Descriptions",
+    "url": "https://arxiv.org/abs/2607.07461",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Tests adding behavioural risk guidance to tool descriptions as a low-cost mitigation, linking description quality to security outcomes as well as usability.",
+    "limitations": "A description-level mitigation reduces the chance of triggering a flaw but cannot fix the underlying code."
+  },
+  {
+    "title": "Prompt Injection Attacks on Agentic Coding Assistants: A Systematic Analysis of Vulnerabilities in Skills, Tools, and Protocol Ecosystems",
+    "url": "https://arxiv.org/abs/2601.17548",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Systematises published work on prompt injection against coding agents into a taxonomy covering skills, tools and protocol ecosystems, a map of the attack surface that agent-facing content creates.",
+    "limitations": "A synthesis of existing studies rather than new experiments, so its figures inherit the limits of the underlying work."
+  },
+  {
+    "title": "The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents",
+    "url": "https://arxiv.org/abs/2608.27092",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Shows that reframing the same exfiltration request can move attack success from none to all attempts for one model, and that destination allow-lists and capability isolation close the gap where model-level fixes do not.",
+    "limitations": "Run in a synthetic laboratory setting with mock tools rather than a production deployment."
+  },
+  {
+    "title": "Agent Browser Shield",
+    "url": "https://github.com/pixiebrix/agent-browser-shield",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "An open-source browser extension that filters pages before an agent reads them, removing likely prompt injection, masking personal data and stripping dark patterns, a practical mitigation for browsing agents.",
+    "limitations": "An alpha prototype whose rules may change; its published measurement is a small token benchmark, and blocking effectiveness is not independently evaluated."
+  },
+  {
+    "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "url": "https://arxiv.org/abs/2307.13854",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Models web agents against realistic sites, showing why navigation, site state, and task context matter for agent-facing web design.",
+    "limitations": "Self-hosted benchmark environments are useful for repeatability, but live websites change and need ongoing monitoring."
+  },
+  {
+    "title": "Mind2Web: Towards a Generalist Agent for the Web",
+    "url": "https://arxiv.org/abs/2306.06070",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Focuses on mapping natural-language goals to web actions, which is a core AX concern for documentation, labels, and machine-readable task affordances.",
+    "limitations": "Dataset-driven results should be treated as evidence about task representation, not as a universal recipe for every website."
+  },
+  {
+    "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+    "url": "https://arxiv.org/abs/2406.12045",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Centres user-agent-tool interaction, making it especially relevant to AX work on handoffs, clarifications, and domain state.",
+    "limitations": "Domain simulations still simplify messy real systems; use it to guide evaluation design, not to claim production readiness."
+  },
+  {
+    "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+    "url": "https://arxiv.org/abs/2401.13178",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Supports analysis of multi-turn agent behaviour rather than only recording a final success or failure, which helps AX reviews separate failure stages.",
+    "limitations": "Benchmark assumptions can age quickly as tools, models, and web environments change, so it should not be treated as a universal scorecard."
+  },
+  {
+    "title": "StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models",
+    "url": "https://arxiv.org/abs/2403.07714",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Calls attention to benchmark stability for tool learning, a necessary concern when tracking whether AX changes move an evaluation in a repeatable way.",
+    "limitations": "Stability controls evaluation noise; it does not decide which product affordances matter to a given audience."
+  },
+  {
+    "title": "AgentBench: Evaluating LLMs as Agents",
+    "url": "https://arxiv.org/abs/2308.03688",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "An early multi-environment agent benchmark spanning operating system, database, web and game settings, still used as a reference design for broad agent evaluation.",
+    "limitations": "Scores were measured on 2023 models and are dated, even though the environments are still reused."
+  },
+  {
+    "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+    "url": "https://arxiv.org/abs/2404.07972",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Evaluates agents on open-ended tasks in full desktop environments using screenshots and accessibility trees, extending evaluation beyond the browser to whole applications.",
+    "limitations": "Desktop environments are costly to run at scale, and results may not transfer across operating systems or application versions."
+  },
+  {
+    "title": "ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents",
+    "url": "https://arxiv.org/abs/2410.06703",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Adds policy compliance and safety to web-agent evaluation in enterprise-style tasks, so a run is judged on whether it stayed within rules as well as whether it finished.",
+    "limitations": "Built on one browser environment framework and a fixed policy set, which bounds what kinds of unsafe behaviour it can detect."
+  },
+  {
+    "title": "τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+    "url": "https://arxiv.org/abs/2506.07982",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Extends τ-bench so that both the simulated user and the agent can change a shared environment through tools, surfacing coordination failures that single-control benchmarks miss.",
+    "limitations": "Two-party dual control is still a simplification of real systems where several actors change state at once."
+  },
+  {
+    "title": "WebArena-Verified",
+    "url": "https://github.com/ServiceNow/webarena-verified",
+    "sourceType": "repository",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "A verified release of WebArena in which tasks, reference answers and evaluators were reviewed, with deterministic scoring and offline evaluation from network traces for reproducible web-agent results.",
+    "limitations": "Verification is limited to the WebArena task set and its self-hosted sites; it does not add new site types."
+  },
+  {
+    "title": "ClawBench",
+    "url": "https://github.com/TIGER-AI-Lab/ClawBench",
+    "sourceType": "repository",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Evaluates browser agents on everyday tasks across about 160 live websites, intercepting the final submission so agents use real sites without completing real transactions.",
+    "limitations": "Live sites change, so task validity drifts over time in a way a self-hosted benchmark avoids."
+  },
+  {
+    "title": "LiveMCPBench: Can Agents Navigate an Ocean of MCP Tools?",
+    "url": "https://arxiv.org/abs/2508.01780",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Tests agents against many real MCP servers and tools at once and finds retrieval of the right tool is a main failure point, which ties evaluation directly to catalogue and description design.",
+    "limitations": "A curated task set scored partly by a model judge; a later validity audit in this list examines this benchmark family."
+  },
+  {
+    "title": "MCP-Atlas: A Large-Scale Benchmark for Tool-Use Competency with Real MCP Servers",
+    "url": "https://arxiv.org/abs/2602.00933",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Scores tasks on real MCP servers against required factual claims rather than one expected call path, with a failure taxonomy that separates tool-call errors from reasoning and stopping errors.",
+    "limitations": "A private test split is withheld, so the full results cannot be independently replicated."
+  },
+  {
+    "title": "Berkeley Function Calling Leaderboard (BFCL)",
+    "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+    "sourceType": "benchmark",
+    "year": null,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "An academic leaderboard for function-calling accuracy covering single, parallel and multi-turn calls, with later versions adding agentic tasks, widely used as a shared reference for tool-calling ability.",
+    "limitations": "A periodically updated leaderboard subject to the reproducibility concerns raised in the validity audits below; treat single-run rankings with caution."
+  },
+  {
+    "title": "METR Task Standard",
+    "url": "https://github.com/METR/task-standard",
+    "sourceType": "specification",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "A common format for packaging agent evaluation tasks (environment, instructions and optional scoring) so tasks written by one party can run in another party's harness, with adaptors for existing suites.",
+    "limitations": "Standardises packaging, not task quality, and the repository had not been updated for some time at retrieval."
+  },
+  {
+    "title": "Inspect Evals",
+    "url": "https://github.com/UKGovernmentBEIS/inspect_evals",
+    "sourceType": "repository",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "A maintained collection of benchmark implementations for the Inspect framework from the UK AI Security Institute, letting teams run many agent evaluations through one harness instead of reimplementing each.",
+    "limitations": "Coverage depends on contributions, so newer benchmarks can lag behind their original release."
+  },
+  {
+    "title": "Langfuse",
+    "url": "https://github.com/langfuse/langfuse",
+    "sourceType": "tool",
+    "year": 2023,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "Open-source tracing, evaluation and prompt management for LLM and agent applications, supporting the practice of recording every agent run so failures can be reviewed and turned into test cases.",
+    "limitations": "Self-hosting at scale is an operational commitment, and tracing records what happened without judging whether it was correct."
+  },
+  {
+    "title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
+    "url": "https://arxiv.org/abs/2607.02577",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Audits four major tool-calling benchmark families against 496 expert-reviewed tasks and finds that repeating one benchmark's own setup 23 times produced an 18.9-point score spread, large enough to flip leaderboard conclusions.",
+    "limitations": "The audit covers four named benchmark families (BFCL v4, tau2-Bench, LiveMCPBench, MCP-Atlas); it does not establish that every tool-calling benchmark has comparable reproducibility problems."
+  },
+  {
+    "title": "Establishing Best Practices for Building Rigorous Agentic Benchmarks",
+    "url": "https://arxiv.org/abs/2507.02825",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Introduces a checklist for task validity, outcome validity and reporting in agent benchmarks, drawn from problems found in published benchmarks, giving teams a pre-publication review tool.",
+    "limitations": "A methodological checklist; it does not by itself re-score widely used benchmarks end to end."
+  },
+  {
+    "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
+    "url": "https://arxiv.org/abs/2507.21504",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Organises agent evaluation work by what is evaluated and how, which helps a team find the existing benchmark or method that fits a specific AX question.",
+    "limitations": "A survey that summarises rather than resolves disagreements between the methods it covers."
+  },
+  {
+    "title": "Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI",
+    "url": "https://arxiv.org/abs/2607.22368",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Audits agent traces across many benchmarks and finds reward hacking and protocol exploitation inflating scores on some, a failure mode distinct from ordinary evaluator noise.",
+    "limitations": "Covers a named set of benchmarks; prevalence elsewhere in the field is not estimated."
+  },
+  {
+    "title": "The Double Measurement Confound in Agent Benchmarks: De-Scaffolding, Ground-Truth Scoring, and Reliability Beyond the Mean",
+    "url": "https://arxiv.org/abs/2609.09218",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Names a confound in which a fixed scaffold makes execution-critical decisions and a scorer may not reflect correctness, and shows that repairing both changes what a leaderboard appears to show.",
+    "limitations": "The repair protocol is demonstrated mainly on one benchmark, and applying it elsewhere needs bespoke work."
+  },
+  {
+    "title": "Beyond Pass@k: Measuring Reliability and Security of Agentic Code Generation",
+    "url": "https://arxiv.org/abs/2608.14711",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Identifies a common miscalculation of pass@k that can greatly inflate reported agent scores, and proposes reliability and security measures to report alongside it.",
+    "limitations": "The live pilot is very small, and the authors describe the practical effect of their security-adjusted metric as unresolved."
+  },
+  {
+    "title": "Demystifying evals for AI agents",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "A practitioner walkthrough of building agent evaluations, covering task design, graders and reading transcripts, which complements the academic validity work in this section.",
+    "limitations": "Based on one model provider's internal practice rather than an independently validated method."
+  },
+  {
+    "title": "Is Your Site Agent-Ready?",
+    "url": "https://isitagentready.com/",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "A public scanner that checks a site for many emerging agent-facing conventions in one pass, from robots.txt rules and Markdown negotiation to OAuth discovery, MCP server cards, agent skills and commerce protocols.",
+    "limitations": "Measures adoption of conventions chosen by one vendor, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "Lighthouse agentic browsing scoring",
+    "url": "https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "An experimental Lighthouse category that audits WebMCP use, agent-relevant accessibility and page stability, reporting per-audit results instead of one weighted number.",
+    "limitations": "Experimental, page-level and subject to run-to-run variation, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "Is Agentic",
+    "url": "https://is-agentic.com/",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "Scores the public parts of a site that agents can discover, access and use, and documents its method, including known false positives and false negatives.",
+    "limitations": "A point-in-time vendor score whose weighting is the vendor's choice, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "AXIS: Agent Experience Index Score",
+    "url": "https://github.com/netlify/axis",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "Open-source tooling that runs a real agent through a scenario and grades the transcript on goal achievement, environment, service and agent dimensions, measuring an observed journey rather than static signals.",
+    "limitations": "Relies on a model judge, mixes product and model quality in one composite, and no published evidence yet shows that a higher score predicts agent task success beyond the scenarios run."
+  },
+  {
+    "title": "Agent-Friendly Documentation Spec",
+    "url": "https://agentdocsspec.com/",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Readiness instruments",
+    "whyItMatters": "An open specification and checker for documentation sites that reports pass, warn or fail per check across discoverability, Markdown availability, page size, structure and URL stability.",
+    "limitations": "Grounded in the author's observations rather than a controlled study, covers web delivery only, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "Agent Readiness Model (Factory)",
+    "url": "https://docs.factory.ai/agent-readiness/overview",
+    "sourceType": "framework",
+    "year": null,
+    "section": "Readiness instruments",
+    "whyItMatters": "Scores a code repository, not a website, on whether it has the structure, validation and operational signals coding agents need, using gated levels that a repository unlocks in order.",
+    "limitations": "Tied to one vendor's coding agent, the level thresholds are the vendor's own, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "GEO: Generative Engine Optimization",
+    "url": "https://arxiv.org/abs/2311.09735",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "The paper that named generative engine optimisation and introduced a benchmark for measuring how content changes affect visibility in AI-generated answers, the starting point for most later GEO work.",
+    "limitations": "Visibility gains were measured on the paper's own benchmark and engines at the time, not on current production answer engines."
+  },
+  {
+    "title": "Structural Feature Engineering for Generative Engine Optimization: How Content Structure Shapes Citation Behavior",
+    "url": "https://arxiv.org/abs/2603.29979",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Separates page structure from wording and reports that structure alone changes citation rates across several generative engines, relevant to how agent-readable pages are organised.",
+    "limitations": "Engine behaviour changes as platforms update, and some quality judgements rely on a rating method the paper does not fully specify."
+  },
+  {
+    "title": "From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms",
+    "url": "https://arxiv.org/abs/2604.25707",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Distinguishes being cited from actually shaping an answer and shows the two diverge differently across platforms, a correction to measuring GEO by citation counts alone.",
+    "limitations": "Observational analysis of a public dataset rather than a controlled experiment, and platform behaviour shifts over time."
+  },
+  {
+    "title": "What Gets Cited: Competitive GEO in AI Answer Engines",
+    "url": "https://arxiv.org/abs/2605.25517",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "A large factorial experiment across several models that isolates content factors and finds relevance and position matter far more than formatting-only edits for being cited.",
+    "limitations": "Uses a simplified two-document setting rather than realistic multi-source retrieval."
+  },
+  {
+    "title": "Optimizing Visibility in Generative Engines: A Critical Survey of Generative Engine Optimization (2023-2026)",
+    "url": "https://arxiv.org/abs/2607.14035",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "A critical review of GEO research that concludes no reviewed technique yet shows a stable, cross-platform effect over time, the field's own check on optimisation claims.",
+    "limitations": "Its conclusions inherit the short time horizons of the studies it reviews, which the authors acknowledge."
+  },
+  {
+    "title": "When Optimization Becomes Manipulation: Defending Generative Search against Malicious Generative Engine Optimization",
+    "url": "https://arxiv.org/abs/2609.02964",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Describes automated, agent-driven content manipulation aimed at answer engines and proposes a defence that reduces attack success without penalising benign content.",
+    "limitations": "Evaluated against attack families the authors built, so novel manipulation strategies remain untested."
+  },
+  {
+    "title": "Optimizing your website for generative AI features on Google Search",
+    "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Primary guidance from one search engine on its AI features, which states that tactics such as content chunking or llms.txt files are unnecessary for its Search, a useful corrective to GEO marketing claims.",
+    "limitations": "Covers one search engine only and says nothing about how other answer engines or agents treat the same signals."
+  },
+  {
+    "title": "alexngai/awesome-agent-experience",
+    "url": "https://github.com/alexngai/awesome-agent-experience",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "A broad AX list with sections on standards, IETF discovery drafts, governance bodies, articles and case studies, useful for tracing the wider conversation around the sources curated here.",
+    "limitations": "Archived on GitHub at retrieval, entries carry no limitations, and some case studies repeat unverified vendor outcome figures."
+  },
+  {
+    "title": "rolandfarkasCOM/awesome-agentic-web",
+    "url": "https://github.com/rolandfarkasCOM/awesome-agentic-web",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "A short list of open-source protocols, SDKs and specifications for the agentic web, including commerce protocols, that is quick to scan for implementations.",
+    "limitations": "Small and recently started, and its framework and orchestration sections sit outside agent experience as scoped here."
+  },
+  {
+    "title": "VoltAgent/awesome-agent-skills",
+    "url": "https://github.com/VoltAgent/awesome-agent-skills",
+    "sourceType": "list",
+    "year": 2025,
+    "section": "Related lists",
+    "whyItMatters": "A large catalogue of Agent Skills published by product teams and the community, the place to look for existing skills rather than guidance on designing them.",
+    "limitations": "Its own notice says skills are curated rather than audited, so each skill should be reviewed before installation."
+  },
+  {
+    "title": "punkpeye/awesome-mcp-servers",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers",
+    "sourceType": "list",
+    "year": 2024,
+    "section": "Related lists",
+    "whyItMatters": "A large directory of MCP servers grouped by domain, useful when the question is whether an MCP server already exists for a given product or service.",
+    "limitations": "A directory rather than a review, so it does not assess description quality, security posture or maintenance."
+  },
+  {
+    "title": "steel-dev/awesome-web-agents",
+    "url": "https://github.com/steel-dev/awesome-web-agents",
+    "sourceType": "list",
+    "year": 2025,
+    "section": "Related lists",
+    "whyItMatters": "A directory of browser-agent frameworks, automation tools and related benchmarks, covering the agent-building side of the web that this list deliberately leaves out.",
+    "limitations": "Mostly product and framework listings without annotation of limits, and the list is maintained by a browser-infrastructure vendor."
+  },
+  {
+    "title": "pauldebdeep9/awesome-agentic-evaluation",
+    "url": "https://github.com/pauldebdeep9/awesome-agentic-evaluation",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "A structured list of agent benchmarks, evaluation tooling and methodology papers, with a separation between benchmark catalogues and rigour concerns that complements the Evaluation section here.",
+    "limitations": "A single-maintainer project, and several domain sections such as cybersecurity sit outside agent experience as scoped here."
+  },
+  {
+    "title": "hqhq1025/awesome-computer-use-ecosystem",
+    "url": "https://github.com/hqhq1025/awesome-computer-use-ecosystem",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "Organises desktop and browser computer-use agent projects by capability, including accessibility and semantic grounding, for readers who need GUI-agent tooling.",
+    "limitations": "New at retrieval, and a notable share of entries are the maintainer's own projects."
   }
 ]

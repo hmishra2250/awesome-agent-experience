@@ -18,19 +18,48 @@ function destination(value) {
   return `<${url.href.replace(/</g, '%3C').replace(/>/g, '%3E')}>`;
 }
 
+/** GitHub-style heading anchor for a plain-text heading. */
+export function anchor(heading) {
+  return heading.toLowerCase().replace(/[^a-z0-9 -]/g, '').trim().replace(/ /g, '-');
+}
+
+function entry(source) {
+  const meta = [source.sourceType, source.year].filter((value) => value !== undefined && value !== null && value !== '');
+  const tag = meta.length ? ` (${escapeMarkdown(meta.join(', '))})` : '';
+  return `- [${escapeMarkdown(source.title)}](${destination(source.url)})${tag}: ${escapeMarkdown(source.whyItMatters)} _Limit: ${escapeMarkdown(source.limitations)}_`;
+}
+
+function groupBy(items, key) {
+  const groups = new Map();
+  for (const item of items) {
+    const name = item[key] ?? '';
+    if (!groups.has(name)) groups.set(name, []);
+    groups.get(name).push(item);
+  }
+  return groups;
+}
+
+/**
+ * Sections and optional subsections render in order of first appearance in the dataset.
+ * Entries without a subsection render before any subsection heading in their section.
+ */
 export function render(sources) {
   if (!Array.isArray(sources)) throw new TypeError('Expected a source array');
-  const groups = new Map();
-  for (const source of sources) {
-    if (!groups.has(source.section)) groups.set(source.section, []);
-    groups.get(source.section).push(source);
-  }
-  return [...groups].map(([section, entries]) => {
-    const lines = entries.map((source) =>
-      `- [${escapeMarkdown(source.title)}](${destination(source.url)}): ${escapeMarkdown(source.whyItMatters)} _Limit: ${escapeMarkdown(source.limitations)}_`,
-    );
-    return `## ${escapeMarkdown(section)}\n\n${lines.join('\n')}`;
-  }).join('\n\n') + '\n';
+  const sections = [...groupBy(sources, 'section')];
+  const contents = sections.map(([section, entries]) =>
+    `- [${escapeMarkdown(section)}](#${anchor(section)}) (${entries.length})`,
+  );
+  const body = sections.map(([section, entries]) => {
+    const parts = [`## ${escapeMarkdown(section)}`];
+    const subsections = groupBy(entries, 'subsection');
+    if (subsections.has('')) parts.push(subsections.get('').map(entry).join('\n'));
+    for (const [subsection, items] of subsections) {
+      if (subsection === '') continue;
+      parts.push(`### ${escapeMarkdown(subsection)}`, items.map(entry).join('\n'));
+    }
+    return parts.join('\n\n');
+  });
+  return [`## Contents\n\n${contents.join('\n')}`, ...body].join('\n\n') + '\n';
 }
 
 export function replaceGenerated(readme, body) {

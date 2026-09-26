@@ -5,7 +5,25 @@ import { render, replaceGenerated } from './build-readme-sources.mjs';
 const ONLINE = process.argv.includes('--online');
 const sourcePath = new URL('../data/sources.json', import.meta.url);
 const required = ['title', 'url', 'sourceType', 'year', 'section', 'whyItMatters', 'limitations'];
-const allowedTypes = new Set(['paper', 'specification', 'framework', 'dataset', 'repository', 'essay']);
+const allowedTypes = new Set([
+  'paper', 'specification', 'framework', 'dataset', 'repository', 'essay',
+  'documentation', 'tool', 'benchmark', 'list',
+]);
+const requiredSections = [
+  'Agent experience framing',
+  'Discovery and agent-readable web',
+  'Documentation for agents',
+  'Tool use, tool descriptions and MCP',
+  'Protocols and machine-readable surfaces',
+  'Agent identity and authorization',
+  'Agentic commerce and payments',
+  'Human control, approval and recovery',
+  'Security for agent-facing surfaces',
+  'Evaluation',
+  'Readiness instruments',
+  'GEO and AI search (adjacent)',
+  'Related lists',
+];
 
 async function validateCitationFile() {
   const citationUrl = new URL('../CITATION.cff', import.meta.url);
@@ -101,8 +119,17 @@ for (const [index, source] of sources.entries()) {
   assertHttpUrl(source.url, index);
   if (urls.has(source.url)) fail(`source ${index}: duplicate URL ${source.url}`);
   urls.add(source.url);
-  if (!Number.isInteger(source.year) || source.year < 1900 || source.year > 2100) {
-    fail(`source ${index}: year must be a reasonable integer`);
+  // null records that the source states no publication year; never infer one.
+  if (source.year !== null && (!Number.isInteger(source.year) || source.year < 1900 || source.year > 2100)) {
+    fail(`source ${index}: year must be a reasonable integer or null`);
+  }
+  if ('subsection' in source && (typeof source.subsection !== 'string' || source.subsection.trim() === '')) {
+    fail(`source ${index}: subsection must be a non-empty string when present`);
+  }
+  for (const field of ['whyItMatters', 'limitations']) {
+    const text = String(source[field]);
+    if (/[\u2013\u2014]/.test(text)) fail(`source ${index}: ${field} uses an en or em dash`);
+    if (/\b\w+n['\u2019]t\b|\b(it|that|there|what)['\u2019]s\b/i.test(text)) fail(`source ${index}: ${field} uses a contraction`);
   }
   if (!allowedTypes.has(source.sourceType)) {
     fail(`source ${index}: sourceType must be one of ${[...allowedTypes].join(', ')}`);
@@ -113,16 +140,21 @@ for (const [index, source] of sources.entries()) {
 }
 
 if (sources.length < 1) fail('expected at least one source');
-for (const name of [
-  'Agent experience framing',
-  'Agent tool use and planning',
-  'Discovery and agent-readable web',
-  'Evaluation and benchmarks',
-  'Protocols and machine-readable surfaces',
-  'Agent identity and authorization',
-  'Human control, accessibility, and recovery'
-]) {
+for (const name of requiredSections) {
   if (!sections.has(name)) fail(`missing section: ${name}`);
+}
+for (const name of sections.keys()) {
+  if (!requiredSections.includes(name)) fail(`unexpected section: ${name}; add it to requiredSections or fix the typo`);
+}
+// Sections must be contiguous so the generated README order matches the reader path.
+const sectionOrder = [...new Set(sources.map((source) => source.section))];
+if (sectionOrder.join('|') !== requiredSections.join('|')) {
+  fail(`sections must appear contiguously in reader-path order: ${requiredSections.join(' > ')}`);
+}
+for (let i = 1; i < sources.length; i += 1) {
+  if (sources[i].section !== sources[i - 1].section && sources.slice(0, i - 1).some((source) => source.section === sources[i].section)) {
+    fail(`source ${i}: section ${sources[i].section} is split across the dataset`);
+  }
 }
 
 if (ONLINE && Array.isArray(sources)) {

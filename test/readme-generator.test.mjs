@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, writeFile, copyFile, rm } from 'node:fs/promi
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { render, replaceGenerated, START, END } from '../scripts/build-readme-sources.mjs';
+import { render, replaceGenerated, anchor, START, END } from '../scripts/build-readme-sources.mjs';
 
 const sources = [{
   section: 'A <B>', title: 'a*[x]', url: 'https://example.test/a_(b)?q=two%20words',
@@ -26,6 +26,41 @@ test('plain-text headings, titles and annotations are escaped; URL parentheses r
   assert.ok(output.includes('[a\\*\\[x\\]](<https://example.test/a_(b)?q=two%20words>)'));
   assert.ok(output.includes('Plain \\*text\\* not a heading'));
   assert.ok(output.includes('\\<script\\> and \\_emphasis\\_'));
+});
+
+test('renders a contents list with counts and GitHub-style anchors', () => {
+  const output = render([
+    { ...sources[0], section: 'Tool use, tool descriptions and MCP' },
+    { ...sources[0], title: 'Two', section: 'GEO and AI search (adjacent)' },
+  ]);
+  assert.ok(output.startsWith('## Contents\n\n'));
+  assert.ok(output.includes('- [Tool use, tool descriptions and MCP](#tool-use-tool-descriptions-and-mcp) (1)'));
+  assert.ok(output.includes('(#geo-and-ai-search-adjacent) (1)'));
+  assert.equal(anchor('Human control, approval and recovery'), 'human-control-approval-and-recovery');
+});
+
+test('renders subsections after unsectioned entries, in order of first appearance', () => {
+  const base = { ...sources[0], section: 'Evaluation' };
+  const output = render([
+    { ...base, title: 'Bench', subsection: 'Benchmarks' },
+    { ...base, title: 'Loose' },
+    { ...base, title: 'Method', subsection: 'Methodology' },
+    { ...base, title: 'Bench two', subsection: 'Benchmarks' },
+  ]);
+  const at = (text) => output.indexOf(text);
+  assert.ok(at('[Loose]') < at('### Benchmarks'));
+  assert.ok(at('### Benchmarks') < at('[Bench]'));
+  assert.ok(at('[Bench two]') < at('### Methodology'));
+  assert.equal(output.match(/### Benchmarks/g).length, 1);
+});
+
+test('tags entries with source type and year, omitting an unknown year', () => {
+  const output = render([
+    { ...sources[0], sourceType: 'paper', year: 2026 },
+    { ...sources[0], title: 'Undated', sourceType: 'specification', year: null },
+  ]);
+  assert.ok(output.includes('>) (paper, 2026): Plain'));
+  assert.ok(output.includes('[Undated](<https://example.test/a_(b)?q=two%20words>) (specification): '));
 });
 
 test('rejects unsafe URL schemes and malformed source shapes', () => {
