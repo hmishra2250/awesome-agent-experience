@@ -119,6 +119,7 @@ for (const name of [
   'Discovery and agent-readable web',
   'Evaluation and benchmarks',
   'Protocols and machine-readable surfaces',
+  'Agent identity and authorization',
   'Human control, accessibility, and recovery'
 ]) {
   if (!sections.has(name)) fail(`missing section: ${name}`);
