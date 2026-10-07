@@ -27,6 +27,15 @@
     "limitations": "Adopter examples are reported by a platform founder about his own and partner products; the article does not measure whether the patterns change outcomes."
   },
   {
+    "title": "How Vercel ships for agents",
+    "url": "https://2027.dev/blog/how-vercel-ships-for-agents",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "A case study that groups one platform's agent-facing changes into six patterns, including version-matched docs referenced from AGENTS.md, Markdown 404 pages that suggest nearby URLs, non-interactive CLI defaults when an agent is detected, and deploy-before-signup claim flows.",
+    "limitations": "Written by a company that sells agent testing, in collaboration with the platform it describes; its eval figures are the platform's own, and it does not measure whether the patterns transfer to other products."
+  },
+  {
     "title": "What is AX (Agent Experience) and how to improve it",
     "url": "https://resend.com/blog/agent-experience",
     "sourceType": "essay",
@@ -43,6 +52,15 @@
     "section": "Agent experience framing",
     "whyItMatters": "States a short set of community AX principles, including treating agents as delegates of people and recording agent actions separately from human ones, which helps teams agree on design intent before choosing tools.",
     "limitations": "The site is hosted and largely written by Netlify staff despite its community framing, and it says itself that the principles may change as practice matures."
+  },
+  {
+    "title": "AI Agents as Users",
+    "url": "https://www.nngroup.com/articles/ai-agents-as-users/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "A UX research firm's argument that agents are users in a functional sense, contrasting screenshot, accessibility-tree and API interaction, and setting out when a product may reasonably choose not to serve agents.",
+    "limitations": "An opinion article with no new study behind it; its near-term advice is largely existing accessibility practice, and its remarks on token costs are general rather than measured."
   },
   {
     "title": "From Human Interfaces to Agent Interfaces: Rethinking Software Design in the Age of AI-Native Systems",
@@ -234,6 +252,15 @@
     "limitations": "An RFC-stage proposal from one company; the index shape may change and it has no standards-body status."
   },
   {
+    "title": "Open Knowledge Format (OKF) specification, v0.2",
+    "url": "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Specifies a directory of Markdown files with YAML frontmatter as a portable bundle of curated knowledge for agents, with index and log files for progressive disclosure and fields for provenance, trust tier and freshness.",
+    "limitations": "An early draft on a mutable main branch, published by Google Cloud with reference tooling centred on BigQuery; it targets internal data knowledge more than public product surfaces, and it reports no evidence on agent task outcomes."
+  },
+  {
     "title": "How to write a great agents.md: Lessons from over 2,500 repositories",
     "url": "https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/",
     "sourceType": "essay",
@@ -299,6 +326,16 @@
     "subsection": "Tool design guides",
     "whyItMatters": "A command-line perspective on AX that describes structured output, idempotent commands, managed context and informative errors as design goals for tools that agents call from a terminal.",
     "limitations": "Describes one vendor's own product decisions; the principles are not tested against other command-line tools."
+  },
+  {
+    "title": "AXI: Agent eXperience Interface",
+    "url": "https://github.com/kunchenguid/axi",
+    "sourceType": "repository",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Ten design principles for command-line tools used by agents, such as minimal default fields, definitive empty states, structured errors without interactive prompts and next-step hints after each output, with reference implementations to inspect.",
+    "limitations": "Its benchmark tables come from the maintainer's own runs with one model against its own wrappers, and its preferred compact output format (TOON) is a project choice rather than a shared standard."
   },
   {
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -689,6 +726,15 @@
     "section": "Agentic commerce and payments",
     "whyItMatters": "An HTTP-native payment protocol built around the 402 Payment Required status code, so an agent can pay for a request in the same exchange, a different mechanism from checkout-based protocols.",
     "limitations": "Early deployments centre on stablecoin settlement, which brings custody and regulatory considerations that card-based checkout does not."
+  },
+  {
+    "title": "How Stripe is designing Checkout for AI agents",
+    "url": "https://stripe.dev/blog/how-stripe-is-designing-checkout-for-ai-agents",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Describes a payment page that exposes WebMCP tools progressively, so a submit tool appears only once the form is valid, and that derives form tools from the rendered HTML rather than maintaining a separate agent-only checkout.",
+    "limitations": "A vendor engineering post; its efficiency figures come from its own 60 test runs across six models on a fictional shop, and WebMCP is an experimental browser capability whose API may change."
   },
   {
     "title": "What You Approve Is What Executes: Consent Integrity for Black-Box LLM Agents",
