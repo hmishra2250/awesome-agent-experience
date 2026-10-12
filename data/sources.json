@@ -72,6 +72,15 @@
     "limitations": "Conceptual and argumentative only; none of the proposed principles are measured against real systems in the paper."
   },
   {
+    "title": "What is Agent Experience (AX)?",
+    "url": "https://developer.microsoft.com/blog/what-is-agent-experience-ax/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "A platform vendor's definition of AX that splits measurement into propensity (does the agent choose your technology) and efficacy (does it use it correctly), adds task cost, and names working terms such as bare baseline, lift and drag, and agent profile.",
+    "limitations": "Vendor framing illustrated almost entirely with coding agents on Microsoft's own developer products and small run counts, typically five per condition, so its figures hold only for the agent profiles it measured."
+  },
+  {
     "title": "llms.txt: The /llms.txt file, v2",
     "url": "https://llmstxt.org/",
     "sourceType": "specification",
@@ -216,6 +225,33 @@
     "limitations": "A proposal with a reference implementation, not an adopted standard; it only works if both site operators and agent vendors implement it."
   },
   {
+    "title": "AI Catalog",
+    "url": "https://ai-catalog.io/spec/",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "A draft JSON format that lists MCP servers, A2A agents, skills, plugins and other AI artefacts by media type, with an optional signed trust manifest; the ARD specification above treats it as a plain catalogue, distinct from its own search-oriented entry.",
+    "limitations": "The page calls itself a draft that may change at any time and carries no date; its well-known path also differs from ARD v0.91, which asks publishers to move from ai-catalog.json to ard.json."
+  },
+  {
+    "title": "AGENTS.TXT: Capability Declarations for Web Agents",
+    "url": "https://datatracker.ietf.org/doc/draft-car-agents-txt-wellknown/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Proposes /.well-known/agents.txt and agents.json as a positive counterpart to robots.txt, in which a site declares the endpoints, protocols, authentication and rate limits agents may use, and explains how it relates to llms.txt and to MCP and A2A cards.",
+    "limitations": "An individual Internet-Draft in the independent stream with no IETF endorsement or formal standing, expiring in December 2026 unless revised; an earlier draft under the same name lapsed without a revision."
+  },
+  {
+    "title": "Does anyone actually have an llms.txt? I checked millions of websites",
+    "url": "https://caseyrb.com/blog/state-of-llms-txt-adoption/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Measures llms.txt adoption from the public HTTP Archive crawl: about 5.6 per cent of the top 10,000 sites had a valid file in June 2026, with little change by rank, and some platforms, notably Shopify, now publish one by default.",
+    "limitations": "A single-author blog post that does not publish its queries; 'valid' means the file parses, not that it is useful, and presence says nothing about whether agents read the file."
+  },
+  {
     "title": "AGENTS.md",
     "url": "https://agents.md/",
     "sourceType": "specification",
@@ -288,6 +324,15 @@
     "limitations": "Written from one model provider's internal practice; specific patterns may not transfer unchanged to other models or agent harnesses."
   },
   {
+    "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+    "url": "https://arxiv.org/abs/2602.11988",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "A controlled test on SWE-bench tasks and a new benchmark built from repositories with developer-written context files: the files did not generally raise task success and added over 20 per cent to inference cost, although agents did follow their instructions.",
+    "limitations": "Python repositories only, with success measured as issue resolution; the authors note that context files may matter more for less common languages and for qualities such as security, which they did not measure."
+  },
+  {
     "title": "Writing effective tools for agents — with agents",
     "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
     "sourceType": "essay",
@@ -336,6 +381,26 @@
     "subsection": "Tool design guides",
     "whyItMatters": "Ten design principles for command-line tools used by agents, such as minimal default fields, definitive empty states, structured errors without interactive prompts and next-step hints after each output, with reference implementations to inspect.",
     "limitations": "Its benchmark tables come from the maintainer's own runs with one model against its own wrappers, and its preferred compact output format (TOON) is a project choice rather than a shared standard."
+  },
+  {
+    "title": "Tool search",
+    "url": "https://developers.openai.com/api/docs/guides/tools-tool-search",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "OpenAI's version of letting the model search for tools instead of loading every definition: functions, namespaces or MCP servers are marked for deferred loading and found by a hosted or application-run search, with advice to group them in small, well-described namespaces.",
+    "limitations": "Vendor documentation for recent models on one API, with no published token or accuracy figures; for a single deferred function the name and description stay visible and only the parameter schema is deferred."
+  },
+  {
+    "title": "Tool search tool",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Anthropic's version of the same pattern, in which deferred tools stay out of the context entirely until a regex or BM25 search returns them; read alongside the OpenAI guide, it shows that vendors differ in what the model sees before it searches.",
+    "limitations": "Vendor documentation whose figures on token savings and tool-selection accuracy are the vendor's own and not linked to a published evaluation, and whose details apply only to the models it lists as supported."
   },
   {
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -488,6 +553,66 @@
     "limitations": "Benefits depend on how well generated intent queries cover the real workload and on provider-side prompt caching, both of which vary by deployment."
   },
   {
+    "title": "The Bitter Lesson of Tool Calling",
+    "url": "https://arxiv.org/abs/2608.06370",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Compares exposing tools as typed Python functions that the model calls from code with native JSON tool calls across 14 models on BFCL v4; calling from code matched or beat JSON for 11 of the 14 models, which bears on how tools are packaged for code-capable agents.",
+    "limitations": "Results come from one benchmark and the authors' own harness for running generated code, so they show the approach works there rather than that it improves any particular product's tools."
+  },
+  {
+    "title": "The Scaffolding Matters More Than the Interface: A Controlled Comparison of MCP and CLI Tool Use Across Seven Agent Scaffoldings, Five Language Models, and One Software Task",
+    "url": "https://arxiv.org/abs/2608.08654",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Runs one software task through MCP and through a plain command line across seven agent scaffoldings and five models, checking the repository rather than the agent's own report; the scaffolding moved cost far more than the interface, and agents often ignored the one assigned.",
+    "limitations": "One task of six git operations, as the title says; the paired MCP-to-CLI cost ratios were unstable, so they should not be read as general figures for either interface."
+  },
+  {
+    "title": "MCP-GRANITE Benchmark: GRANularity Interface TEsting for MCP-Based LLM Agents",
+    "url": "https://arxiv.org/abs/2609.24161",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Treats how finely functionality is split into tools as a controlled variable across 81 multi-step scenarios at four levels, from many primitives to one monolithic tool; at a well-matched granularity a 3.2B model beat a 20.9B model at a poor one.",
+    "limitations": "Uses nine small, locally run models in edge and IoT scenarios, so the best granularity found here may not hold for large hosted models or for other domains."
+  },
+  {
+    "title": "SilentProbe: Measuring Silent Failure in Production APIs Used as Agent Tools",
+    "url": "https://arxiv.org/abs/2609.00035",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Shows why an HTTP 200 is not enough for agents: constraints written only in prose let a misunderstood query return an empty success, while schema-encoded constraints produced honest errors, and models in the agent loop rarely noticed the silent failure.",
+    "limitations": "Several authors work for the aggregation service used to reach the 27 vendors' endpoints, a competing interest the paper declares, and live calls were limited to read-only endpoints reached through that one layer."
+  },
+  {
+    "title": "Hybrid Semantic Tool Discovery for Enterprise MCP Gateway: Architecture and Implementation",
+    "url": "https://arxiv.org/abs/2608.23992",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Describes a gateway pattern for large MCP estates: rather than loading over 2,000 tool schemas from more than 200 servers, the agent gets one meta-tool that searches the catalogue with combined keyword and vector retrieval and another that runs the chosen tool.",
+    "limitations": "An experience report on one company's gateway and catalogue; retrieval quality rests on 45 usable queries written for that catalogue, and poorly described tools may be missed with no way to detect it."
+  },
+  {
+    "title": "Screenshots or Tools? Eliciting Tool Use and Managing Multimodal Context in Hybrid GUI-MCP Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2608.03327",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "On OSWorld-MCP, adding the same MCP tools helped a reasoning model and hurt a non-reasoning one, and even the reasoning model called a tool on under a quarter of the tasks where one applied: offering a tool does not mean the agent will use it well.",
+    "limitations": "Compares two checkpoints of one 8-billion-parameter open model on one benchmark with five runs each, so the direction of the effect for other models and harnesses is not established."
+  },
+  {
     "title": "Model Context Protocol architecture overview",
     "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
     "sourceType": "specification",
@@ -546,6 +671,16 @@
     "subsection": "Model Context Protocol",
     "whyItMatters": "The official specification and SDK for an MCP extension that lets a server return interactive user interface inside the host, extending agent-facing surfaces from text results to embedded UI.",
     "limitations": "An extension rather than part of the core protocol, so support differs between MCP hosts."
+  },
+  {
+    "title": "SEP-2127: MCP Server Cards - HTTP Server Discovery",
+    "url": "https://modelcontextprotocol.io/seps/2127-mcp-server-cards",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "A Final Extensions Track proposal for a static, cacheable card that tells a client where a remote MCP server is, which transports and protocol versions it supports and who runs it, before connecting; tools are left out because they vary per user and session.",
+    "limitations": "The page is a historical record of the accepted design while the normative schema lives in a separate extension repository that can change, and a client still has to connect to learn what tools a server offers."
   },
   {
     "title": "OpenAPI Specification v3.2.0",
@@ -692,6 +827,24 @@
     "limitations": "A programme page rather than a standard; concrete published outputs were limited at retrieval time."
   },
   {
+    "title": "Claim Deployments",
+    "url": "https://vercel.com/docs/deployments/claim-deployments",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Documents a provision-first, claim-later flow: an agent deploys through the API, requests a transfer code valid for 24 hours and gives the person a claim URL, after which the project and supported linked databases move into their account.",
+    "limitations": "One vendor's implementation of the claim step; the page covers transfer mechanics but not how the agent is identified or what happens to deployments that are never claimed."
+  },
+  {
+    "title": "Claimable Neon",
+    "url": "https://neon.com/docs/reference/claimable-neon",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "The same claim-later pattern for a database: an agent provisions a Postgres project without an account, an unclaimed project expires after 72 hours with storage and transfer caps, a claim code lasts 15 minutes, and discovery runs through auth.md.",
+    "limitations": "Vendor documentation for one service; the expiry windows and caps are given as current values, and the page reports nothing on how often projects are claimed or abandoned in practice."
+  },
+  {
     "title": "Agentic Commerce Protocol (ACP)",
     "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
     "sourceType": "specification",
@@ -800,6 +953,51 @@
     "limitations": "Specific to one SDK's run and approval model, so the mechanism does not transfer directly to other frameworks."
   },
   {
+    "title": "Agent Approval Laundering: Transitive Effects Beyond the Approved Invocation",
+    "url": "https://arxiv.org/abs/2609.28586",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Shows that approving one command or tool call can let through effects the approval never named, such as a package's install scripts or an MCP call's network access, and measures how often approval records in coding agents miss them.",
+    "limitations": "The benchmark (111 approval and trace pairs, 17 holdout workflows) is the authors' own and small, and the proposed fix is shown only as an integration with one coding agent's permission hook."
+  },
+  {
+    "title": "When Consent Outlives Context: Residual Authority Replay in Long-Lived Agents",
+    "url": "https://arxiv.org/abs/2609.33910",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Shows that approvals persisted across tasks or sessions can be replayed later without fresh consent, and that an attacker can build up such leftover authority through harmless requests first; it also compares how eight production coding agents store approvals.",
+    "limitations": "Attack gains are measured on AgentDojo and Terminal-Bench cases rather than observed incidents, and the per-agent findings describe the versions tested, whose approval storage can change between releases."
+  },
+  {
+    "title": "Do User-Authored Permission Policies Improve Protection Against AI Agent Overreach?",
+    "url": "https://arxiv.org/abs/2608.27443",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "A randomised study of 113 people without software backgrounds: standing allow, ask and never rules cut runtime prompts but blocked less overreach than approving each action, because most rules were set to ask and unrequested actions were then approved.",
+    "limitations": "One scripted day of 18 simulated actions with online participants and no real consequences, so it does not show how rules are written, revised or trusted over months of real use."
+  },
+  {
+    "title": "Let the Agent Do It? How Software Practitioners Understand and Make Permission Decisions in Agentic AI Assistants",
+    "url": "https://arxiv.org/abs/2610.06047",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Interviews with 18 practitioners and a survey of 115 show how developers decide whether a coding assistant may act, and turn that into requirements for permission systems, such as keeping an agent's permissions separate from the user's intent.",
+    "limitations": "Relies on what practitioners report rather than logged approval behaviour, and its design implications are not built or tested in a working permission system."
+  },
+  {
+    "title": "Idempotent requests",
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "A concrete design for retry-safe writes in Stripe's API: the client sends a unique key with a create or update, and in API v1 a retry with that key returns the saved result of the first attempt instead of running it again, so a timed-out agent can retry.",
+    "limitations": "One vendor's API: key length, pruning after at least 24 hours, the v1 and v2 behaviours and errors on reused keys with different parameters are Stripe's own choices, and the page does not address agents."
+  },
+  {
     "title": "Exposed by Design: A Dynamic Security Assessment of Internet-Facing MCP Servers at Scale",
     "url": "https://arxiv.org/abs/2608.00150",
     "sourceType": "paper",
@@ -888,6 +1086,42 @@
     "section": "Security for agent-facing surfaces",
     "whyItMatters": "An open-source browser extension that filters pages before an agent reads them, removing likely prompt injection, masking personal data and stripping dark patterns, a practical mitigation for browsing agents.",
     "limitations": "An alpha prototype whose rules may change; its published measurement is a small token benchmark, and blocking effectiveness is not independently evaluated."
+  },
+  {
+    "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+    "url": "https://arxiv.org/abs/2302.12173",
+    "sourceType": "paper",
+    "year": 2023,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Presents indirect prompt injection as a new class of attack: instructions planted in content an LLM-integrated application will later retrieve, rather than typed by the user, with a taxonomy of impacts from data theft to injections that spread between systems.",
+    "limitations": "The demonstrations target 2023 systems such as Bing Chat and code-completion engines, and the paper notes that effective mitigations were lacking, so it defines the threat rather than measuring current agents."
+  },
+  {
+    "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+    "url": "https://arxiv.org/abs/2506.08837",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Sets out six architectural patterns, including plan-then-execute, dual LLM and code-then-execute, that stop untrusted content from steering an agent's choice of actions, and applies them to ten application case studies with the utility each one gives up.",
+    "limitations": "The case studies are design analyses rather than measured deployments, and the authors say that securing general-purpose agents remains out of reach; the patterns suit narrow, application-specific agents."
+  },
+  {
+    "title": "Indirect Prompt Injection in the Wild: An Empirical Study of Prevalence, Techniques, and Objectives",
+    "url": "https://arxiv.org/abs/2604.27202",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Measures injected instructions already on the web: about 15,300 validated cases on some 11,700 pages from 1.2 billion URLs, mostly in parts of the response people never see, with controlled tests across 13 models in which only a small share were followed.",
+    "limitations": "Based mainly on Common Crawl, which under-represents logged-in content, and on an indicator list that can miss new phrasings; compliance was tested in controlled runs, not on deployed agents."
+  },
+  {
+    "title": "We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs",
+    "url": "https://arxiv.org/abs/2406.10279",
+    "sourceType": "paper",
+    "year": 2024,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Across 16 code models and 576,000 generated samples in Python and JavaScript, models recommended packages that do not exist, names an attacker could register; relevant wherever agent instructions or skills tell an agent what to install.",
+    "limitations": "Measures code generation with 2024-era models rather than agents that install and run packages, so current rates, and how often a hallucinated name is actually installed, are not established."
   },
   {
     "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
@@ -1128,6 +1362,16 @@
     "subsection": "Methodology and validity",
     "whyItMatters": "A practitioner walkthrough of building agent evaluations, covering task design, graders and reading transcripts, which complements the academic validity work in this section.",
     "limitations": "Based on one model provider's internal practice rather than an independently validated method."
+  },
+  {
+    "title": "Building AX evals that actually work",
+    "url": "https://developer.microsoft.com/blog/building-ax-evals-that-actually-work/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Practical guidance for evaluating how agents use a product: realistic developer prompts, checklist criteria with pass, fail and skip conditions for an LLM judge, judge calibration, at least five runs per condition and pinned, representative environments.",
+    "limitations": "An experience report from one vendor's evaluation work on coding agents, not a controlled study; thresholds such as five runs per scenario are rules of thumb rather than statistically derived."
   },
   {
     "title": "Is Your Site Agent-Ready?",
