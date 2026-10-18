@@ -1427,6 +1427,15 @@
     "whyItMatters": "Scores a code repository, not a website, on whether it has the structure, validation and operational signals coding agents need, using gated levels that a repository unlocks in order.",
     "limitations": "Tied to one vendor's coding agent, the level thresholds are the vendor's own, and no published evidence yet shows that a higher score predicts agent task success."
   },
+    {
+    "title": "AgentReady.market",
+    "url": "https://www.agentready.market/",
+    "sourceType": "tool",
+    "year": null,
+    "section": "Readiness instruments",
+    "whyItMatters": "Scores an online store, not a website in general, on whether an AI shopping agent can find, understand and buy there, from crawler and firewall access to offer data, policies, transaction protocol endpoints and checkout reachability under an agent user agent, using deterministic checks with a published method and no model judge. Its vendor also publishes a pre-registered series relating the score to agent requests about each store.",
+    "limitations": "Vendor material whose checks and weights are the vendor's own. The published series measures agent attention on the vendor's own surfaces, not task success or purchases, and many agent requests in it follow a read of the vendor's own ranked index, so it is weak evidence that a higher score predicts agent task success."
+  },
   {
     "title": "GEO: Generative Engine Optimization",
     "url": "https://arxiv.org/abs/2311.09735",

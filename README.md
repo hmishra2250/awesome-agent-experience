@@ -46,7 +46,7 @@ Vendor guides and scanners are included when they carry concrete, checkable guid
 - [Human control, approval and recovery](#human-control-approval-and-recovery) (12)
 - [Security for agent-facing surfaces](#security-for-agent-facing-surfaces) (14)
 - [Evaluation](#evaluation) (25)
-- [Readiness instruments](#readiness-instruments) (6)
+- [Readiness instruments](#readiness-instruments) (7)
 - [GEO and AI search (adjacent)](#geo-and-ai-search-adjacent) (7)
 - [Related lists](#related-lists) (7)
 
@@ -250,6 +250,7 @@ Vendor guides and scanners are included when they carry concrete, checkable guid
 - [AXIS: Agent Experience Index Score](<https://github.com/netlify/axis>) (tool, 2026): Open-source tooling that runs a real agent through a scenario and grades the transcript on goal achievement, environment, service and agent dimensions, measuring an observed journey rather than static signals. _Limit: Relies on a model judge, mixes product and model quality in one composite, and no published evidence yet shows that a higher score predicts agent task success beyond the scenarios run._
 - [Agent-Friendly Documentation Spec](<https://agentdocsspec.com/>) (specification): An open specification and checker for documentation sites that reports pass, warn or fail per check across discoverability, Markdown availability, page size, structure and URL stability. _Limit: Grounded in the author's observations rather than a controlled study, covers web delivery only, and no published evidence yet shows that a higher score predicts agent task success._
 - [Agent Readiness Model (Factory)](<https://docs.factory.ai/agent-readiness/overview>) (framework): Scores a code repository, not a website, on whether it has the structure, validation and operational signals coding agents need, using gated levels that a repository unlocks in order. _Limit: Tied to one vendor's coding agent, the level thresholds are the vendor's own, and no published evidence yet shows that a higher score predicts agent task success._
+- [AgentReady.market](<https://www.agentready.market/>) (tool): Scores an online store, not a website in general, on whether an AI shopping agent can find, understand and buy there, from crawler and firewall access to offer data, policies, transaction protocol endpoints and checkout reachability under an agent user agent, using deterministic checks with a published method and no model judge. Its vendor also publishes a pre-registered series relating the score to agent requests about each store. _Limit: Vendor material whose checks and weights are the vendor's own. The published series measures agent attention on the vendor's own surfaces, not task success or purchases, and many agent requests in it follow a read of the vendor's own ranked index, so it is weak evidence that a higher score predicts agent task success._
 
 ## GEO and AI search (adjacent)
 
