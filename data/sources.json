@@ -613,6 +613,16 @@
     "limitations": "Compares two checkpoints of one 8-billion-parameter open model on one benchmark with five runs each, so the direction of the effect for other models and harnesses is not established."
   },
   {
+    "title": "Teaching LLMs to Learn Tool Trialing and Execution through Environment Interaction",
+    "url": "https://arxiv.org/abs/2601.12762",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Introduces ToolMaster, which learns tool trialing and execution through environment interaction with supervised fine-tuning followed by GRPO, connecting tool exploration and self-correction to how an agent learns to use exposed capabilities.",
+    "limitations": "A tool-learning preprint; its training paradigm does not by itself specify production permission, recovery or tool-interface contracts."
+  },
+  {
     "title": "Model Context Protocol architecture overview",
     "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
     "sourceType": "specification",
@@ -1262,6 +1272,16 @@
     "subsection": "Benchmarks",
     "whyItMatters": "An academic leaderboard for function-calling accuracy covering single, parallel and multi-turn calls, with later versions adding agentic tasks, widely used as a shared reference for tool-calling ability.",
     "limitations": "A periodically updated leaderboard subject to the reproducibility concerns raised in the validity audits below; treat single-run rankings with caution."
+  },
+  {
+    "title": "Empowering Edge Agents: A Systematic Analysis of Edge-Cloud Collaboration in LLM Agent Execution",
+    "url": "https://arxiv.org/abs/2610.17816",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Introduces EC2-Bench, 128 executable digital-workspace tasks including 100 with privacy annotations, jointly measuring task performance, cloud cost and privacy exposure to evaluate the trade-offs of cloud participation throughout an agent workflow.",
+    "limitations": "A benchmark and analysis of the evaluated edge-cloud configurations, rather than a guarantee of privacy or task performance in a production workflow."
   },
   {
     "title": "METR Task Standard",
