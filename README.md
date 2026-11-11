@@ -39,13 +39,13 @@ Vendor guides and scanners are included when they carry concrete, checkable guid
 - [Agent experience framing](#agent-experience-framing) (9)
 - [Discovery and agent-readable web](#discovery-and-agent-readable-web) (19)
 - [Documentation for agents](#documentation-for-agents) (9)
-- [Tool use, tool descriptions and MCP](#tool-use-tool-descriptions-and-mcp) (35)
+- [Tool use, tool descriptions and MCP](#tool-use-tool-descriptions-and-mcp) (36)
 - [Protocols and machine-readable surfaces](#protocols-and-machine-readable-surfaces) (7)
 - [Agent identity and authorization](#agent-identity-and-authorization) (11)
 - [Agentic commerce and payments](#agentic-commerce-and-payments) (5)
 - [Human control, approval and recovery](#human-control-approval-and-recovery) (12)
 - [Security for agent-facing surfaces](#security-for-agent-facing-surfaces) (14)
-- [Evaluation](#evaluation) (25)
+- [Evaluation](#evaluation) (26)
 - [Readiness instruments](#readiness-instruments) (6)
 - [GEO and AI search (adjacent)](#geo-and-ai-search-adjacent) (7)
 - [Related lists](#related-lists) (7)
@@ -131,6 +131,7 @@ Vendor guides and scanners are included when they carry concrete, checkable guid
 - [SilentProbe: Measuring Silent Failure in Production APIs Used as Agent Tools](<https://arxiv.org/abs/2609.00035>) (paper, 2026): Shows why an HTTP 200 is not enough for agents: constraints written only in prose let a misunderstood query return an empty success, while schema-encoded constraints produced honest errors, and models in the agent loop rarely noticed the silent failure. _Limit: Several authors work for the aggregation service used to reach the 27 vendors' endpoints, a competing interest the paper declares, and live calls were limited to read-only endpoints reached through that one layer._
 - [Hybrid Semantic Tool Discovery for Enterprise MCP Gateway: Architecture and Implementation](<https://arxiv.org/abs/2608.23992>) (paper, 2026): Describes a gateway pattern for large MCP estates: rather than loading over 2,000 tool schemas from more than 200 servers, the agent gets one meta-tool that searches the catalogue with combined keyword and vector retrieval and another that runs the chosen tool. _Limit: An experience report on one company's gateway and catalogue; retrieval quality rests on 45 usable queries written for that catalogue, and poorly described tools may be missed with no way to detect it._
 - [Screenshots or Tools? Eliciting Tool Use and Managing Multimodal Context in Hybrid GUI-MCP Computer-Use Agents](<https://arxiv.org/abs/2608.03327>) (paper, 2026): On OSWorld-MCP, adding the same MCP tools helped a reasoning model and hurt a non-reasoning one, and even the reasoning model called a tool on under a quarter of the tasks where one applied: offering a tool does not mean the agent will use it well. _Limit: Compares two checkpoints of one 8-billion-parameter open model on one benchmark with five runs each, so the direction of the effect for other models and harnesses is not established._
+- [Teaching LLMs to Learn Tool Trialing and Execution through Environment Interaction](<https://arxiv.org/abs/2601.12762>) (paper, 2026): Introduces ToolMaster, which learns tool trialing and execution through environment interaction with supervised fine-tuning followed by GRPO, connecting tool exploration and self-correction to how an agent learns to use exposed capabilities. _Limit: A tool-learning preprint; its training paradigm does not by itself specify production permission, recovery or tool-interface contracts._
 
 ### Model Context Protocol
 
@@ -224,6 +225,7 @@ Vendor guides and scanners are included when they carry concrete, checkable guid
 - [LiveMCPBench: Can Agents Navigate an Ocean of MCP Tools?](<https://arxiv.org/abs/2508.01780>) (paper, 2025): Tests agents against many real MCP servers and tools at once and finds retrieval of the right tool is a main failure point, which ties evaluation directly to catalogue and description design. _Limit: A curated task set scored partly by a model judge; a later validity audit in this list examines this benchmark family._
 - [MCP-Atlas: A Large-Scale Benchmark for Tool-Use Competency with Real MCP Servers](<https://arxiv.org/abs/2602.00933>) (paper, 2026): Scores tasks on real MCP servers against required factual claims rather than one expected call path, with a failure taxonomy that separates tool-call errors from reasoning and stopping errors. _Limit: A private test split is withheld, so the full results cannot be independently replicated._
 - [Berkeley Function Calling Leaderboard (BFCL)](<https://gorilla.cs.berkeley.edu/leaderboard.html>) (benchmark): An academic leaderboard for function-calling accuracy covering single, parallel and multi-turn calls, with later versions adding agentic tasks, widely used as a shared reference for tool-calling ability. _Limit: A periodically updated leaderboard subject to the reproducibility concerns raised in the validity audits below; treat single-run rankings with caution._
+- [Empowering Edge Agents: A Systematic Analysis of Edge-Cloud Collaboration in LLM Agent Execution](<https://arxiv.org/abs/2610.17816>) (paper, 2026): Introduces EC2-Bench, 128 executable digital-workspace tasks including 100 with privacy annotations, jointly measuring task performance, cloud cost and privacy exposure to evaluate the trade-offs of cloud participation throughout an agent workflow. _Limit: A benchmark and analysis of the evaluated edge-cloud configurations, rather than a guarantee of privacy or task performance in a production workflow._
 
 ### Evaluation tooling
 
