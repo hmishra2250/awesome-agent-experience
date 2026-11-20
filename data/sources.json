@@ -81,6 +81,24 @@
     "limitations": "Vendor framing illustrated almost entirely with coding agents on Microsoft's own developer products and small run counts, typically five per condition, so its figures hold only for the agent profiles it measured."
   },
   {
+    "title": "W3C and the State of the Web in the AI Era",
+    "url": "https://www.w3.org/2026/10/w3c-and-state-of-web-in-ai-era.html",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "A W3C Strategy Team discussion paper that maps current and proposed W3C work touching agents (WebMCP, agent identity and delegation, consent, payments, accessibility semantics) and proposes a nine-point declaration in which an agent acting for a person is a user agent that owes that person loyalty, and consequential actions need real human consent. It also suggests that each working group document what agents need next to what the person needs, with the person's needs winning on conflict, which gives practitioners one view of where web standards work on agents is heading.",
+    "limitations": "A discussion paper prepared for TPAC 2026 that seeks feedback, not a consensus W3C position or a standard; its traffic figures come from different vendors' own networks and are not comparable with each other."
+  },
+  {
+    "title": "Stop Getting Good at Protocols. Get Good at Agent Experience.",
+    "url": "https://www.oreilly.com/radar/stop-getting-good-at-protocols-get-good-at-agent-experience/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent experience framing",
+    "whyItMatters": "Argues that agent protocols are interchangeable packaging and sets out a five-step AX practice: find out from traffic which agents reach your service, infer which tasks customers delegate, watch agents attempt those tasks, change the product where agents consistently assume different behaviour, and guard the result with automated scoring in CI. It connects the definitional essays in this section to an evaluation routine a team can adopt.",
+    "limitations": "An opinion piece by a Netlify executive that recommends AXIS, a scoring framework the author's employer maintains, and its remarks on Netlify outcomes are not backed by published figures."
+  },
+  {
     "title": "llms.txt: The /llms.txt file, v2",
     "url": "https://llmstxt.org/",
     "sourceType": "specification",
@@ -105,7 +123,7 @@
     "year": 2026,
     "section": "Discovery and agent-readable web",
     "whyItMatters": "Defines the document.modelContext API for exposing client-side tools to agents and gives a detailed public security taxonomy for agent-callable web pages, covering tool poisoning, output injection, and over-parameterised data leakage.",
-    "limitations": "Published by a W3C Community Group; the spec itself states it is not a W3C Standard nor on the Standards Track, so treat it as an active proposal, not settled browser behaviour."
+    "limitations": "Published by a W3C Community Group; the spec itself states it is not a W3C Standard nor on the Standards Track. A draft W3C Agentic Web Working Group charter names it as the initial input to a 'Site Capabilities for Agents' deliverable, but that charter is not yet approved, so treat this as an active proposal, not settled browser behaviour."
   },
   {
     "title": "Markdown for Agents",
@@ -252,12 +270,165 @@
     "limitations": "A single-author blog post that does not publish its queries; 'valid' means the file parses, not that it is useful, and presence says nothing about whether agents read the file."
   },
   {
+    "title": "A Vocabulary For Expressing AI Usage Preferences (draft-ietf-aipref-vocab-08)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-aipref-vocab/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "The IETF AI Preferences working group's shared vocabulary for stating how automated systems may use content, with defined usage categories and rules for combining conflicting statements. It gives publishers one set of terms to reason about instead of a different token per crawler or vendor.",
+    "limitations": "A working group Internet-Draft whose own note to readers says its contents do not yet reflect working group consensus, and preferences it expresses are not an enforcement mechanism."
+  },
+  {
+    "title": "Associating AI Usage Preferences with Content in HTTP (draft-ietf-aipref-attach-05)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-aipref-attach/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "The companion to the aipref vocabulary, defining how a site attaches usage preferences to content through robots.txt rules and an HTTP header field. It is the place to check the concrete syntax a publisher would deploy, and it would update RFC 9309 (the Robots Exclusion Protocol) if approved.",
+    "limitations": "A working group Internet-Draft still in progress; it defines how preferences are signalled, not whether any crawler or agent honours them."
+  },
+  {
+    "title": "Agentic Web Working Group Charter (draft)",
+    "url": "https://w3c.github.io/charter-drafts/2026/agenticweb-wg.html",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Sets out what a proposed W3C working group would standardise for agents on the web, with a 'Site Capabilities for Agents' deliverable that takes WebMCP as its initial input, plus scope items on agent identity and delegation, permissions on agent actions, outcome measurement and a threat model. Its explicit out-of-scope list (crawler controls, bot detection, model APIs, cryptographic authentication primitives) shows where other bodies are expected to lead.",
+    "limitations": "A draft charter with placeholder start and end dates; nothing in it is an approved W3C deliverable and its scope may change before any charter vote."
+  },
+  {
+    "title": "WebMCP best practices (Chrome for Developers)",
+    "url": "https://developer.chrome.com/docs/ai/webmcp/best-practices",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Concrete rules for exposing page actions to agents through WebMCP: register the whole tool surface or none of it, share one application service between the visible interface and the tools, only report success once application state matches, and define explicit commit points for cancellation. These are directly checkable in code review of a WebMCP integration.",
+    "limitations": "Vendor documentation for an API in a Chrome origin trial that tracks a Community Group draft, so details may change; security guidance is kept on a separate page."
+  },
+  {
+    "title": "WebMCP tools (Chrome Labs)",
+    "url": "https://github.com/GoogleChromeLabs/webmcp-tools",
+    "sourceType": "repository",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Chrome's companion repository for WebMCP, with a browser extension to inspect which tools a page exposes and their input schemas, an evals CLI for checking whether a model calls the right page tools for a given request, a polyfill, agent skills and imperative and declarative demos. It lets a site team test a WebMCP surface rather than only read the draft.",
+    "limitations": "Experimental vendor tooling that tracks a draft API, and most of its evaluations depend on the LLM backends a team chooses, so results are not comparable across setups."
+  },
+  {
+    "title": "Agent Discovery in A2A",
+    "url": "https://a2a-protocol.org/latest/topics/agent-discovery/",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Explains the ways a client locates an A2A Agent Card (a well-known URI on the agent's domain, curated registries, or direct configuration) and gives server and client guidance on protecting sensitive cards and on caching them with Cache-Control and ETag. It is the practical companion to the A2A specification for anyone publishing an agent that others should find.",
+    "limitations": "Explanatory project documentation that defers to Section 8.6 of the specification for normative requirements, and it treats standardised registry interactions as future work."
+  },
+  {
+    "title": "A Survey of AI Agent Discovery Mechanisms (draft-jimenez-dawn-discovery-landscape-00)",
+    "url": "https://datatracker.ietf.org/doc/draft-jimenez-dawn-discovery-landscape/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Compares agent discovery work at the IETF, AAIF, 3GPP and in open source by discovery model, scope, dynamism, cross-domain reach and semantic capability, and names the gaps and conflicts between them. A useful map before choosing between well-known files, DNS records and registries.",
+    "limitations": "An individual Internet-Draft (revision 00, expiring January 2027) that surveys rather than specifies, and it states that it does not prescribe which mechanism to use."
+  },
+  {
+    "title": "DNS for AI Discovery (DNS-AID) (draft-mozleywilliams-dawn-dnsaid-00)",
+    "url": "https://datatracker.ietf.org/doc/draft-mozleywilliams-dawn-dnsaid/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Specifies how an organisation can publish its agents in DNS using existing SVCB records, optionally with DNS-SD labels, DNSSEC and DANE, covering lookups where the caller knows the agent or only the organisation. It gives teams a domain-controlled discovery path that no third-party registry mediates and that needs no new record types.",
+    "limitations": "An individual Internet-Draft (revision 00, November 2026) without working group adoption, and it leaves capability-based search, where the caller knows neither agent nor organisation, out of scope."
+  },
+  {
+    "title": "Allow Google-Agent traffic",
+    "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Shows how to verify a user-triggered agent by user agent, published IP list and an experimental Web Bot Auth signature, then lists the ways sites still block it after allowing it: allow rules ranked below ASN or bot rules, CAPTCHAs on search or form submission, blocks on XHR or API calls deeper in a journey, and per-IP rate limits on shared egress. It is a concrete checklist for site and security teams who intend to let agents complete tasks.",
+    "limitations": "Vendor documentation written for one company's agent fetcher, with no stated publication date; the signature verification it describes is labelled an experiment."
+  },
+  {
+    "title": "Do Generative AI Assistants Respect robots.txt? Tracing Web Access Beyond Visible Answers",
+    "url": "https://arxiv.org/abs/2607.14447",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Tests ten search-capable assistants under four robots.txt conditions, using server logs and secret codes in target pages to separate what was actually fetched from what the answer showed. Site owners get a method they can reuse to check whether assistant fetchers honour access rules and can be attributed by user agent.",
+    "limitations": "A preprint based on 200 trials at one point in time; assistant configurations and user agents change often, so per-assistant results may date quickly."
+  },
+  {
+    "title": "A Content Analysis of llms.txt Files from the July 2026 Crawl Archive",
+    "url": "https://commoncrawl.org/blog/a-content-analysis-of-llms-txt-files-from-the-july-2026-crawl-archive",
+    "sourceType": "dataset",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Common Crawl seeded llms.txt and llms-full.txt requests into a large sample of hosts and analysed the roughly 584,000 non-empty files returned: about half follow the full specified structure, a share carry policy text the format never defined (rate limits, copyright, opt-outs), and some contain prompt injection. The released responses give a reusable baseline for what these files actually say, complementing the adoption count already listed.",
+    "limitations": "Describes file contents from one crawl, not whether any AI system reads the files or changes behaviour because of them, and the authors state their abuse counts are deliberately conservative lower bounds."
+  },
+  {
+    "title": "We Analyzed 137K Sites: 97% of llms.txt Files Never Get Read",
+    "url": "https://ahrefs.com/blog/llmstxt-study",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Uses server logs from 137,000 domains to look at who requests llms.txt: most published files received no requests in a month, the requests that did arrive came largely from bots including coding agents, and no AI bot requested the file on sites that lacked one. It helps teams outside developer documentation decide how much effort the file deserves.",
+    "limitations": "A vendor study limited to domains using the vendor's own analytics product and to one month of traffic; it counts fetches and does not test whether fetched files improved any agent task."
+  },
+  {
+    "title": "The Current State of Content Negotiation for AI Agents (Feb 2026)",
+    "url": "https://www.checklyhq.com/blog/state-of-ai-agent-content-negotation/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Records the exact Accept and User-Agent headers that several coding agents' fetch tools sent to a header-echo endpoint, showing which ask for text/markdown and with what q-values. It answers a question the Markdown for Agents entry leaves open: whether negotiation alone reaches the agents a site's users run.",
+    "limitations": "A vendor blog post capturing one snapshot of specific agent versions in February 2026; agent headers change between releases, so the results need re-running before they are relied on."
+  },
+  {
+    "title": "RFC 9727: api-catalog: A Well-Known URI and Link Relation to Help Discovery of APIs",
+    "url": "https://www.rfc-editor.org/info/rfc9727",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Defines /.well-known/api-catalog and a matching link relation that return a machine-readable index of a publisher's APIs with links to their descriptions and usage policies. It is a standards-track way for an agent to find a site's APIs without scraping a developer portal.",
+    "limitations": "A general API discovery standard that predates and is not specific to AI agents; it lists APIs but says nothing about how an agent should choose between them."
+  },
+  {
+    "title": "MCP vs RAG vs NLWeb vs HTML: A Comparison of the Effectiveness and Efficiency of Different Agent Interfaces to the Web (Technical Report)",
+    "url": "https://arxiv.org/abs/2511.23281",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Runs the same shopping tasks, from product search to checkout, through agents using HTML browsing, RAG over crawled content, MCP web APIs and NLWeb on a testbed of simulated shops, and reports both task quality and token and runtime cost. It gives site owners a controlled comparison of what a structured agent interface offers over plain HTML.",
+    "limitations": "A technical report on four simulated e-shops and a small set of models, so results may not transfer to real sites, other domains or later models."
+  },
+  {
+    "title": "AX is the New AEO",
+    "url": "https://arxiv.org/abs/2609.34951",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "A large matched observational study (37,927 agent journeys over 1,056 businesses and four agent harnesses) comparing sites an agent can fetch and read with sites it cannot, measuring how much of each answer came from the business's own pages, how often it was recommended, accuracy against captured facts, and agent cost. It is one of the few public attempts to link site readability to agent outcomes at scale, and it releases analysis code and a data sample.",
+    "limitations": "A vendor-authored preprint that groups sites using the authors' own readiness ranker and compares existing sites rather than intervening on them; the authors note content depth is not matched and that a before-and-after intervention study is still needed."
+  },
+  {
+    "title": "RFC 9727: api-catalog: A Well-Known URI and Link Relation to Help Discovery of APIs",
+    "url": "https://www.rfc-editor.org/rfc/rfc9727.html",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Discovery and agent-readable web",
+    "whyItMatters": "Defines /.well-known/api-catalog and an api-catalog link relation that point to a document listing a publisher's APIs, so an automated client can find them without guessing paths. It is a small, standards-track discovery file to publish alongside OpenAPI descriptions.",
+    "limitations": "Handles discovery only and does not describe the APIs themselves, and the RFC gives no evidence about how widely agents read it."
+  },
+  {
     "title": "AGENTS.md",
     "url": "https://agents.md/",
     "sourceType": "specification",
     "year": 2026,
     "section": "Documentation for agents",
-    "whyItMatters": "A deliberately unstructured Markdown convention for repository-level agent instructions, now governed by the Agentic AI Foundation under the Linux Foundation rather than a single vendor, with adoption checkable via a linked GitHub code search.",
+    "whyItMatters": "A deliberately unstructured Markdown convention for repository-level agent instructions, governed by the Agentic AI Foundation under the Linux Foundation rather than a single vendor (a Technical Charter was added to the repository in September 2026), with adoption checkable via a linked GitHub code search.",
     "limitations": "Has no required fields or schema, so file quality varies widely between projects; the specification itself does not address how a poorly written file affects agent task success."
   },
   {
@@ -266,7 +437,7 @@
     "sourceType": "specification",
     "year": null,
     "section": "Documentation for agents",
-    "whyItMatters": "Defines the SKILL.md package format (a directory with YAML frontmatter, instructions and optional scripts and references) that many coding agents load on demand, now a common way for products to ship usage knowledge to agents.",
+    "whyItMatters": "Defines the SKILL.md package format (a directory with YAML frontmatter, instructions and optional scripts and references) that many coding agents load on demand, now a common way for products to ship usage knowledge to agents. Since November 2026 the project has adopted a governance document placing it under LF Projects, and the site hosts companion guidance on optimising descriptions and evaluating skills.",
     "limitations": "The format does not verify the quality or safety of a skill; installing a third-party skill can mean running its instructions and code."
   },
   {
@@ -315,15 +486,6 @@
     "limitations": "A single vendor, a single framework and the vendor's own evaluation set; the result is not shown to generalise to other stacks or agents."
   },
   {
-    "title": "Effective context engineering for AI agents",
-    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
-    "sourceType": "essay",
-    "year": 2025,
-    "section": "Documentation for agents",
-    "whyItMatters": "Explains how to treat an agent's context as a finite budget, covering just-in-time retrieval, compaction and structured notes, which informs how documentation and tool output should be shaped for agents.",
-    "limitations": "Written from one model provider's internal practice; specific patterns may not transfer unchanged to other models or agent harnesses."
-  },
-  {
     "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
     "url": "https://arxiv.org/abs/2602.11988",
     "sourceType": "paper",
@@ -333,8 +495,143 @@
     "limitations": "Python repositories only, with success measured as issue resolution; the authors note that context files may matter more for less common languages and for qualities such as security, which they did not measure."
   },
   {
+    "title": "Skills over MCP (official MCP extension)",
+    "url": "https://modelcontextprotocol.io/extensions/skills/overview",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "Defines how an MCP server can publish Agent Skills next to its tools (skills/list and skills/get, with files read through resources/read), with per-file SHA-256 manifests, origin tagging and a rule that reading SKILL.md does not by itself activate it. It gives a service a standard route for shipping its own workflow instructions to any host that implements the extension.",
+    "limitations": "The extensions overview lists it as Beta with no stated destination and SDK and host support still being implemented; its digests prove consistency with the server manifest, not that the skill content is trustworthy."
+  },
+  {
+    "title": "What Open-Source Projects Tell Their Coding Agents: A Census of AGENTS.md and CLAUDE.md",
+    "url": "https://arxiv.org/abs/2610.31715",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "A population-level baseline of root instruction files across 22,854 active repositories in thirteen languages, with released statement-level annotations, so a team can compare what its own file says (build, test, workflow and AI attribution rules) with what other projects actually write, including how rarely directives give a reason.",
+    "limitations": "Single-author preprint that is descriptive only: it does not test whether any instruction changes agent behaviour, and the author reports that model annotators agreed with each other far more than with the human reviewer."
+  },
+  {
+    "title": "When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents",
+    "url": "https://arxiv.org/abs/2611.09802",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Holds code and task fixed while an instruction is left stale, corrected or removed, and shows at tool-call level that agents act on outdated guidance and do not repair the file afterwards. It is a concrete argument for giving AGENTS.md and CLAUDE.md the same review and checks as other maintained documentation.",
+    "limitations": "Preprint covering three stale instructions, 22 tasks and two models; a cost difference was detectable for only one of the three instructions, so the measured effect is narrow."
+  },
+  {
+    "title": "Do They Do as They Are Told? Investigating Coding Agents' Adherence to Explicit Instructions in Context Files",
+    "url": "https://arxiv.org/abs/2611.13709",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Turns individual context-file instructions into executable checks and measures compliance in real agent-authored commits, showing that adherence splits between instructions that are consistently followed and ones that are never respected. Authors can use the categories to decide which rules to rewrite and which to enforce outside the file, for example in hooks or CI.",
+    "limitations": "Preprint based on observational commit data rather than controlled runs, and only instructions that can be operationalised as scripts are measurable."
+  },
+  {
+    "title": "Do Context Files Help Coding Agents? A Two-Agent Ablation Study on Real Repositories",
+    "url": "https://aclanthology.org/2026.realm-1.5/",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "A peer-reviewed workshop ablation across Claude Code and Codex that uses equivalence testing to bound any correctness effect of context files, with a failure triage suggesting agents fail on implementation rather than on missing repository knowledge. It also offers an explanation for contradictory earlier results (task difficulty bands differ by agent), which helps when reading other context-file studies.",
+    "limitations": "Small task set (17 tasks from three repositories, 288 runs) and a correctness-only outcome, so it says little about cost, style or safety, and the null result is bounded at about 10 to 15 points rather than shown to be zero."
+  },
+  {
+    "title": "From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation",
+    "url": "https://arxiv.org/abs/2608.20195",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Uses public coding-agent session traces and agentic pull requests to show which documents agents actually touch (mostly instruction files and working notes, rarely API references) and tests two common assumptions about agent-friendly documentation, actionability and verifiability, against behaviour. The pipeline and event-level data are released for reuse.",
+    "limitations": "Preprint built on two public datasets of coding sessions, so findings may not carry over to agents reading product or API documentation on the web, and the associations are observational."
+  },
+  {
+    "title": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer",
+    "url": "https://arxiv.org/abs/2609.31587",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Builds a roundtrip benchmark for code descriptions and an optimised description prompt, then reports, against a positive control, that better documentation did not help agents resolve issues when the source code was present. It helps teams aim documentation effort at surfaces where the agent cannot simply read the code.",
+    "limitations": "Preprint limited to repository issue resolution across ten repositories and two model families; it says nothing about documentation for closed services or web APIs."
+  },
+  {
+    "title": "Signal or Noise? A Benchmark Study of Agent Skills in Web Development",
+    "url": "https://arxiv.org/abs/2608.23067",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Tests 31 public web development skills on 1,000 ordered tasks with a length-matched irrelevant control and component ablations, separating real skill effects from prompt-length effects. Its design (matched controls, per-model audits) is a template for checking whether a skill a team publishes helps at all.",
+    "limitations": "Preprint confined to web development skills on the Web-Bench project set; its finding that injected skills often lowered pass rates and raised token cost may not hold in other domains."
+  },
+  {
+    "title": "From Anatomy to Smells: An Empirical Study of SKILL.md in Agent Skills",
+    "url": "https://arxiv.org/abs/2607.01456",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Provides a component taxonomy for SKILL.md files, a catalogue of skill smells drawn from published authoring guidance, and an automated detector, which gives skill authors a concrete review checklist and shows that smells tend to persist once introduced.",
+    "limitations": "Preprint whose smells are defined as departures from guidance found in a multivocal review, not from measured effects on agent task success."
+  },
+  {
+    "title": "Making OpenAPI Documentation Agent-Ready: Detecting Documentation and REST Smells with a Multi-Agent LLM System",
+    "url": "https://arxiv.org/abs/2605.14312",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "An industrial report in which 16 production APIs (about 600 endpoints) being exposed to agents through MCP were scanned for documentation and REST smells, with deficiencies found in every operation and practitioners largely agreeing. It is useful evidence that a structurally valid OpenAPI document is not the same as one an agent can plan with, and it describes the adoption changes the organisation made.",
+    "limitations": "Static analysis of one organisation's APIs without live agent task runs, published as a short conference paper."
+  },
+  {
+    "title": "Optimizing skill descriptions (Agent Skills)",
+    "url": "https://agentskills.io/skill-creation/optimizing-descriptions",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "Explains that a skill only helps if its description causes it to be activated, and gives a testable method: labelled should-trigger and should-not-trigger queries, repeated runs, and a train and validation split to avoid overfitting the description. The sibling page on evaluating skill output (evals/evals.json, assertions and grading) completes the loop.",
+    "limitations": "Guidance on the specification site rather than a study; its example trigger-detection script is written for one agent client and must be adapted, and no trigger rates are reported."
+  },
+  {
+    "title": "Skill authoring best practices (Claude Platform Docs)",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "Concrete authoring rules for SKILL.md files: keep the body concise because it competes for context once loaded, match instruction specificity to how fragile the task is, write descriptions that say when the skill applies, and use progressive disclosure into one level of reference files.",
+    "limitations": "Vendor documentation written for one model family, with worked examples but no published evaluation of how much each practice changes task success."
+  },
+  {
+    "title": "Docs URL Discovery Bench",
+    "url": "https://github.com/mintlify/docs-url-discovery-bench",
+    "sourceType": "benchmark",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "An open benchmark that proxies coding-agent fetches and compares four serving arms (HTML, Markdown, Markdown linking to llms.txt, Markdown with llms.txt inlined) on dead URLs, fetches, tokens and accuracy, with snapshots for deterministic replay. It isolates the effect of an index from the effect of Markdown, and teams can rerun it against their own documentation.",
+    "limitations": "Vendor-built benchmark on 20 sites hosted by the same vendor with two primary agent harnesses (replicated on three further models); it measures retrieval waste rather than end-to-end task success."
+  },
+  {
+    "title": "State of Docs: Agents are your top readers",
+    "url": "https://buildwithfern.com/post/state-of-docs",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Documentation for agents",
+    "whyItMatters": "Nine months of request data from one documentation host with a stated counting method, showing agent requests concentrating on API reference, changelogs and Markdown routes, and llms.txt acting as an entry index before per-page Markdown; the host also reports dropping llms-full.txt. It is a useful counterpoint to trace studies of coding sessions, where API references are rarely read.",
+    "limitations": "Vendor analysis of its own hosted sites with promotional sections; agent counts rest on a route-based rule rather than client identification, and the SDK success figure it cites is the vendor's own benchmark."
+  },
+  {
+    "title": "Modern Web Guidance",
+    "url": "https://github.com/GoogleChrome/modern-web-guidance",
+    "sourceType": "repository",
+    "year": null,
+    "section": "Documentation for agents",
+    "whyItMatters": "Shows platform documentation owners delivering guidance to coding agents as installable, token-pruned skills, with content trimmed according to evals and a public eval dashboard, stewarded jointly by the Chrome, Edge, Firefox and MDN teams. It is a working model for documentation teams who want guidance to reach agents at the point of use.",
+    "limitations": "Covers web platform development only, and its evals are run and reported by the project itself."
+  },
+  {
     "title": "Writing effective tools for agents — with agents",
-    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "url": "https://www.anthropic.com/research/writing-tools-for-agents",
     "sourceType": "essay",
     "year": 2025,
     "section": "Tool use, tool descriptions and MCP",
@@ -401,6 +698,36 @@
     "subsection": "Tool design guides",
     "whyItMatters": "Anthropic's version of the same pattern, in which deferred tools stay out of the context entirely until a regex or BM25 search returns them; read alongside the OpenAI guide, it shows that vendors differ in what the model sees before it searches.",
     "limitations": "Vendor documentation whose figures on token savings and tool-selection accuracy are the vendor's own and not linked to a published evaluation, and whose details apply only to the models it lists as supported."
+  },
+  {
+    "title": "Build your user's agentic workflows with WebMCP tools",
+    "url": "https://developer.chrome.com/docs/ai/webmcp/build-tools",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "A step-by-step method for choosing which tools a site should expose to agents: define the user goal and starting state, role-play the conversation to find each needed tool, return errors that tell the agent how to recover, bind approval of consequential actions to a short-lived grant over the exact plan, and test edits, undo, timeouts and idempotency-key replays.",
+    "limitations": "Browser-vendor guidance for WebMCP, an experimental API in origin trial that the page says may change."
+  },
+  {
+    "title": "Code execution with MCP: Building more efficient agents",
+    "url": "https://www.anthropic.com/research/code-execution-with-mcp",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "Explains why loading every MCP tool definition up front and passing every intermediate result through the model scales poorly, and describes presenting servers as a code API that the agent explores and calls from a sandbox, so it loads only what it needs and filters data before it reaches context. It frames the code mode pattern that later research tests.",
+    "limitations": "Vendor engineering post whose token saving comes from one illustrative workflow rather than a benchmark, and the pattern adds the cost and risk of running generated code."
+  },
+  {
+    "title": "Spaces: A CLI Built for Humans and Agents",
+    "url": "https://mistral.ai/news/spaces",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Tool design guides",
+    "whyItMatters": "A case study of an internal platform CLI reworked once coding agents became users: every interactive prompt gains a flag equivalent feeding one execution path, a non-interactive mode fails loudly instead of waiting on input, plugin registries are introspectable as JSON, each project gets a generated context.json and AGENTS.md, and working-directory and config assumptions become explicit inputs. Its closing checklist is short enough to use as a review list for other command-line tools.",
+    "limitations": "Vendor engineering post about an internal tool; it describes one anecdotal agent run and makes no measured comparison of agent success before and after the changes."
   },
   {
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -613,6 +940,96 @@
     "limitations": "Compares two checkpoints of one 8-billion-parameter open model on one benchmark with five runs each, so the direction of the effect for other models and harnesses is not established."
   },
   {
+    "title": "MCP Error Messages Written for Developers Hurt the Most Capable Agents Most",
+    "url": "https://arxiv.org/abs/2609.35381",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Audits 3,001 error messages from 150 MCP servers and finds that most recovery steps assume a human (run a command, edit configuration, open a page, wait), then shows tool-only agents follow those steps literally. MCP authors get a testable rule: credential and rate-limit errors should name a server tool the agent can actually call next.",
+    "limitations": "Preprint submitted to a journal, with the behavioural tests run on Berkeley Function Calling Leaderboard tasks using models from one vendor."
+  },
+  {
+    "title": "Which Metadata Matters for LLM Tool Selection in MCP? Evidence from Controlled Factor-Level Interventions",
+    "url": "https://arxiv.org/abs/2610.14334",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Changes one metadata factor at a time (server name, tool name, description or parameter schema) with tool positions balanced, after showing that functionally similar MCP tools often share names but differ in schema. Schema designers learn that the shape of the parameter schema can influence which tool is chosen before any call is made.",
+    "limitations": "Preprint using five models and five tasks in a controlled selection setting, not observed production traffic."
+  },
+  {
+    "title": "Callability Is Not Operability: Controlled Interface Interventions for LLM Agents",
+    "url": "https://arxiv.org/abs/2608.23628",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Distinguishes a tool that accepts a valid call from one that tells the agent enough to continue safely (for example after a committed effect whose response was lost), and names interface mechanisms for the gap: selective capability discovery, execution lifecycle and recovery, explicit effect semantics, machine-readable results and postcondition checks. It gives tool designers a vocabulary and a controlled test bed (AFT-Bench) that varies only the interface.",
+    "limitations": "Single-author preprint whose benchmark is a controlled framework built by the author rather than an independent suite."
+  },
+  {
+    "title": "AT-AT: Automatic Tool Optimization from Agent Traces",
+    "url": "https://arxiv.org/abs/2610.34679",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Takes the position of a tool provider who cannot change the agents that call its API or MCP server: a coding agent reads past trajectories and their evaluation results, then edits tool descriptions and, where allowed, implementations while the agents stay fixed. It is a concrete model for improving a shared tool surface from telemetry.",
+    "limitations": "Preprint whose results on production MCP servers come from a single organisation and are reported only in summary."
+  },
+  {
+    "title": "Beyond Plain MCP: Do Decision Models and Code Mode Make Tool Use Cheaper and Faster?",
+    "url": "https://arxiv.org/abs/2611.19123",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "A preregistered comparison of plain MCP tool calling, code mode (the agent writes scripts against tool stubs) and router layers that preselect tools, across 12 servers and up to 1,958 distractor tools. Gateway and SDK designers get a specific, testable variable: whether stubs declare the shape of what each tool returns.",
+    "limitations": "Single-author preprint using three open-weight agents, so the results may not carry over to hosted frontier models."
+  },
+  {
+    "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions",
+    "url": "https://arxiv.org/abs/2602.14878",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Derives six components of a tool description from prior work, turns them into a scoring rubric and a set of description smells, applies them to 856 tools on 103 MCP servers and then measures what augmenting the descriptions does to agent performance and cost. It helps authors weigh which parts of a description earn their tokens.",
+    "limitations": "Preprint whose rubric scoring is itself model-assisted; it is a different study from the smell-aware evaluation paper already listed."
+  },
+  {
+    "title": "Tool Preferences in Agentic LLMs are Unreliable",
+    "url": "https://aclanthology.org/2025.emnlp-main.1060/",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Peer-reviewed evidence that editing a tool description, without changing what the tool does, can sharply shift how often models choose it over equivalent alternatives, tested across 17 models. It shows description wording is both a lever for providers and a reliability and fairness problem for registries and agent builders.",
+    "limitations": "Measures selection between competing tools in controlled pairings rather than end-to-end task success."
+  },
+  {
+    "title": "Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models",
+    "url": "https://aclanthology.org/2026.acl-long.948/",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Identifies schema misalignment, where small models invent plausible tool names that the schema does not contain, and proposes a training-free renaming method (PA-Tool) that picks names the model is already familiar with. It is peer-reviewed support for treating tool and parameter naming as part of the interface design.",
+    "limitations": "Evaluated on MetaTool and RoTBench with small models; it does not establish the effect on large hosted models."
+  },
+  {
+    "title": "Terminal Agents Suffice for Enterprise Automation",
+    "url": "https://arxiv.org/abs/2604.00073",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Research on tool use and selection",
+    "whyItMatters": "Compares a coding agent that has only a terminal and filesystem and calls platform APIs directly with MCP tool-augmented agents and GUI web agents on real enterprise systems. API providers get peer-reviewed evidence that a clean programmatic API with good documentation can serve as the agent surface without a bespoke tool layer.",
+    "limitations": "Results depend on the enterprise platforms and backbone models chosen, and the comparison reflects how the authors built each alternative architecture."
+  },
+  {
     "title": "Model Context Protocol architecture overview",
     "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
     "sourceType": "specification",
@@ -670,7 +1087,7 @@
     "section": "Tool use, tool descriptions and MCP",
     "subsection": "Model Context Protocol",
     "whyItMatters": "The official specification and SDK for an MCP extension that lets a server return interactive user interface inside the host, extending agent-facing surfaces from text results to embedded UI.",
-    "limitations": "An extension rather than part of the core protocol, so support differs between MCP hosts."
+    "limitations": "An official extension rather than part of the core protocol; the MCP extensions overview lists it as Stable (fixed within a protocol revision), but support still differs between MCP hosts. Documentation is at modelcontextprotocol.io/extensions/apps/overview."
   },
   {
     "title": "SEP-2127: MCP Server Cards - HTTP Server Discovery",
@@ -680,7 +1097,129 @@
     "section": "Tool use, tool descriptions and MCP",
     "subsection": "Model Context Protocol",
     "whyItMatters": "A Final Extensions Track proposal for a static, cacheable card that tells a client where a remote MCP server is, which transports and protocol versions it supports and who runs it, before connecting; tools are left out because they vary per user and session.",
-    "limitations": "The page is a historical record of the accepted design while the normative schema lives in a separate extension repository that can change, and a client still has to connect to learn what tools a server offers."
+    "limitations": "The page is a historical record of the accepted design; the normative schema now lives in the modelcontextprotocol/ext-server-card repository, where Server Cards are a Beta official extension with no destination yet stated, and a client still has to connect to learn what tools a server offers."
+  },
+  {
+    "title": "Model Context Protocol specification 2026-07-28: Key Changes",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "The authoritative list of what changed in the stateless revision, each item linked to its SEP: removal of the initialize handshake and protocol sessions, server/discover, the Multi Round-Trip Requests pattern for mid-call input, Tasks moved to an extension, cacheable list results, deterministic tool ordering and routing headers. Server and client authors can work through it as a migration checklist.",
+    "limitations": "A change log rather than a guide; several items are breaking changes and SDK support for them differs by language."
+  },
+  {
+    "title": "MCP Extensions overview",
+    "url": "https://modelcontextprotocol.io/docs/extensions/overview",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "Explains how optional capabilities beyond the core protocol are identified, negotiated and moved through Experimental, Beta and Stable stages, with a table giving the current stage of each official extension (authorisation extensions, MCP Apps, Tasks for durable long-running work, Skills over MCP and Server Cards). It is the reference for deciding how far to rely on a given extension.",
+    "limitations": "A living page with no stated date whose stage tables change as extensions move, and it does not say which clients support each extension."
+  },
+  {
+    "title": "What a Random Draw from the MCP Registry Contains, and What Tool-Use Benchmarks Contain Instead",
+    "url": "https://arxiv.org/abs/2609.10962",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "Draws a seeded probability sample of 400 npm and stdio servers from a 24,135-server registry census and probes each over the wire, finding that fewer than half complete an initialise handshake and that optional safety annotations are frequently missing. It gives a re-runnable baseline for ecosystem quality and a caution about how curated samples flatter it.",
+    "limitations": "Single-author preprint covering only npm and stdio servers from one registry snapshot."
+  },
+  {
+    "title": "From REST to MCP: An Empirical Study of API Wrapping and Automated Server Generation for LLM Agents",
+    "url": "https://arxiv.org/abs/2507.16044",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "Examines 116 official MCP servers to see how they wrap existing REST APIs and how much of each API they expose, then tests generating servers from 80 real OpenAPI contracts with and without specification repair and tool-set reduction. API owners get a list of the specification defects that most often stop generated tools from working.",
+    "limitations": "Preprint with no stated venue whose title and scope changed across versions; generation success is judged per tool rather than per end-to-end agent task."
+  },
+  {
+    "title": "MCP Inspector",
+    "url": "https://github.com/modelcontextprotocol/inspector",
+    "sourceType": "tool",
+    "year": 2024,
+    "section": "Tool use, tool descriptions and MCP",
+    "subsection": "Model Context Protocol",
+    "whyItMatters": "The project's own tool for connecting to an MCP server and seeing exactly which tools, resources and prompts a client receives, with web, scriptable command-line and terminal interfaces so checks can run in CI or inside a coding agent's feedback loop. It is a sensible first step before any model-in-the-loop evaluation of a server.",
+    "limitations": "Tests protocol behaviour and lets you exercise tools by hand; it does not measure whether agents choose or use the tools well."
+  },
+  {
+    "title": "Effective context engineering for AI agents",
+    "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Explains how to treat an agent's context as a finite budget, covering just-in-time retrieval, compaction and structured notes, which informs how documentation and tool output should be shaped for agents.",
+    "limitations": "Written from one model provider's internal practice; specific patterns may not transfer unchanged to other models or agent harnesses."
+  },
+  {
+    "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance",
+    "url": "https://www.trychroma.com/research/context-rot",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Holds task difficulty fixed while varying only input length across 18 models, and reports that reliability falls as inputs grow and that distractors and haystack structure change results in uneven ways. It gives tool and documentation owners a concrete reason to return short, relevant results rather than large dumps.",
+    "limitations": "Vendor technical report (Chroma), not peer reviewed, using deliberately simple synthetic and conversational tasks rather than end-to-end agent workflows."
+  },
+  {
+    "title": "Context Engineering for AI Agents: Lessons from Building Manus",
+    "url": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus",
+    "sourceType": "essay",
+    "year": 2025,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Turns production experience into design rules that bear directly on tool surfaces: keep prompt prefixes and tool lists stable so caches can be reused, mask tools instead of removing them, give related tools consistent name prefixes, leave failed actions visible, and keep compression reversible by retaining a path or URL. It works as a checklist when deciding how tools are named and what they return.",
+    "limitations": "A single company's engineering essay; the recommendations are not backed by a published evaluation."
+  },
+  {
+    "title": "Memory tool (Claude API documentation)",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Specifies a client-side, file-shaped memory surface under /memories, where the model requests operations and the integrator runs them against storage it controls, with explicit guidance on path traversal protection, file size limits and expiry. It is a concrete reference for anyone designing persistent memory that an agent reads and writes across sessions.",
+    "limitations": "Vendor documentation for one provider's tool interface, and actual behaviour depends on the integrator's handler and storage."
+  },
+  {
+    "title": "Same Context, Different Agents: A Behavioral Study of Semantic Layers, Multi-Agent Orchestration and Memory Compaction in Data Agents",
+    "url": "https://arxiv.org/abs/2610.20959",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Tests semantic layers, orchestration and compaction alone and in combination with seven models on 1,514 long-horizon data tasks, and reports that the same context aid helps some agent behaviours and hurts others (for example, a semantic layer can stop thorough agents from inspecting the data). Teams that publish data descriptions or semantic layers for agents get a reason to test them against varied agent behaviours, not one accuracy figure.",
+    "limitations": "Preprint limited to data-agent benchmarks, and the behaviour groups are the authors' own classification."
+  },
+  {
+    "title": "Diagnosing and Mitigating Context Rot in Long-horizon Search",
+    "url": "https://arxiv.org/abs/2606.29718",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Identifies premature termination, where search agents give up or give uncertain wrong answers well before the context window is full, links its rate to context length, and compares seven context management methods. It supports keeping peak context low through paginated, trimmed and compact tool and search responses.",
+    "limitations": "Preprint evaluated on deep-search benchmarks with four models, so implications for other tool surfaces are inferred rather than tested."
+  },
+  {
+    "title": "Agents Cannot Hand Over What They Have Not Yet Understood",
+    "url": "https://arxiv.org/abs/2611.18642",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Measures how much an agent's learning survives a short written note to a successor, separating a smaller loss from compressing once from a larger loss from compressing repeatedly, and reports that writing each note from the full earlier record recovers most of the gap. It is directly relevant to session continuation files, subagent briefs and context-window handoffs.",
+    "limitations": "Single-author preprint using synthetic hidden-rule worlds and a fixed 300-character note budget."
+  },
+  {
+    "title": "Facts Without Rules: Boundary Metadata Collapse in Multi-Agent LLM Handoffs",
+    "url": "https://arxiv.org/abs/2608.29028",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Context, memory and handoffs",
+    "whyItMatters": "Shows that handoff summaries between agents tend to keep operational facts while dropping the markers that say how those facts may be used, and that explicit constraints leak far less than vague wording while prompt-only fixes help only partly. It is a design lesson for anyone defining handoff or summary formats that carry permissions or privacy limits.",
+    "limitations": "Preprint on a controlled testbed with three models, so leakage rates may differ in production systems."
   },
   {
     "title": "OpenAPI Specification v3.2.0",
@@ -713,10 +1252,10 @@
     "title": "Agent2Agent (A2A) Protocol specification",
     "url": "https://a2a-protocol.org/latest/specification/",
     "sourceType": "specification",
-    "year": 2025,
+    "year": 2026,
     "section": "Protocols and machine-readable surfaces",
     "whyItMatters": "Defines agent cards for capability discovery and a task-based exchange for delegating work between independently built agents, the agent-to-agent layer that MCP does not address.",
-    "limitations": "The latest URL tracks a moving version, and published adoption figures come from the project itself rather than independent measurement."
+    "limitations": "The latest URL tracks a moving version (v1.0.1 at retrieval, after the first stable v1.0.0 release in March 2026), and published adoption figures come from the project itself rather than independent measurement."
   },
   {
     "title": "AG-UI: Agent-User Interaction Protocol",
@@ -728,13 +1267,13 @@
     "limitations": "Governed by its originating project rather than a standards body, and support varies by agent framework."
   },
   {
-    "title": "Agent Communication Protocols (agentproto) working group charter",
-    "url": "https://datatracker.ietf.org/doc/charter-ietf-agentproto/00-03/",
+    "title": "Agent Communication Protocols (agentproto) working group",
+    "url": "https://datatracker.ietf.org/wg/agentproto/about/",
     "sourceType": "specification",
     "year": 2026,
     "section": "Protocols and machine-readable surfaces",
     "whyItMatters": "Tracks the IETF process for a working group on user-to-agent, agent-to-agent and agent-to-tool communication, a standards-track venue with more procedural weight than the many individual agent drafts.",
-    "limitations": "A proposed charter under review at retrieval time; its scope was contested and is expected to change before any working group is formed."
+    "limitations": "Chartered in October 2026 with milestones running to March 2028, so it has no adopted protocol yet and its scope is limited to dialog identifiers, lifecycle and context propagation rather than a full agent protocol."
   },
   {
     "title": "A Survey of AI Agent Protocols",
@@ -743,7 +1282,79 @@
     "year": 2025,
     "section": "Protocols and machine-readable surfaces",
     "whyItMatters": "Compares agent protocols along shared dimensions, giving one place to understand design choices across MCP, A2A and related proposals before reading each specification.",
-    "limitations": "A 2025 survey that predates several later protocols, including the commerce and payment protocols listed below."
+    "limitations": "A 2025 survey that predates several later protocols, including the commerce and payment protocols listed below, and it treats IBM's Agent Communication Protocol (ACP) as separate although ACP merged into A2A in August 2025."
+  },
+  {
+    "title": "Agentic AI Use Cases and Requirements (draft-agentic-ai-usecases-requirements)",
+    "url": "https://datatracker.ietf.org/doc/draft-agentic-ai-usecases-requirements/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Works through six agent communication scenarios, including a long-running delegated task with an authorisation checkpoint and tool, data and API mediation between agents, and derives numbered protocol requirements from each. Protocol and platform teams can use it as a checklist for whether their design covers dialog management, identity and security in realistic flows.",
+    "limitations": "An Informational Internet-Draft that is a candidate for agentproto adoption rather than an adopted working group document, so its requirements may change or be dropped."
+  },
+  {
+    "title": "Architecture for AI Agent Communications on the Internet (draft-manyfolks-agentproto-arch)",
+    "url": "https://datatracker.ietf.org/doc/draft-manyfolks-agentproto-arch/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Defines the 'agentic dialog' that the IETF agentproto work is built around and decomposes it into dialog identifiers, lifecycle, recovery, structured error and progress signalling, and cancellation and interruption. It also separates the principal from the agent and the client from the server, which gives designers a shared vocabulary for interruption and recovery across vendors.",
+    "limitations": "First revision of an individual Informational draft; it deliberately defines no authorisation mechanism and defers to OAuth and WIMSE work, so many details remain open."
+  },
+  {
+    "title": "RFC 9457: Problem Details for HTTP APIs",
+    "url": "https://www.rfc-editor.org/rfc/rfc9457.html",
+    "sourceType": "specification",
+    "year": 2023,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "The IETF format for machine-readable HTTP API errors, with type, status, title, detail and instance members plus API-specific extension members. It gives agent-facing APIs a standard error body that a client can branch on instead of parsing prose or HTML error pages.",
+    "limitations": "A general HTTP standard written before AI agents; it does not define retry safety or recovery hints, which an API has to add through its own extension members."
+  },
+  {
+    "title": "RateLimit header fields for HTTP (draft-ietf-httpapi-ratelimit-headers)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Defines the RateLimit-Policy and RateLimit response headers so a server can advertise its quota policies and remaining capacity. Agent clients can then pace requests from a machine-readable signal rather than learning limits from 429 responses.",
+    "limitations": "A working group Internet-Draft, not an RFC; revision 11 expires on 24 November 2026, so check for a newer revision before citing details."
+  },
+  {
+    "title": "A2A Protocol Technology Compatibility Kit (TCK)",
+    "url": "https://github.com/a2aproject/a2a-tck",
+    "sourceType": "repository",
+    "year": 2025,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "The A2A project's conformance suite, which runs against a live agent over gRPC, JSON-RPC and HTTP+JSON, groups tests by MUST, SHOULD and MAY requirement levels and writes compatibility reports. Teams can use it to check an implementation against the specification before other agents depend on it.",
+    "limitations": "Tests protocol conformance only, not whether an agent's declared skills are accurate, and it has no tagged releases, so pin a commit (the README and recent commits disagree on the minimum Python version)."
+  },
+  {
+    "title": "A2A Inspector",
+    "url": "https://github.com/a2aproject/a2a-inspector",
+    "sourceType": "tool",
+    "year": 2025,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "An official A2A project tool that fetches an Agent Card, detects whether it is v1.0 or v0.3, checks it against the specification, and logs and validates every exchange over JSON-RPC, HTTP+JSON and gRPC. It shows a publisher what a calling agent will actually receive, and its card editor and AI Catalog import help when drafting discovery metadata.",
+    "limitations": "Checks card and protocol conformance rather than the usefulness or accuracy of declared skills, and the current v1.0 line is published as alpha pre-releases."
+  },
+  {
+    "title": "Agent Network Protocol (ANP) specifications",
+    "url": "https://github.com/agent-network-protocol/AgentNetworkProtocol",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "The canonical repository for the ANP 1.2 specification set, covering DID authentication, the did:wba method, naming, Agent Description documents and a .well-known Agent Discovery protocol, with a per-document status table. It shows a decentralised, DID-based approach to agent identity and discovery to set against A2A Agent Cards and MCP Server Cards.",
+    "limitations": "A community specification not developed in a standards body; several parts (authorisation, meta-protocol, payments) are still drafts, and the W3C Community Group that discusses it has no standards-track status."
+  },
+  {
+    "title": "The Cost of Saying Hello: An Empirical Study of Handshake Overhead in AI Agent Communication Protocols",
+    "url": "https://arxiv.org/abs/2610.30151",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Protocols and machine-readable surfaces",
+    "whyItMatters": "Measures round trips, latency, bytes and tokens consumed before useful work begins in MCP (both its 2025 and 2026 handshakes), A2A and ACP using each official SDK, and reports that token cost grows with the size of the counterpart's capability inventory. It gives concrete figures to weigh when deciding how much capability metadata to expose up front.",
+    "limitations": "A single-author preprint measured on loopback and emulated latency rather than production networks, and ACP has since merged into A2A."
   },
   {
     "title": "WorkOS FGA: The authorization layer for AI agents",
@@ -769,7 +1380,7 @@
     "sourceType": "specification",
     "year": 2026,
     "section": "Agent identity and authorization",
-    "whyItMatters": "Explains consent, scopes, and OAuth-oriented authorisation patterns that matter when agents act through user-authorised tools.",
+    "whyItMatters": "Walks through the MCP authorisation flow step by step, including consent, scopes and client registration, where it now recommends pre-registration or Client ID Metadata Documents and treats Dynamic Client Registration as deprecated, plus common pitfalls such as open registration endpoints.",
     "limitations": "Remote and local transports differ, so the same authorisation pattern will not fit every deployment."
   },
   {
@@ -788,16 +1399,16 @@
     "year": null,
     "section": "Agent identity and authorization",
     "whyItMatters": "Documents how bots and agents can prove operator identity on each request with HTTP message signatures instead of a spoofable user-agent string.",
-    "limitations": "Authenticates the operator of the agent, not the person it acts for, so it does not solve delegated or on-behalf-of authorisation."
+    "limitations": "Vendor documentation for one network's implementation; the standards-track text is the IETF working group draft draft-ietf-webbotauth-httpsig-protocol, and like it this authenticates the operator of the agent, not the person it acts for."
   },
   {
-    "title": "AI Agent Authentication and Authorization (Internet-Draft)",
-    "url": "https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/",
+    "title": "AI Identity Management System (draft-ietf-wimse-aims)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/",
     "sourceType": "specification",
     "year": 2026,
     "section": "Agent identity and authorization",
     "whyItMatters": "A multi-author Internet-Draft describing how existing standards, the WIMSE workload identity architecture and the OAuth 2.0 family, can be applied to agent authentication and authorisation without a new protocol.",
-    "limitations": "An individual Internet-Draft, not an RFC; it may change or expire, and it composes existing standards rather than settling open questions such as multi-hop delegation."
+    "limitations": "An early WIMSE working group draft (revision 01) of best practices that defines no new protocol; it replaced the earlier individual draft draft-klrc-aiagent-auth and may still change substantially."
   },
   {
     "title": "Agent Identity overview (Google Cloud IAM)",
@@ -809,22 +1420,22 @@
     "limitations": "Describes one provider's implementation, which does not transfer directly to other clouds or self-hosted identity systems."
   },
   {
-    "title": "Agent Name Service (ANS) for Secure AI Agent Discovery v1.0",
-    "url": "https://genai.owasp.org/resource/agent-name-service-ans-for-secure-al-agent-discovery-v1-0/",
+    "title": "Agent Name Service v2 (ANS): A Domain-Anchored Identity Layer for Autonomous AI Agents (Internet-Draft)",
+    "url": "https://datatracker.ietf.org/doc/draft-narajala-courtney-ansv2/",
     "sourceType": "specification",
-    "year": 2025,
+    "year": 2026,
     "section": "Agent identity and authorization",
-    "whyItMatters": "A security-community design for agent naming and discovery that ties agent names to PKI-backed identity and adapts across A2A, MCP and other protocols.",
-    "limitations": "A working-group whitepaper rather than a deployed system, and independent adoption is not documented on the resource page."
+    "whyItMatters": "Binds an agent endpoint to the holder of its DNS domain, a specific software release and an auditable history using DNSSEC, the Web PKI, optional DANE and an append-only Merkle transparency log, and adopts DNS-AID records for discovery. Its stated threat model lets relying parties see what each check does and does not prevent.",
+    "limitations": "An individual Internet-Draft with no working group adoption; normative detail sits in separate ANS specifications now hosted by a Linux Foundation project, and the earlier OWASP v1 whitepaper is superseded."
   },
   {
-    "title": "AI Agent Standards Initiative (NIST)",
-    "url": "https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative",
+    "title": "SI Agent Standards Initiative (NIST)",
+    "url": "https://www.nist.gov/super-intelligence/si-agent-standards-initiative",
     "sourceType": "framework",
     "year": 2026,
     "section": "Agent identity and authorization",
     "whyItMatters": "A government standards programme focused on interoperability, security and identity for agents, useful for tracking where public-sector guidance on agent identity is heading.",
-    "limitations": "A programme page rather than a standard; concrete published outputs were limited at retrieval time."
+    "limitations": "A programme page rather than a standard; it was renamed from the AI Agent Standards Initiative in late 2026, and concrete published outputs remain limited."
   },
   {
     "title": "Claim Deployments",
@@ -845,13 +1456,148 @@
     "limitations": "Vendor documentation for one service; the expiry windows and caps are given as current values, and the page reports nothing on how often projects are claimed or abandoned in practice."
   },
   {
+    "title": "HTTP Message Signatures for automated traffic (draft-ietf-webbotauth-httpsig-protocol)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "The Web Bot Auth working group's adopted protocol text: it sets out how an automated client signs requests with RFC 9421, the Signature-Agent header that tells a verifier where the signer's keys live, a JWKS-based key directory and the well-known URI that serves it. Agent builders and site operators can implement against the standards-track text instead of relying on one vendor's documentation.",
+    "limitations": "An early working group Internet-Draft (revision 01) with no intended RFC status recorded yet; it authenticates the operator of the client, not the person it acts for or what it is allowed to do."
+  },
+  {
+    "title": "MCP Client Registration (protocol revision 2026-07-28)",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/client-registration",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "The normative order in which an MCP client gets an OAuth identity at a server it has never met: pre-registered credentials first, then Client ID Metadata Documents when the authorisation server advertises support, then Dynamic Client Registration, which this revision deprecates. It also requires clients to key stored credentials to the issuing authorisation server and re-register when that server changes, a concrete rule for agents that connect to many servers.",
+    "limitations": "Relies on the IETF Client ID Metadata Document draft, which is not yet an RFC, and authorisation server support for it varies, so the DCR fallback remains in practice."
+  },
+  {
+    "title": "Enterprise-Managed Authorization (MCP extension)",
+    "url": "https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Explains how an organisation's identity provider, rather than each employee, decides which MCP servers an agent client may reach: the client exchanges the user's SSO assertion for an ID-JAG and redeems it at the server's authorisation server with the JWT bearer grant. The page gives the exact token exchange parameters and a table of identity providers and authorisation servers with documented support, which helps teams judge feasibility before building.",
+    "limitations": "An opt-in official extension (listed as Stable in the ext-auth repository) that only works when the client, the enterprise IdP and the server's authorisation server all support it, and vendors target different revisions of the underlying ID-JAG draft."
+  },
+  {
+    "title": "OAuth Client ID Metadata Document (draft-ietf-oauth-client-id-metadata-document)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Lets an OAuth client use an HTTPS URL as its client_id, pointing at a JSON metadata document the authorisation server fetches on demand, so a client can work with servers it has no prior registration with. This is the mechanism MCP now prefers over Dynamic Client Registration, and its fetching, validation and caching rules are what an authorisation server team has to implement.",
+    "limitations": "A general OAuth working group draft (revision 03) that is not specific to agents and is still a work in progress."
+  },
+  {
+    "title": "Identity Assertion JWT Authorization Grant (draft-ietf-oauth-identity-assertion-authz-grant)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Defines the ID-JAG: a token an enterprise identity provider issues by token exchange so that an application or agent can obtain an access token for a third-party API that already trusts that provider for SSO, without a separate consent redirect. It is the protocol beneath Cross-App Access and the MCP Enterprise-Managed Authorization extension.",
+    "limitations": "A working group Internet-Draft (revision 06) with no RFC status yet, and implementations in the field track different revisions of it."
+  },
+  {
+    "title": "OAuth Identity and Authorization Chaining Across Domains (draft-ietf-oauth-identity-chaining)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Describes how a client carries identity and authorisation from one trust domain into another by combining token exchange with the JWT bearer grant, which is the pattern an agent needs when a task crosses organisational boundaries. Several agent delegation drafts, including ID-JAG, build on it.",
+    "limitations": "A general OAuth pattern rather than an agent profile; it is approved and in the RFC Editor queue but has no RFC number yet."
+  },
+  {
+    "title": "RFC 9728: OAuth 2.0 Protected Resource Metadata",
+    "url": "https://www.rfc-editor.org/rfc/rfc9728.html",
+    "sourceType": "specification",
+    "year": 2025,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Lets a protected resource publish a well-known metadata document naming the authorisation servers and scopes that apply to it, so an agent client can discover how to obtain a token without prior configuration. MCP authorisation and the Auth.md proposal already listed both depend on it.",
+    "limitations": "Covers metadata publication only; it says nothing about agent identity, delegation or consent."
+  },
+  {
+    "title": "A Protocol-Agnostic Threat Classification for Cross-Boundary AI Agent Authorization",
+    "url": "https://openid.net/wp-content/uploads/2026/10/A-Protocol-Agnostic-Threat-Classification-for-Cross-Boundary-AI-Agent-Authorization_with-Cover.pdf",
+    "sourceType": "framework",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "An OpenID Foundation community group threat model for agents acting across trust boundaries, covering how identity, authority and the target resource can be misread once a call leaves its home domain, with lifecycle controls framed as joiner, mover and leaver steps. Architects can turn its categories into review questions for any gateway or federation design, whatever protocol it uses.",
+    "limitations": "Explicitly a threat model, not a specification or remediation guide; the authors say mitigation guidance will follow in later documents."
+  },
+  {
+    "title": "Identity Management for Agentic AI (OpenID Foundation whitepaper)",
+    "url": "https://arxiv.org/abs/2510.25819",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A standards-community survey of what existing OAuth, OpenID Connect and enterprise identity tools already offer for securing agents and where delegated authority, agent-specific identities and scalable access control still need work. It is useful orientation before reading the individual Internet-Drafts in this section.",
+    "limitations": "A whitepaper setting an agenda rather than a specification, and it predates most of the 2026 drafts and MCP changes listed here."
+  },
+  {
+    "title": "Agentic Identity and Access Management (CoSAI)",
+    "url": "https://www.coalitionforsecureai.org/wp-content/uploads/2026/04/agentic-identity-and-access-control.pdf",
+    "sourceType": "framework",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A design-pattern paper that treats agents as first-class identities, keeps an agent's own baseline rights separate from on-behalf-of rights, prefers short-lived task-bound entitlements and requires enforcement at every hop and at the final tool or API, illustrated end to end with an invoice-processing agent. It gives teams a reference model built on existing IAM rather than a new stack.",
+    "limitations": "A coalition paper (version 1.0) whose patterns are recommendations, not an interoperable specification or conformance test."
+  },
+  {
+    "title": "NCCoE Software and Agentic AI Identity and Authorization project hub",
+    "url": "https://pages.nist.gov/nccoe-ai-identity/",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "NIST NCCoE's public home for its agent identity project, linking the February 2026 concept paper and a summary of the more than 600 comments it received, which records broad support for building on existing standards. The planned SP 1800 practice guide and interim outputs are to be published here.",
+    "limitations": "Early project material: no practice guide or example implementation exists yet, and NIST pages now use the term 'SI agents' following a 2026 renaming, which may confuse searches."
+  },
+  {
+    "title": "Broken Gates: Re-evaluating Web Bot Defenses in the Age of LLM Agents",
+    "url": "https://arxiv.org/abs/2607.18659",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Measures seven solver services and eight LLM browser agents against four widely deployed bot defences and finds that the browser and account state shown to the verifier, more than challenge solving, decides whether agents get through. It is evidence for site owners that behavioural signals do not separate legitimate agents from abuse, which is the gap that explicit identity schemes such as Web Bot Auth aim to fill.",
+    "limitations": "A preprint covering four defences at one point in time; vendors change their defences frequently, so the figures may not hold for long."
+  },
+  {
+    "title": "Fundamental concepts in Microsoft Entra Agent ID",
+    "url": "https://learn.microsoft.com/en-us/entra/agent-id/key-concepts",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Sets out a concrete enterprise object model for agents: blueprints that hold credentials and mint tokens for many agent identities, optional paired agent user accounts, separate owner, sponsor and manager roles, and on-behalf-of flows for interactive agents versus client credentials for autonomous ones. It is a useful comparison point for the Google Cloud agent identity entry already listed.",
+    "limitations": "Vendor documentation tied to Microsoft Entra and Microsoft Graph, and its constructs do not transfer directly to other identity providers."
+  },
+  {
+    "title": "Authenticate requests with Web Bot Auth (experimental), Google crawling documentation",
+    "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "A second large operator's deployment notes for Web Bot Auth: a subset of Google-Agent requests are signed as https://agent.bot.goog, with the signature label to look for, an IP-based fallback, and the option to respond first and validate afterwards on latency-sensitive paths. Verifier implementers get a concrete second profile to test against besides Cloudflare's.",
+    "limitations": "Vendor documentation for an experiment: Google states that not all of its agents sign and not every request is signed, so IP verification is still required."
+  },
+  {
+    "title": "When MCP Meets OAuth: Common Pitfalls Leading to One-Click Account Takeover",
+    "url": "https://obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Agent identity and authorization",
+    "whyItMatters": "Explains, from disclosed cases, why remote MCP servers that wrap an existing API end up acting as both an authorisation server for MCP clients and a single shared OAuth client upstream, and how failing to bind consent and state to the user session lets one malicious link leak an authorisation code. It is a practical checklist for teams putting an existing OAuth-protected API behind MCP.",
+    "limitations": "Vendor security research based on a handful of responsibly disclosed cases rather than a systematic measurement."
+  },
+  {
     "title": "Agentic Commerce Protocol (ACP)",
     "url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
     "sourceType": "specification",
     "year": 2025,
     "section": "Agentic commerce and payments",
     "whyItMatters": "The specification repository for an open checkout protocol in which an agent passes a scoped payment token while the merchant remains merchant of record, with schemas and a changelog.",
-    "limitations": "Maintained by two companies at retrieval time, and implementing it does not by itself list a merchant on any AI shopping surface."
+    "limitations": "The README states the specification is maintained by OpenAI and Stripe and is in beta, with dated releases (the latest, 2026-04-17, adds cart, feed, orders, authentication and MCP); implementing it does not by itself list a merchant on any AI shopping surface."
   },
   {
     "title": "Agent Payments Protocol (AP2)",
@@ -860,7 +1606,7 @@
     "year": 2025,
     "section": "Agentic commerce and payments",
     "whyItMatters": "Specifies signed mandates that record what a person authorised an agent to buy, aimed at verifiable authorisation for payments and offered as an extension to A2A and UCP.",
-    "limitations": "Partner counts are supplied by the sponsors, and independent evidence of production use was not found in this pass."
+    "limitations": "Partner counts are supplied by the sponsors, the site now links a v0.2 release, and further standardisation is stated to continue in FIDO Alliance working groups, so the specification may still change; independent evidence of production use was not found."
   },
   {
     "title": "Universal Commerce Protocol (UCP)",
@@ -868,7 +1614,7 @@
     "sourceType": "specification",
     "year": null,
     "section": "Agentic commerce and payments",
-    "whyItMatters": "An open specification for agentic commerce covering discovery, checkout and post-purchase steps, with a public repository, SDKs and reference implementations.",
+    "whyItMatters": "An open specification for agentic commerce covering discovery, checkout and post-purchase steps, published as dated versions (for example 2026-08-25) with explicit version selection before capability negotiation, an optional AP2 Mandates extension for cryptographic proof of user authorisation, and a public repository, SDKs and reference implementations.",
     "limitations": "Written from its sponsoring companies' perspective, and cross-protocol interoperability testing is not documented on the site."
   },
   {
@@ -888,6 +1634,114 @@
     "section": "Agentic commerce and payments",
     "whyItMatters": "Describes a payment page that exposes WebMCP tools progressively, so a submit tool appears only once the form is valid, and that derives form tools from the rendered HTML rather than maintaining a separate agent-only checkout.",
     "limitations": "A vendor engineering post; its efficiency figures come from its own 60 test runs across six models on a fictional shop, and WebMCP is an experimental browser capability whose API may change."
+  },
+  {
+    "title": "The \"Payment\" HTTP Authentication Scheme (Machine Payments Protocol core)",
+    "url": "https://datatracker.ietf.org/doc/draft-httpauth-payment/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Gives HTTP 402 defined semantics: the server issues a Payment challenge in WWW-Authenticate, the client retries with a credential in Authorization, and success returns a Payment-Receipt, with payment methods defined in separate specifications. Its table of status codes and problem types (malformed credential, unknown or reused challenge, expired challenge, failed verification, policy denial after valid payment) tells an API owner exactly what an agent should receive at each failure point.",
+    "limitations": "An individual Internet-Draft (revision 01, September 2026) by authors from the two companies that co-develop MPP, Tempo and Stripe, so it is work in progress rather than an RFC; mpp.dev is the sponsors' developer overview."
+  },
+  {
+    "title": "Verifiable Intent",
+    "url": "https://github.com/agent-intent/verifiable-intent",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Defines a layered SD-JWT chain from credential provider to user to agent, binding amount ranges, allowed line items, payees and approved merchants as machine-checkable constraints, and separates a user-confirmed Immediate mode from a delegated Autonomous mode. It gives designers a concrete way to prove afterwards that an agent purchase stayed inside the scope a person approved.",
+    "limitations": "Draft v0.1 maintained by Mastercard; transport, key provisioning, enrolment and dispute resolution are explicitly out of scope."
+  },
+  {
+    "title": "Trusted Agent Protocol",
+    "url": "https://github.com/visa/trusted-agent-protocol",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Shows how a merchant can tell a credentialed shopping agent from anonymous automated traffic: the agent signs requests with RFC 9421 HTTP message signatures bound to the merchant domain and the operation (browsing or payment), with timestamps and session identifiers against replay, and can pass consented consumer and payment identifiers to prefill checkout. The repository includes a runnable sample with agent, key registry, verifying proxy and merchant components.",
+    "limitations": "Visa-led vendor material; recognition depends on Visa-approved agents and a Visa-run key registry, and the repository offers sample code rather than versioned releases of the specification."
+  },
+  {
+    "title": "Shared payment tokens (Stripe)",
+    "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+    "sourceType": "documentation",
+    "year": null,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Documents a concrete scoped credential for agent purchases: the agent grants a seller a token limited by currency, maximum amount and expiry, the seller can resolve it only once for a third-party processor, and webhook events report use and deactivation. It is a worked example of bounding agent spending at the API level rather than in the prompt.",
+    "limitations": "Public preview vendor documentation for one provider, with regional availability limits and a preview API version that may change."
+  },
+  {
+    "title": "Product feed schema (OpenAI Agentic Commerce)",
+    "url": "https://developers.openai.com/commerce/specs/file-upload/products",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "States the catalogue fields a merchant supplies for products to be discoverable in one assistant's shopping surface, one row per purchasable variant, with explicit value conventions: omit unknown values, never use placeholder strings such as n/a, and treat an empty value as no value rather than zero or false. It is one of the clearest public statements of what an agent-facing product feed must contain.",
+    "limitations": "Vendor specification for one assistant's ingestion pipeline; ads and checkout need separate integrations, and a Draft schema view sits alongside the Stable one."
+  },
+  {
+    "title": "Native checkout overview (Google Universal Commerce Protocol guide)",
+    "url": "https://developers.google.com/merchant/ucp/guides/overview/native-checkout",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Turns UCP checkout into an implementable contract: a session status lifecycle from incomplete to completed, canceled or error, a handoff point where the agent passes control to a Google interface for payment and fulfilment details, per-endpoint availability and latency targets, and advice to return structured UCP errors for payment declines. It links SDKs and a conformance test suite.",
+    "limitations": "Vendor implementation guide for one platform; payment entry is deliberately kept away from the agent, so it documents a human-completed flow rather than autonomous purchase."
+  },
+  {
+    "title": "Beyond the Mandate: A Systematic Security Analysis of the Agent Payments Protocol (AP2)",
+    "url": "https://arxiv.org/abs/2608.23858",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Catalogues 48 threats to AP2 v0.2 across five lifecycle phases and five deployment architectures, demonstrates the eight highest-scored ones on a testbed, and describes a deployment-aware scanner. Its central lesson for designers is that signed mandates protect transaction data after signing but not the A2A messages and MCP tool calls that shape a purchase beforehand.",
+    "limitations": "Preprint; threats are demonstrated on the authors' own testbed because no complete public AP2 deployment was available, and severity comes from a scoring scheme rather than observed incidents."
+  },
+  {
+    "title": "A Formal Analysis of Agent Payment Protocols",
+    "url": "https://arxiv.org/abs/2609.00060",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Models x402, MPP, ACP and AP2 in the Tamarin prover against a common payment lifecycle and condenses the results into 18 shared security principles about keeping delegated authority consistent with the final charge and the service delivered. Implementers get a cross-protocol list of bindings to check in their own flows.",
+    "limitations": "Preprint; the models abstract specifications that are still changing, and implementation validation concentrates on x402."
+  },
+  {
+    "title": "Free-Riding the Agentic Web: A Systematic Security Analysis of x402 Payments",
+    "url": "https://arxiv.org/abs/2605.30998",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Traces four flaw classes in x402 deployments (cross-resource substitution, duplicate settlement races, allowance overdraft and denial of settlement) to the HTTP, scheme or SDK layer and proposes mitigations for each. Anyone charging agents per request over HTTP 402 gets concrete failure cases to test for.",
+    "limitations": "Preprint centred on x402 and blockchain settlement; the authors state all findings were disclosed, so some may already be fixed in current SDKs."
+  },
+  {
+    "title": "What Is Your AI Agent Buying? Evaluation, Biases, Model Dependence, & Emerging Implications for Agentic E-Commerce",
+    "url": "https://arxiv.org/abs/2508.02630",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Uses a provider-agnostic sandbox (ACES) to audit how shopping agents choose products, reporting position effects that persist in text-only interfaces, penalties for sponsored tags, rewards for platform endorsements and market-share swings after model updates. For sellers and platforms it argues for continuous testing of listings against agents rather than one-off optimisation.",
+    "limitations": "Preprint using a mock marketplace; observed preferences are tied to specific model versions and may not persist."
+  },
+  {
+    "title": "Whom Do AI Agents Work For? Role Assignment Induces Sponsorship Bias in LLM Recommenders",
+    "url": "https://arxiv.org/abs/2609.17989",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Controlled choice experiments show that naming a booking platform rather than a traveller as the agent's principal weakens the penalty agents apply to sponsored listings, and that stricter disclosure wording (Sponsored rather than Promoted) lowers paid-listing choice without closing that gap. It matters for anyone deciding how paid placement is labelled for agents and how an agent's role is worded.",
+    "limitations": "Preprint based on prompted roles in travel-booking experiments, not observation of deployed shopping assistants."
+  },
+  {
+    "title": "Get In, Decide, Prove: A Merchant-Side Readiness Benchmark for Agentic Commerce",
+    "url": "https://arxiv.org/abs/2610.17378",
+    "sourceType": "benchmark",
+    "year": 2026,
+    "section": "Agentic commerce and payments",
+    "whyItMatters": "Measures the merchant side of an agent purchase: whether a site admits an agent (reported separately for a declared bot, a declared headless browser and a user-present browser), whether published terms are precise enough to decide a buyer mandate on total cost, cancellation, service date and variant, and what evidence of the agreement remains. Scores carry evidence coverage and missingness bounds, and a companion dataset is published on Zenodo.",
+    "limitations": "Pilot preprint whose authors declare an affiliation with a company that has a commercial interest in merchant assessment; the scanner is available only on request, and the readiness weights have not been validated against purchase outcomes."
   },
   {
     "title": "What You Approve Is What Executes: Consent Integrity for Black-Box LLM Agents",
@@ -996,6 +1850,159 @@
     "section": "Human control, approval and recovery",
     "whyItMatters": "A concrete design for retry-safe writes in Stripe's API: the client sends a unique key with a create or update, and in API v1 a retry with that key returns the saved result of the first attempt instead of running it again, so a timed-out agent can retry.",
     "limitations": "One vendor's API: key length, pruning after at least 24 hours, the v1 and v2 behaviours and errors on reused keys with different parameters are Stripe's own choices, and the page does not address agents."
+  },
+  {
+    "title": "When Neither Side Confirms: Destructive Tool Approval Across MCP Servers and Hosts",
+    "url": "https://arxiv.org/abs/2611.02527",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Audits source code from a sample of 1,000 MCP registry servers and 41 open-source hosts and agent SDKs to ask who actually enforces confirmation of destructive tools, and finds that most pairings have no human approval by default. Host builders get evidence for owning the approval decision (for example, prompting on any tool not annotated read-only or non-destructive) rather than leaving it to servers or elicitation.",
+    "limitations": "Single-version preprint that relies on a rule-based extractor and open-source hosts only, so closed clients and later changes to defaults are not covered."
+  },
+  {
+    "title": "MCP elicitation (specification, 2026-07-28 revision)",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "The protocol baseline for asking a person for input mid-task: form mode for structured answers, URL mode for credentials, payments and third-party OAuth, distinct accept, decline and cancel outcomes, a ban on collecting secrets through form mode, and client duties to show the full URL and obtain consent before opening it. It also works through a phishing scenario, which is useful when designing consent prompts that cannot be spoofed.",
+    "limitations": "The specification marks URL mode as a newer feature whose design may change, and it deliberately leaves the user interface to each client, so it does not on its own guarantee a confirmation is shown."
+  },
+  {
+    "title": "The Idempotency-Key HTTP Header Field (Internet-Draft)",
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "A vendor-neutral way for a client to mark a POST or PATCH as safe to retry and for a server to answer retries, including 409 for a request still being processed and 422 for a reused key with a different payload. Agents that cannot tell whether a timed-out write succeeded need exactly this contract, and it generalises the Stripe pattern already in the list.",
+    "limitations": "A working-group Internet-Draft aimed at the Standards Track, not yet an RFC, so details may still change."
+  },
+  {
+    "title": "Where Does Exactly-Once Live? Model, Harness, and Tool-Contract Effects on Duplicate Side Effects in LLM Agents",
+    "url": "https://arxiv.org/abs/2609.29095",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Uses LIMBO, a deterministic sandbox of six services with injected faults such as late commits and redelivery, graded against a ledger of committed effects, to ask whether duplicate charges and deployments are best prevented by the model, the harness or the tool contract. The finding that the answer depends on the fault type, with the contract dominating when a read-back cannot reveal what happened, is direct guidance for API designers.",
+    "limitations": "Single-author preprint run against synthetic services rather than live systems."
+  },
+  {
+    "title": "When Should Users Check? Modeling Confirmation Frequency in Multi-Step Agentic AI Tasks",
+    "url": "https://arxiv.org/abs/2510.05307",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Treats where to place confirmation points in a multi-step agent task as a scheduling problem and offers a decision-theoretic model as an alternative to confirming only at the end or at every step. The observed confirm, diagnose, correct and redo cycle is a useful frame for designing intermediate checkpoints.",
+    "limitations": "Peer-reviewed at CHI 2026, but the evidence comes from lab studies with 8 and 48 participants on bounded tasks, so it may not transfer to long-running or high-stakes production agents."
+  },
+  {
+    "title": "Comparing Human Oversight Strategies for Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2604.04918",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Compares four oversight strategies across 192 live web sessions and reports that control often reaches the user too early or too late, that people judge correctness rather than safety, and that upfront plan approval can dampen scrutiny during execution. It helps teams choose between plan review, step approval and live intervention with timing in mind.",
+    "limitations": "Preprint with no stated venue, drawing on one study of 48 participants on web tasks."
+  },
+  {
+    "title": "The Verifiable Action Card: Trustworthy Human-in-the-Loop Control for Secure Autonomous Agents",
+    "url": "https://arxiv.org/abs/2609.18411",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Proposes an approval design for agentic browsers in which the confirmation card is rebuilt from the real pending action, shown in trusted browser chrome outside page or model control, and bound to that exact action when it is dispatched. It is a constructive counterpart to the approval-integrity attacks already listed, such as Loopjacking and approval laundering.",
+    "limitations": "Preprint evaluated on the authors' own 24-scenario benchmark, so its attack-success figures should not be generalised beyond that setting."
+  },
+  {
+    "title": "How we built Claude Code auto mode: a safer way to skip permissions",
+    "url": "https://www.anthropic.com/research/claude-code-auto-mode",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Explains why a coding agent replaced most manual permission prompts with a classifier that reviews each action: users accepted 93 per cent of prompts, broad allow rules hid risky commands, and consent often did not cover the real blast radius. The design notes on stripping agent text from the reviewer and returning denials to the agent, with escalation to a human after repeated blocks, are reusable patterns.",
+    "limitations": "Vendor engineering account of its own product with internally measured figures, and the post itself says it is not a replacement for careful human review of high-stakes infrastructure."
+  },
+  {
+    "title": "Your AI agent can move money in Stripe: here is how to stay in control",
+    "url": "https://stripe.dev/blog/your-ai-agent-can-move-money-in-stripe",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Shows server-side approval for agents acting on money: live refunds and payouts made through an OAuth-connected agent need the account holder to confirm, agent-tagged API keys fall under dashboard approval rules, the API returns an approval_required error that the agent can annotate with a justification, and webhook events report approval and execution outcomes back to the agent. It is a worked example of putting approval in the API rather than in the client.",
+    "limitations": "Vendor product guidance tied to Stripe features, not a general standard."
+  },
+  {
+    "title": "Outcome Monitors: Recovery Affordances for Silent Tool Failures",
+    "url": "https://arxiv.org/abs/2608.19303",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Addresses failures that arrive in the expected format, such as a cached error page or a negative price, by checking tool results against outcome contracts and returning a receipt that names the violated property and the recovery tools available. Its ablation, in which removing the recovery-tool list removes the measured gain, is a concrete hint for designing recoverable tool responses.",
+    "limitations": "Preprint whose main results come from the authors' ToolMaze environment plus tau-bench retail, and detection drops sharply for faults outside the mined contract vocabulary."
+  },
+  {
+    "title": "Same Error, Different Recovery: How Delivery Changes LLM Agent Behavior",
+    "url": "https://arxiv.org/abs/2611.11581",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Holds tool-error text constant and varies where it appears, what guidance accompanies it and whether the failed exchange is kept, and finds that the next action changes. For API, CLI and tool builders it is evidence that how an error reaches the agent, and whether the exact fault kind is named, is part of recovery design alongside the wording.",
+    "limitations": "Single-version preprint covering 13 open models from 3B to 70B parameters, so hosted frontier models are not tested, and no gain was measured on the benchmark that mixes in silent corruption."
+  },
+  {
+    "title": "Human-Guided Harm Recovery for Computer Use Agents",
+    "url": "https://arxiv.org/abs/2604.18847",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Treats recovery after an agent has already caused harm as a problem in its own right, derives a natural-language rubric of what people value in a recovery from 1,130 pairwise judgements, and introduces BackBench, 50 computer-use tasks for testing recovery from harmful states. Useful for teams that need a remediation path when prevention fails.",
+    "limitations": "Preprint with no listed venue or linked code, and the benchmark is small and confined to computer-use settings."
+  },
+  {
+    "title": "Overseeing Agents Without Constant Oversight: Challenges and Opportunities",
+    "url": "https://arxiv.org/abs/2602.16844",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Three user studies with a computer-use agent examine whether action traces help people verify its work, and surface problems a review interface must handle: hidden built-in assumptions, correctness criteria that shift as users go, and the difficulty of conveying the agent's process. Practical input for anyone designing trace or review views.",
+    "limitations": "Preprint with no stated venue; the proposed interface shortened time to find errors but did not meaningfully improve final accuracy."
+  },
+  {
+    "title": "Modeling Distinct Human Interaction in Web Agents",
+    "url": "https://arxiv.org/abs/2602.17588",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Introduces CowCorpus, 400 real-user web navigation trajectories with over 4,200 interleaved human and agent actions, identifies four interaction styles from hands-off supervision to full takeover, and frames predicting when a person will step in as a modelling task. It informs when an agent should pause to ask and when it should carry on.",
+    "limitations": "Labelled a preprint; the abstract page does not say how to obtain the dataset, and the usefulness gains come from the authors' own user study."
+  },
+  {
+    "title": "Using function tools with human in the loop approvals (Microsoft Agent Framework)",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/agents/tools/tool-approval",
+    "sourceType": "documentation",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Documents approval-marked tools across .NET, Python and Go, with approval responses bound by default to the pending request, a fail-closed path when middleware changes approved arguments, and an explicit warning that standing approvals can match a replacement tool with the same name, including an MCP tool. A framework-level reference for the approval-binding failures described in research already in this section.",
+    "limitations": "Framework-specific documentation with no evaluation, and its defaults may change between releases."
+  },
+  {
+    "title": "MasDrift: Benchmarking Authorization Preservation Across Multi-Agent Architectures",
+    "url": "https://arxiv.org/abs/2608.07556",
+    "sourceType": "benchmark",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "Pairs 600 benign tasks with reserved actions and measures whether delegated goals keep the user's original authorisation limits across single-agent, hierarchical and peer designs. It also compares re-checking each pending call against the original request with passing an attenuated policy down the chain, which informs where approval evidence should live.",
+    "limitations": "Preprint benchmark on productivity-style tasks, and the reported rates depend on the models and orchestration tested."
+  },
+  {
+    "title": "Signed but Not Safe: Requirement Integrity in Multi-Agent LLM Handoffs",
+    "url": "https://arxiv.org/abs/2611.07483",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Human control, approval and recovery",
+    "whyItMatters": "A preregistered comparison of free-text, structured JSON and signed requirement-manifest handoffs between an orchestrator and subagents, finding that signing stops tampering in transit and that deterministic checks outperform an LLM checker, while the extraction step before signing remains the weak point. It offers a concrete pattern for carrying a user's requirements intact through delegation.",
+    "limitations": "Preprint on synthetic tasks, with code and logs available only on request from the authors."
   },
   {
     "title": "Exposed by Design: A Dynamic Security Assessment of Internet-Facing MCP Servers at Scale",
@@ -1122,6 +2129,213 @@
     "section": "Security for agent-facing surfaces",
     "whyItMatters": "Across 16 code models and 576,000 generated samples in Python and JavaScript, models recommended packages that do not exist, names an attacker could register; relevant wherever agent instructions or skills tell an agent what to install.",
     "limitations": "Measures code generation with 2024-era models rather than agents that install and run packages, so current rates, and how often a hallucinated name is actually installed, are not established."
+  },
+  {
+    "title": "Model Context Protocol (MCP) Security, version 2.0 (CoSAI)",
+    "url": "https://github.com/cosai-oasis/ws4-secure-design-agentic-systems/blob/main/whitepapers/model-context-protocol-security.md",
+    "sourceType": "framework",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "A threat model for MCP deployments with twelve threat categories and thirty-four threats, plus four cumulative assurance levels that map controls across eight security dimensions to those categories and to the OWASP MCP Top 10. Version 2.0 is updated for the stateless 2026-07-28 release, covering request headers, sealed request state and extension governance.",
+    "limitations": "A coalition work product from an OASIS open project rather than a standard, and it tracks a protocol that is still changing."
+  },
+  {
+    "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+    "url": "https://arxiv.org/abs/2610.35541",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Introduces VELA, an executable benchmark of 44 known web vulnerabilities reached through agent-facing interfaces derived from legitimate workflows, and finds that the interface design changes how many stay exploitable far more than the choice of agent does. Teams turning existing web workflows into agent endpoints get measured trade-offs between removing operations and keeping legitimate tasks possible.",
+    "limitations": "Preprint that tests three commercial agents against reconstructed vulnerable backends, so it does not measure exposure on live production services."
+  },
+  {
+    "title": "When Tool Names Are Not Identities: Measuring Provider Misbinding in MCP-Based AI Agents",
+    "url": "https://arxiv.org/abs/2611.21577",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Shows that an attacker who only runs an additional MCP server can capture requests meant for a legitimate provider, because tool names, descriptions and schemas are not bound to a verified provider identity. Client and host designers get concrete evidence for namespacing tools by server and surfacing provider identity when several servers offer similar tools.",
+    "limitations": "Single-version preprint run in a controlled MCP environment with five LLM-based clients, so it does not measure how often misbinding happens in deployed hosts."
+  },
+  {
+    "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+    "url": "https://arxiv.org/abs/2611.03555",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Measures tool poisoning with real tool execution across 12 agent frameworks, 18 models and 45 scenarios, confirming exfiltration with a canary endpoint, and reports that susceptibility varies mainly by model rather than framework while a simple regex description scanner stops fewer than half the scenarios. It is useful evidence that metadata scanning is only a partial control and that frameworks ship no deliberate defence.",
+    "limitations": "Workshop paper (AISec 2026) whose framework audit reflects the versions pinned at the time and whose 45 scenarios are author-constructed."
+  },
+  {
+    "title": "MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers",
+    "url": "https://arxiv.org/abs/2508.14925",
+    "sourceType": "benchmark",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Builds 1,348 poisoned test cases on 45 live MCP servers and 353 real tools, where malicious instructions sit in tool metadata rather than tool output, and finds that agents rarely refuse them. It gives hosts and registries a reusable baseline for treating tool descriptions as untrusted input.",
+    "limitations": "Measures whether models comply with poisoned metadata rather than confirmed end-to-end execution, and the models evaluated are now dated."
+  },
+  {
+    "title": "Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines",
+    "url": "https://arxiv.org/abs/2609.18217",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Shows that tool descriptions, tool results and sampling messages share one context without privilege separation, and that payloads split across two or three of these channels can lead to credential exfiltration where a single-channel injection is refused. MCP server and client authors get a threat model in which each channel looks benign on its own, which per-field scanning will not catch.",
+    "limitations": "Single-version preprint whose results depend on the specific models, clients, payloads and third-party scanners tested."
+  },
+  {
+    "title": "Don't believe everything you read: Understanding and Measuring MCP Behavior under Misleading Tool Descriptions",
+    "url": "https://arxiv.org/abs/2602.03580",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Applies static analysis to 10,240 real MCP servers to compare what tool descriptions say with what the code does, and finds a minority with substantial mismatches that could hide privileged operations, state changes or financial actions. Reviewers and registry operators get a concrete reason to audit a description and its implementation together.",
+    "limitations": "Single-version preprint based on static analysis, so behaviour that only appears at runtime, and later server updates, are not captured."
+  },
+  {
+    "title": "A First Measurement Study on Authentication Security in Real-World Remote MCP Servers",
+    "url": "https://arxiv.org/abs/2605.22333",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Finds 7,973 live remote MCP servers, about 40 per cent of which expose tools with no authentication, and sets out a taxonomy of nine OAuth flaw types tied to open client environments, dynamic client registration and delegated authorisation. Server operators get a concrete list of registration and redirect failures to test for.",
+    "limitations": "Preprint whose detailed flaw counts come from the 119 OAuth servers the authors could test end to end, and it predates the 2026-07-28 MCP release that deprecates dynamic client registration in favour of Client ID Metadata Documents."
+  },
+  {
+    "title": "A2ABreak: Systematic Security Analysis of the A2A Protocol",
+    "url": "https://arxiv.org/abs/2609.10871",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Extracts a finite-state model from the A2A specification text and reasons over it to report 11 weaknesses that a fully specification-compliant adversary could exploit, including context injection through unprotected context identifiers, identity loss across delegation chains and rogue agents advertising unattested capabilities. Teams publishing or consuming Agent Cards get design-level risks to address beyond implementation bugs.",
+    "limitations": "Preprint that analyses the specification under a full-compliance assumption, with LLM-assisted model extraction checked against expert review rather than against deployed implementations."
+  },
+  {
+    "title": "Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale",
+    "url": "https://arxiv.org/abs/2601.10338",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Scans 31,132 skills from two marketplaces and reports that roughly a quarter contain at least one vulnerability pattern, with skills that bundle scripts about twice as likely to be affected as instruction-only skills. It supplies a vulnerability taxonomy and an open dataset for anyone publishing, curating or installing skills.",
+    "limitations": "Preprint whose detector combines static analysis with LLM classification at reported precision and recall below 90 per cent, so counts are estimates rather than confirmed exploits."
+  },
+  {
+    "title": "DECEPTICON: How Dark Patterns Manipulate Web Agents",
+    "url": "https://arxiv.org/abs/2512.22894",
+    "sourceType": "benchmark",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Provides 700 web tasks (600 generated, 100 from real sites) that each isolate one dark pattern, and reports that such patterns steer agents towards unwanted outcomes more often than they steer people, with prompting and guardrail models not reliably helping. It frames deceptive interface design as a safety problem for anyone who builds, audits or operates sites that agents use.",
+    "limitations": "Preprint whose generated tasks are synthetic and whose per-model results will age as agents change."
+  },
+  {
+    "title": "Defeating Prompt Injections by Design",
+    "url": "https://arxiv.org/abs/2503.18813",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Presents CaMeL, a system layer that derives control and data flow from the trusted user request so that untrusted tool data cannot change what the agent does, and enforces capability-based data-flow policies whenever a tool is called. It is the main worked implementation of the architectural approach described in the design-patterns paper already listed.",
+    "limitations": "Preprint whose security results are measured on AgentDojo only, with a reported drop in task completion compared with an undefended agent."
+  },
+  {
+    "title": "Agentic Browsing and Web Architecture",
+    "url": "https://w3ctag.github.io/agentic-browsing-finding/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "The W3C Technical Architecture Group's analysis of agentic browsers argues that they combine private data, untrusted content and outbound communication, erode same-origin assumptions and act as confused deputies holding the user's ambient authority, with direct reference to WebMCP. Sites and browser teams exposing tools to agents get the architectural objections they will need to answer.",
+    "limitations": "A Draft Finding of the TAG, not a normative specification or a consensus Recommendation, and its text may change before publication."
+  },
+  {
+    "title": "Threat Model for WebMCP",
+    "url": "https://w3c.github.io/threat-model-webmcp/",
+    "sourceType": "framework",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "A structured threat model that separates threats inherent to agentic navigation, threats from MCP-style tool mediation and threats specific to WebMCP, using data-flow diagrams, trust boundaries and STRIDE, and maps each threat to the specification's security and privacy considerations. Sites adding WebMCP tools can check their designs against a numbered threat inventory.",
+    "limitations": "An unofficial proposal draft whose response section is still to be written, tracking a specification that is itself a draft."
+  },
+  {
+    "title": "OWASP Top 10 for Agentic Applications for 2026",
+    "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "sourceType": "framework",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Gives teams a shared vocabulary of the main risk categories for agents that plan and act, including goal hijacking, tool misuse and identity or privilege abuse, which works as a checklist when reviewing tool, permission and delegation design.",
+    "limitations": "A community consensus framework from a volunteer project rather than an empirically validated standard, and the full text is a separate download from the resource page."
+  },
+  {
+    "title": "OWASP MCP Top 10",
+    "url": "https://owasp.org/www-project-mcp-top-10/",
+    "sourceType": "framework",
+    "year": 2025,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Names ten MCP-specific risk categories, from token and secret exposure and scope creep to tool poisoning, shadow servers and context over-sharing, giving MCP server authors and reviewers a checklist to work through.",
+    "limitations": "Still at its beta stage with 2025 identifiers, and the project roadmap promises a later release, so numbering and wording may change."
+  },
+  {
+    "title": "Snyk Agent Scan",
+    "url": "https://github.com/snyk/agent-scan",
+    "sourceType": "tool",
+    "year": null,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Discovers the agents, MCP servers and skills installed on a machine and scans their tools, prompts and resources for prompt injection, tool poisoning and related risks, a practical pre-install and audit check for teams that rely on third-party agent components.",
+    "limitations": "Vendor-maintained tool whose README states the CLI output is experimental and may change between releases, and part of its analysis relies on a vendor service."
+  },
+  {
+    "title": "Characterizing Agentic Flooding of Government Services",
+    "url": "https://arxiv.org/abs/2608.16603",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "Collects 84 potential cases of agent-driven demand surges across 11 jurisdictions, offers a risk matrix for which services are most exposed, and maps responses, noting that the quickest friction measures such as fees can reduce equitable access. It frames what happens to a service when agents make it cheap to use at scale, and the trade-offs in adding friction.",
+    "limitations": "Focused on public-sector services, and its cases are described as potential rather than confirmed instances."
+  },
+  {
+    "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+    "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Security for agent-facing surfaces",
+    "whyItMatters": "A large site operator's first-hand account of unapproved agent edits, failed attempts to use a hosted note tool as a proxy, and heavy API and query traffic, including how hard it was to attribute the activity. It is a primary record of why operators ask for verifiable agent identity and clear agent access rules.",
+    "limitations": "An incident account from one organisation, whose attribution to a specific operator is stated as the Foundation's belief rather than independently verified, and it found no evidence of compromise."
+  },
+  {
+    "title": "Semantic conventions for GenAI agent and framework spans (OpenTelemetry)",
+    "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Observability and traces",
+    "whyItMatters": "Defines a shared span vocabulary for agent creation and invocation (create_agent, invoke_agent, invoke_workflow and framework entry points) with attributes such as gen_ai.tool.definitions, so operators can record which tools an agent was offered without a vendor-specific format. Tool definitions and message content are opt-in, which reflects that they can carry sensitive data.",
+    "limitations": "Marked Development status in a repository with no published release, so names and span kinds may still change."
+  },
+  {
+    "title": "Semantic conventions for Model Context Protocol (OpenTelemetry)",
+    "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/mcp.md",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Observability and traces",
+    "whyItMatters": "Gives MCP client and server builders common span names and attributes (method, session, protocol version, error codes) and says trace context should travel inside params._meta, so a single tool call can be followed from the agent host into the server. Setting gen_ai.operation.name to execute_tool lets MCP tool calls be read alongside other tool spans.",
+    "limitations": "Development status convention whose adoption across MCP SDKs and hosts is uneven, so traces from different clients may not yet line up."
+  },
+  {
+    "title": "OpenInference Specification",
+    "url": "https://openinf.dev/spec/",
+    "sourceType": "specification",
+    "year": null,
+    "section": "Observability and traces",
+    "whyItMatters": "Sets out span kinds and attributes for LLM calls, agent steps, tool invocations and retrieval on top of OpenTelemetry, which many tracing and evaluation tools emit, and includes data masking settings for prompts and outputs. An experimental export to OpenTelemetry gen_ai attributes helps teams that must read both vocabularies.",
+    "limitations": "Vendor-originated convention (Arize) with no stated version, which overlaps with the official OpenTelemetry GenAI conventions."
+  },
+  {
+    "title": "Agent observability: what to track first",
+    "url": "https://aaif.io/blog/agent-observability-what-to-track-first",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Observability and traces",
+    "whyItMatters": "Proposes a minimum set of per-run signals (tool and schema versions, redacted arguments, approval status, a compact record of what entered context, cost roll-ups) and a small failure taxonomy such as wrong tool or wrong input, and points to the MCP 2026-07-28 trace context keys. It gives teams a concrete starting point before choosing tracing tools.",
+    "limitations": "An advisory foundation blog post whose context record and failure taxonomy are proposals, not standards, and it mentions a project connected with its contributors."
   },
   {
     "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
@@ -1264,6 +2478,66 @@
     "limitations": "A periodically updated leaderboard subject to the reproducibility concerns raised in the validity audits below; treat single-run rankings with caution."
   },
   {
+    "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "url": "https://arxiv.org/abs/2406.13352",
+    "sourceType": "benchmark",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "An extensible environment of tool-using tasks (email, e-banking, travel booking) with paired security test cases, into which teams can plug their own tasks, attacks and defences. Most later prompt-injection benchmarks and the NIST hijacking work extend it, so it is the baseline to understand before reading newer defence claims.",
+    "limitations": "Research benchmark with simulated tool suites; its default attack set is fixed, and later work argues that fixed attacks overstate how robust a defence is."
+  },
+  {
+    "title": "An Illusion of Progress? Assessing the Current State of Web Agents (Online-Mind2Web)",
+    "url": "https://arxiv.org/abs/2504.01382",
+    "sourceType": "benchmark",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Introduces Online-Mind2Web, 300 tasks across 136 live websites, and finds earlier web-agent results were over-optimistic. Useful as a live-site counterpart to the offline Mind2Web entry and as a check when reading vendor web-agent claims.",
+    "limitations": "Live websites change over time, so scores drift, and the authors report that their automatic judge agrees with human raters in roughly 85 per cent of cases."
+  },
+  {
+    "title": "WebPageBench: Event-Level Verification and Controlled UI-Variant Generation for Web Agents",
+    "url": "https://arxiv.org/abs/2609.35026",
+    "sourceType": "benchmark",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Instrumented mock sites emit typed events, so success is decided from the interface log rather than a judge model, and a single switch re-renders one control with a different implementation while the task stays fixed. Site builders get one of the few set-ups for measuring how a specific widget choice changes agent completion, and a measure of the gap between tasks agents declare finished and tasks actually done.",
+    "limitations": "Preprint on six synthetic sites and 152 tasks, so control-level findings may not carry over to complex production front ends."
+  },
+  {
+    "title": "Constructing Challenging Browser-Use Tasks by Controlled Environment Interventions (BreakingWeb)",
+    "url": "https://arxiv.org/abs/2609.35814",
+    "sourceType": "benchmark",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Runs each task twice, once unmodified and once under a reproducible change to content, server state, network responses or rendering, scores on backend state and compares agents with human participants. Its finding that most agent failures are runs reported as complete when the required change never happened supports giving users and agents explicit, checkable confirmation of state changes.",
+    "limitations": "Preprint on seven self-hosted sites; the interventions are designed perturbations rather than a sample of real production faults."
+  },
+  {
+    "title": "SusBench: An Online Benchmark for Evaluating Dark Pattern Susceptibility of Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2510.11035",
+    "sourceType": "benchmark",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Injects nine dark-pattern types into real consumer websites and compares computer-use agents with human participants, finding that preselection, trick wording and hidden information catch both groups. It gives interface designers a concrete list of patterns that mislead agents acting for users.",
+    "limitations": "Five agents tested at one point in time, and the patterns are researcher-injected rather than observed in the wild, although participants rated them realistic."
+  },
+  {
+    "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+    "url": "https://arxiv.org/abs/2602.12670",
+    "sourceType": "benchmark",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Benchmarks",
+    "whyItMatters": "Pairs every task with matched no-skill and curated-skill conditions and deterministic verifiers, so the effect of packaging procedural knowledge as an Agent Skill can be measured per model and harness rather than assumed. The current version also compares focused skills with larger bundles, which bears directly on how skill authors scope a package.",
+    "limitations": "Preprint whose task inventory and headline figures changed across four versions; the tasks are expertise-heavy and may not represent the product-usage skills vendors ship."
+  },
+  {
     "title": "METR Task Standard",
     "url": "https://github.com/METR/task-standard",
     "sourceType": "specification",
@@ -1292,6 +2566,46 @@
     "subsection": "Evaluation tooling",
     "whyItMatters": "Open-source tracing, evaluation and prompt management for LLM and agent applications, supporting the practice of recording every agent run so failures can be reviewed and turned into test cases.",
     "limitations": "Self-hosting at scale is an operational commitment, and tracing records what happened without judging whether it was correct."
+  },
+  {
+    "title": "Harbor",
+    "url": "https://github.com/harbor-framework/harbor",
+    "sourceType": "repository",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "An open framework from the Terminal-Bench creators for running off-the-shelf agents such as Claude Code, Codex CLI and OpenHands against shared benchmarks or your own containerised tasks, locally or on parallel cloud sandboxes. It is the official Terminal-Bench 2.0 harness and the runner used in recent vendor guides to product-owned agent evals.",
+    "limitations": "Oriented towards terminal and coding tasks in containers, so web or GUI surfaces need other harnesses."
+  },
+  {
+    "title": "The BrowserGym Ecosystem for Web Agent Research",
+    "url": "https://arxiv.org/abs/2412.05467",
+    "sourceType": "framework",
+    "year": 2024,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "Describes BrowserGym, a shared observation and action interface over many web-agent benchmarks including WebArena and WorkArena, and AgentLab for managing experiments, so a team can run its own site or task set through the same harness researchers use. The maintained code lives at github.com/ServiceNow/BrowserGym.",
+    "limitations": "Research framework whose observation spaces follow benchmark needs, and the model comparison in the paper reflects late 2024 models."
+  },
+  {
+    "title": "MCP Conformance Test Framework",
+    "url": "https://github.com/modelcontextprotocol/conformance",
+    "sourceType": "tool",
+    "year": null,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "The official harness for checking MCP client and server implementations against the specification, with scenario suites (core, auth, extensions, backwards compatibility, draft) that can be filtered by spec version such as 2025-11-25 or 2026-07-28. Server and client authors can confirm protocol behaviour before agents depend on it.",
+    "limitations": "Tests protocol conformance only, not the quality of tool descriptions or whether agents complete tasks."
+  },
+  {
+    "title": "Scope",
+    "url": "https://github.com/microsoft/scope",
+    "sourceType": "repository",
+    "year": null,
+    "section": "Evaluation",
+    "subsection": "Evaluation tooling",
+    "whyItMatters": "An open-source platform for evaluating how agents use a product on real tasks, with reusable success criteria, live run tracking and inspectable evidence through a portal or CLI. It is one of the few evaluation tools built specifically around agent experience rather than model capability.",
+    "limitations": "Vendor-maintained project labelled a research preview, with no independent evidence yet on how well its results track real agent outcomes."
   },
   {
     "title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
@@ -1355,7 +2669,7 @@
   },
   {
     "title": "Demystifying evals for AI agents",
-    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
     "sourceType": "essay",
     "year": 2026,
     "section": "Evaluation",
@@ -1372,6 +2686,86 @@
     "subsection": "Methodology and validity",
     "whyItMatters": "Practical guidance for evaluating how agents use a product: realistic developer prompts, checklist criteria with pass, fail and skip conditions for an LLM judge, judge calibration, at least five runs per condition and pinned, representative environments.",
     "limitations": "An experience report from one vendor's evaluation work on coding agents, not a controlled study; thresholds such as five runs per scenario are rules of thumb rather than statistically derived."
+  },
+  {
+    "title": "Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation",
+    "url": "https://arxiv.org/abs/2510.11977",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Reports a standardised, cost-tracked run of 21,730 rollouts across models, scaffolds and benchmarks, and uses log inspection to surface behaviour such as agents searching for the benchmark instead of solving the task. It is a reference for why scaffold, cost and logs belong in any agent result, and the released logs can be reused.",
+    "limitations": "The associated hal-harness repository was archived in July 2026, so the paper is best read as a methodology reference rather than a live tool."
+  },
+  {
+    "title": "Towards a Science of AI Agent Reliability",
+    "url": "https://arxiv.org/abs/2602.16666",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Proposes twelve reliability metrics grouped under consistency, robustness, predictability and safety, drawn from safety-critical engineering, as a complement to single success rates. Teams can borrow the metrics when deciding whether an agent workflow is consistent enough to deploy.",
+    "limitations": "The metrics are applied to two benchmarks and 15 models, so how well they reflect production conditions is not yet established."
+  },
+  {
+    "title": "The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections",
+    "url": "https://arxiv.org/abs/2510.09023",
+    "sourceType": "paper",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Argues that defences must be tested against adaptive attackers who tailor and scale their search, and bypasses 12 recent defences that had reported near-zero attack success. It sets the evaluation bar that any prompt-injection defence claim for an agent-facing tool should meet.",
+    "limitations": "Preprint focused on model-level defences; it does not offer a defence or examine system-level designs in depth."
+  },
+  {
+    "title": "An Empirical Study of Harness Design for Coding Agents",
+    "url": "https://arxiv.org/abs/2609.20804",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Varies planning, action space and context management one at a time across 176 matched settings, and reports for example that models fluent in bash do well with a bash-only interface while weaker models benefit from predefined tools. It helps teams separate interface effects from model effects when evaluating the tools they expose.",
+    "limitations": "Preprint limited to two coding benchmarks, four models and one lightweight harness."
+  },
+  {
+    "title": "Infrastructure noise in agentic coding evals",
+    "url": "https://www.anthropic.com/research/infrastructure-noise",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Shows that container resource enforcement alone moved Terminal-Bench 2.0 scores by several percentage points, more than many leaderboard gaps, and explains the difference between a guaranteed allocation and a hard kill limit. Anyone comparing agents or harness changes on their own tasks gets concrete reasons to document and fix the runtime configuration.",
+    "limitations": "Vendor engineering post measured on one benchmark and the vendor's own infrastructure, not a peer-reviewed study."
+  },
+  {
+    "title": "Agents are users, so your software needs evals",
+    "url": "https://vercel.com/blog/agent-evals",
+    "sourceType": "essay",
+    "year": 2026,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "A worked method for teams that ship an API, CLI, MCP server or SDK: a discovery, selection, access and success funnel, a testing pyramid by number of model calls, end-to-end tasks with per-constraint verifiers, at least one task where the right move is not to act, and guidance on choosing pass@k or pass^k by the cost of failure.",
+    "limitations": "Vendor material built around Harbor and Vercel infrastructure, and the results table in the worked example is labelled by the authors as illustrative rather than measured."
+  },
+  {
+    "title": "The AX Practitioner Playbook",
+    "url": "https://microsoft.github.io/agent-experience/playbook/",
+    "sourceType": "framework",
+    "year": null,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Consolidates Microsoft developer relations' Agent Experience article series into an eleven-chapter method for teams that own SDKs, APIs, CLIs, MCP servers, skills or docs: design realistic scenarios, write and calibrate criteria a judge applies consistently, choose agent profiles, read trajectories to separate an extension that never loaded from one never called or one misapplied, and test each proposed fix as a hypothesis before shipping it. A quality checklist and an end-to-end SharePoint Framework worked example make the method concrete.",
+    "limitations": "Vendor material drawn from coding agents working on Microsoft's own developer products with small run counts, it overlaps with the series articles already listed, and the site states no publication date or version (the announcement post is dated October 2026)."
+  },
+  {
+    "title": "Why Do Multi-Agent LLM Systems Fail?",
+    "url": "https://arxiv.org/abs/2503.13657",
+    "sourceType": "dataset",
+    "year": 2025,
+    "section": "Evaluation",
+    "subsection": "Methodology and validity",
+    "whyItMatters": "Introduces the MAST taxonomy of 14 failure modes in three groups (system design, inter-agent misalignment, task verification) and a dataset of more than 1,600 annotated traces from seven frameworks, with an LLM annotation pipeline. Teams can reuse the taxonomy to label their own multi-agent traces, including communication and verification failures.",
+    "limitations": "Traces come from research frameworks and earlier model generations, and the LLM annotator approximates rather than replaces human labels."
   },
   {
     "title": "Is Your Site Agent-Ready?",
@@ -1406,17 +2800,17 @@
     "sourceType": "tool",
     "year": 2026,
     "section": "Readiness instruments",
-    "whyItMatters": "Open-source tooling that runs a real agent through a scenario and grades the transcript on goal achievement, environment, service and agent dimensions, measuring an observed journey rather than static signals.",
+    "whyItMatters": "Open-source tooling that runs a real agent through a scenario and grades the transcript on goal achievement, environment, service and agent dimensions, so it measures an observed journey rather than static signals. The project site at axis.run documents the weights (40 per cent goal achievement, 20 per cent for each of the other three), a quickstart and CI baselines that fail a build on regression.",
     "limitations": "Relies on a model judge, mixes product and model quality in one composite, and no published evidence yet shows that a higher score predicts agent task success beyond the scenarios run."
   },
   {
     "title": "Agent-Friendly Documentation Spec",
     "url": "https://agentdocsspec.com/",
     "sourceType": "specification",
-    "year": null,
+    "year": 2026,
     "section": "Readiness instruments",
-    "whyItMatters": "An open specification and checker for documentation sites that reports pass, warn or fail per check across discoverability, Markdown availability, page size, structure and URL stability.",
-    "limitations": "Grounded in the author's observations rather than a controlled study, covers web delivery only, and no published evidence yet shows that a higher score predicts agent task success."
+    "whyItMatters": "An open draft specification (v0.6.0) that defines 28 checks in seven categories for documentation sites: discoverability, Markdown availability, page size, content structure, URL stability, observability and authentication. Each check has pass, warn or fail criteria and a severity. Its automated checker, AFDocs, is listed separately.",
+    "limitations": "A draft grounded in the author's observations rather than a controlled study, covering web delivery only (companion specs on content and repository documentation are planned), and no published evidence yet shows that a higher score predicts agent task success."
   },
   {
     "title": "Agent Readiness Model (Factory)",
@@ -1426,6 +2820,33 @@
     "section": "Readiness instruments",
     "whyItMatters": "Scores a code repository, not a website, on whether it has the structure, validation and operational signals coding agents need, using gated levels that a repository unlocks in order.",
     "limitations": "Tied to one vendor's coding agent, the level thresholds are the vendor's own, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "AFDocs",
+    "url": "https://github.com/agent-ecosystem/afdocs",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "The open-source command-line checker and Node.js library for the Agent-Friendly Documentation Spec. It runs the spec's 28 checks in seven categories against a live documentation site and prints pass, warn or fail per check with a suggested fix, a weighted scorecard and CI helpers. Several hosted documentation scorers say they run it underneath, so its checks reference shows what those scores actually test.",
+    "limitations": "An early 0.x tool whose check identifiers and output formats may change between versions, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "A Standards-Grounded Method for Evaluating Website Agent-Readiness (draft-shah-agent-readiness-evaluation)",
+    "url": "https://datatracker.ietf.org/doc/draft-shah-agent-readiness-evaluation/",
+    "sourceType": "specification",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "Sets out a deterministic 0 to 100 method for website agent-readiness in which every check maps to an existing RFC or W3C specification (robots.txt, Web Linking, api-catalog, JSON-LD, text/markdown, HTTP caching, TLS). Each check is reported with its citation and raw observation, llms.txt and Content-Signal count only as small bonuses, and blocked sites are reported as not observed instead of failed. It works as a template for making any scanner's assumptions open to inspection.",
+    "limitations": "An individual Informational draft on the Independent Submission stream with no IETF working group standing. Its pillar weights are explicitly an editorial convention, and no published evidence yet shows that a higher score predicts agent task success."
+  },
+  {
+    "title": "mcpgrade",
+    "url": "https://github.com/tenglidev/mcpgrade",
+    "sourceType": "tool",
+    "year": 2026,
+    "section": "Readiness instruments",
+    "whyItMatters": "An open-source linter for MCP server tool catalogues. It scores descriptions, schema design, naming, token cost and consistency, gives a concrete fix for each finding and can gate CI. An optional live mode asks a model to pick tools and fill arguments for synthesised tasks, including out-of-scope tasks the model should refuse. The author's accompanying scan of 36 public servers (tengli.dev, July 2026) found that undocumented parameters were the most common failure.",
+    "limitations": "A personal project whose rules and weights are the author's own. The only check of static scores against model behaviour is a small calibration (four servers, one model) that measures single-step tool selection, not task success. It is unrelated to the similarly named mcpgrade.dev security grader."
   },
   {
     "title": "GEO: Generative Engine Optimization",
@@ -1491,13 +2912,40 @@
     "limitations": "Covers one search engine only and says nothing about how other answer engines or agents treat the same signals."
   },
   {
+    "title": "CITECHOICE: A Causal Audit of How Document Presentation Redistributes Citation Credit in Agentic Search",
+    "url": "https://arxiv.org/abs/2609.15164",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Replays frozen, hash-checked transcripts of a searching agent while changing only document order or structured versus prose rendering, which separates what presentation actually causes from the much larger rank effects seen in observational data. It also measures how often citation decisions flip under fresh decoding, a noise floor teams should know before crediting a content edit with a citation change.",
+    "limitations": "Preprint built on one acquisition agent, one retrieval provider and about one hundred verified document pairs; the authors state it does not show that structure changes whether a source is cited at all, or that publisher edits change live retrieval."
+  },
+  {
+    "title": "Understanding ChatGPT Citations: Evidence from Production Web Search Across Model Generations",
+    "url": "https://arxiv.org/abs/2610.15382",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "Follows production ChatGPT search from rewritten queries through retrieval rounds to the sources finally cited, across four model settings in Instant and Thinking modes. It gives practitioners a reason to track being retrieved separately from being cited, to measure at hostname and entity level as well as exact URL, and to recheck results whenever the deployed model changes.",
+    "limitations": "A short observational preprint on one product whose behaviour shifts with each deployment; the abstract page does not state that data or code are released, and the external proxies it tests recover only a minority of cited URLs."
+  },
+  {
+    "title": "Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact",
+    "url": "https://arxiv.org/abs/2605.14021",
+    "sourceType": "paper",
+    "year": 2026,
+    "section": "GEO and AI search (adjacent)",
+    "whyItMatters": "A peer-reviewed measurement study of when Google AI Overviews appear, which domains they cite and whether cited pages support each atomic claim in the answer. Its finding that a large share of cited domains do not appear on the co-displayed first results page shows that ranking organically and being cited by the overview need to be measured as separate problems.",
+    "limitations": "Covers one engine, trending United States queries and a 40-day window in spring 2026, and the abstract page does not state that the query set or code are released."
+  },
+  {
     "title": "alexngai/awesome-agent-experience",
     "url": "https://github.com/alexngai/awesome-agent-experience",
     "sourceType": "list",
     "year": 2026,
     "section": "Related lists",
     "whyItMatters": "A broad AX list with sections on standards, IETF discovery drafts, governance bodies, articles and case studies, useful for tracing the wider conversation around the sources curated here.",
-    "limitations": "Archived on GitHub at retrieval, entries carry no limitations, and some case studies repeat unverified vendor outcome figures."
+    "limitations": "Archived on GitHub since its last push on 2026-05-01, so it no longer tracks new work; entries carry no limitations, and some case studies repeat unverified vendor outcome figures."
   },
   {
     "title": "rolandfarkasCOM/awesome-agentic-web",
@@ -1536,15 +2984,6 @@
     "limitations": "Mostly product and framework listings without annotation of limits, and the list is maintained by a browser-infrastructure vendor."
   },
   {
-    "title": "pauldebdeep9/awesome-agentic-evaluation",
-    "url": "https://github.com/pauldebdeep9/awesome-agentic-evaluation",
-    "sourceType": "list",
-    "year": 2026,
-    "section": "Related lists",
-    "whyItMatters": "A structured list of agent benchmarks, evaluation tooling and methodology papers, with a separation between benchmark catalogues and rigour concerns that complements the Evaluation section here.",
-    "limitations": "A single-maintainer project, and several domain sections such as cybersecurity sit outside agent experience as scoped here."
-  },
-  {
     "title": "hqhq1025/awesome-computer-use-ecosystem",
     "url": "https://github.com/hqhq1025/awesome-computer-use-ecosystem",
     "sourceType": "list",
@@ -1552,5 +2991,41 @@
     "section": "Related lists",
     "whyItMatters": "Organises desktop and browser computer-use agent projects by capability, including accessibility and semantic grounding, for readers who need GUI-agent tooling.",
     "limitations": "New at retrieval, and a notable share of entries are the maintainer's own projects."
+  },
+  {
+    "title": "ai-boost/awesome-a2a",
+    "url": "https://github.com/ai-boost/awesome-a2a",
+    "sourceType": "list",
+    "year": 2025,
+    "section": "Related lists",
+    "whyItMatters": "A catalogue of Agent2Agent material that tracks official releases (including the v1.0 and v1.0.1 specification releases) alongside SDKs, tools, tutorials and example agents, useful when looking for A2A clients or servers to test an Agent Card against.",
+    "limitations": "A community directory with promotional one-line descriptions and no stated review criteria, so it does not assess conformance, security or maintenance of the projects it lists."
+  },
+  {
+    "title": "webfuse-com/awesome-webmcp",
+    "url": "https://github.com/webfuse-com/awesome-webmcp",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "Gathers WebMCP specification links, browser flag and extension setup, libraries and polyfills, demos, developer tools and a small benchmarks section in one place, which complements the single WebMCP specification entry in this list.",
+    "limitations": "Maintained by a vendor working in the space, carries no licence file, and its tagline calls WebMCP a W3C standard although the specification it links is a Community Group draft that is not on the Standards Track."
+  },
+  {
+    "title": "GuilhermeAlbert/awesome-agent-standards",
+    "url": "https://github.com/GuilhermeAlbert/awesome-agent-standards",
+    "sourceType": "list",
+    "year": 2026,
+    "section": "Related lists",
+    "whyItMatters": "Indexes agent-facing files and protocols (AGENTS.md and vendor context files, SKILL.md, llms.txt, auth.md, pricing.md, MCP, A2A, the Agent Client Protocol and tracing conventions) and classifies each by kind (standard, protocol, convention, emerging), which helps readers tell formal specifications apart from informal conventions.",
+    "limitations": "A small single-maintainer index whose maturity labels are the maintainer's own judgement, and several of the conventions it tracks are vendor-originated files rather than published standards."
+  },
+  {
+    "title": "thedaviddias/llms-txt-hub",
+    "url": "https://github.com/thedaviddias/llms-txt-hub",
+    "sourceType": "list",
+    "year": 2025,
+    "section": "Related lists",
+    "whyItMatters": "A large, frequently updated directory of sites that publish llms.txt files and of tools that generate or validate them, which gives a ready sample of real implementations when studying how the format varies in practice.",
+    "limitations": "Entries are largely self-submitted and its README repeats benefits of llms.txt as fact, so inclusion says nothing about whether any agent fetches or benefits from a listed file."
   }
 ]

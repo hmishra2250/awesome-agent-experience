@@ -14,11 +14,13 @@ const requiredSections = [
   'Discovery and agent-readable web',
   'Documentation for agents',
   'Tool use, tool descriptions and MCP',
+  'Context, memory and handoffs',
   'Protocols and machine-readable surfaces',
   'Agent identity and authorization',
   'Agentic commerce and payments',
   'Human control, approval and recovery',
   'Security for agent-facing surfaces',
+  'Observability and traces',
   'Evaluation',
   'Readiness instruments',
   'GEO and AI search (adjacent)',
@@ -154,6 +156,31 @@ if (sectionOrder.join('|') !== requiredSections.join('|')) {
 for (let i = 1; i < sources.length; i += 1) {
   if (sources[i].section !== sources[i - 1].section && sources.slice(0, i - 1).some((source) => source.section === sources[i].section)) {
     fail(`source ${i}: section ${sources[i].section} is split across the dataset`);
+  }
+}
+
+// Wiki pages: relative links must resolve and prose must avoid en and em dashes.
+{
+  const { readdir } = await import('node:fs/promises');
+  const { existsSync } = await import('node:fs');
+  const { join, dirname, resolve } = await import('node:path');
+  const wikiRoot = new URL('../docs/wiki/', import.meta.url).pathname;
+  const walk = async (dir) => (await readdir(dir, { withFileTypes: true }).catch(() => []))
+    .reduce(async (acc, entry) => {
+      const list = await acc;
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) return list.concat(await walk(full));
+      return entry.name.endsWith('.md') ? list.concat(full) : list;
+    }, Promise.resolve([]));
+  for (const file of await walk(wikiRoot)) {
+    const text = await readFile(file, 'utf8');
+    const name = file.slice(wikiRoot.length);
+    if (/[\u2013\u2014]/.test(text)) fail(`docs/wiki/${name}: uses an en or em dash`);
+    for (const [, target] of text.matchAll(/\]\(([^)\s]+)\)/g)) {
+      if (/^(https?:|mailto:|#)/.test(target)) continue;
+      const path = target.split('#')[0];
+      if (!existsSync(resolve(dirname(file), path))) fail(`docs/wiki/${name}: broken relative link ${target}`);
+    }
   }
 }
 

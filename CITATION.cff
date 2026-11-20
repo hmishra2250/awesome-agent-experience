@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 title: Awesome Agent Experience
 type: dataset
-abstract: "Curated public source map for software agent experience: discovery, documentation for agents, tool use and MCP, protocols, identity, commerce, human control, security, evaluation, and readiness instruments."
+abstract: "Curated public source map for software agent experience: discovery, documentation for agents, tool use and MCP, context and handoffs, protocols, identity, commerce, human control, security, observability, evaluation, and readiness instruments, with a companion wiki of concept and standard explainers."
 authors:
   - name: Agent Experience
 url: https://github.com/hmishra2250/awesome-agent-experience
