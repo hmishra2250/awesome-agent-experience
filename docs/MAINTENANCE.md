@@ -51,3 +51,9 @@ Expand only when a reviewed source answers a missing reader question. There is n
 ## Automated offline gate
 
 `.github/workflows/validate.yml` runs generator tests, README drift detection and offline source checks on pull requests and pushes to `main`, using Node 24 and commit-pinned GitHub actions. It has read-only repository permissions, installs no project dependencies, and performs no online source crawl.
+
+## Wiki
+
+- Monthly: recheck the [standards tracker](wiki/standards-tracker.md) and the standard pages whose specifications moved, and update their "As of" dates.
+- Quarterly: reread each concept page against the list; remove claims whose sources were withdrawn or superseded, and add the strongest new entries to its sources section.
+- A wiki page explains; it does not certify. When a page and a list annotation disagree, fix the annotation first, then the page.

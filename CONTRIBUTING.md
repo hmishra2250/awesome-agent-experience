@@ -53,3 +53,13 @@ This project welcomes corrections and removals. A smaller accurate list is bette
 Run `node scripts/build-readme-sources.mjs`, `node scripts/build-readme-sources.mjs --check`, and `node scripts/check-links.mjs`. Submit canonical public URLs, an original rationale and limitation, and verified source/version facts; do not infer dates or status.
 
 The offline checks also run in GitHub Actions on pull requests and pushes to `main`. Online URL checks remain an explicit maintainer task; CI does not crawl external sources. See [maintenance](docs/MAINTENANCE.md) for the review cadence.
+
+## Wiki pages
+
+The [wiki](docs/wiki/README.md) explains the sources in the list. Improve a page when a standard changes status, a stronger source appears, or a claim no longer holds.
+
+- Cite public sources, preferably entries already in `data/sources.json`. If a page needs a source that is not in the list, open it, check it, and consider proposing it as a list entry too.
+- Tag claims where it matters as (specification), (study), (vendor material) or (opinion), and write "As of YYYY-MM-DD" next to any status or version claim about a standard.
+- Update the page's "Last reviewed" date when you recheck it, and keep the standards tracker in step with the standard pages.
+- Follow the same style rules as annotations: British English, no contractions outside quoted titles, no en or em dashes, no unsupported effectiveness claims.
+- Use relative links between wiki pages. `node scripts/check-links.mjs` fails on broken relative links and on dashes in wiki pages.
