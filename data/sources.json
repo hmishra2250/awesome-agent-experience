@@ -2795,6 +2795,15 @@
     "limitations": "A point-in-time vendor score whose weighting is the vendor's choice, and no published evidence yet shows that a higher score predicts agent task success."
   },
   {
+    "title": "Agentrail Agent Readiness Checker",
+    "url": "https://www.agentrail.co/agent-readiness/checker",
+    "sourceType": "tool",
+    "year": null,
+    "section": "Readiness instruments",
+    "whyItMatters": "Shows which checks a public site passes for discovery, access and usability, including crawler rules, an OpenAPI description and JSON error responses. Support for payment protocols earns bonus points.",
+    "limitations": "The checker documents its scoring rules but gives no evidence that the score predicts whether an agent can complete a task on the site."
+  },
+  {
     "title": "AXIS: Agent Experience Index Score",
     "url": "https://github.com/netlify/axis",
     "sourceType": "tool",
